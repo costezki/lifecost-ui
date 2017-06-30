@@ -1,0 +1,19 @@
+<template name="Home">
+	<h1 class="center-align">Welcome to "LofeCost" appllication</h1>
+	<div class="container">
+		<div class="row">
+			<div class="col s12">
+				<ul class="tabs">
+					<li class="tab col s6"><a class="active" href="#authorization">SignIn</a></li>
+					<li class="tab col s6"><a href="#registration">SignUp</a></li>
+				</ul>
+			</div>
+			<div id="authorization" class="col s12">
+				{{> SignIn}}
+			</div>
+			<div id="registration" class="col s12">
+				{{> SignUp}}
+			</div>
+		</div>
+	</div>
+</template>

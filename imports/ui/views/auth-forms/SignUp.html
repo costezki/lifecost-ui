@@ -1,0 +1,13 @@
+<template name="SignUp">
+	{{#autoForm schema=SignUp id="signUpForm" validation="keyup" type="method" meteormethod="createAccounts"}}
+		<fieldset>
+			{{> afQuickField name="userName"}}
+			{{> afQuickField name="email"}}
+			{{> afQuickField name="password"}}
+			{{> afQuickField name="confirmPassword"}}
+			<div class="center-align">
+				<button type="submit" class="modal-action modal-close btn btn-primary">SignUp</button>
+			</div>
+		</fieldset>
+	{{/autoForm}}
+</template>
