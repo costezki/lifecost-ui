@@ -1,3 +1,16 @@
+/** Body, html, main **/
+header, main, footer
+    padding-left 300px
+
+body
+    background-image url("/images/background-2.jpg")
+    background-size 100% 100%
+
+@media only screen and (max-width : 992px)
+  header, main, footer
+    padding-left 0
+
+/** Material fonts and styles **/
 @font-face
     font-family 'Material Icons'
     font-style normal
@@ -19,5 +32,45 @@
     -webkit-font-feature-settings 'liga'
     -webkit-font-smoothing antialiased
 
-#logout-btn
-    font-size 3.5rem
+/** Buttons **/
+#change-role
+    cursor pointer
+    text-decoration underline
+#change-role:hover
+    color #4caf50
+
+#get-role
+    cursor pointer
+#get-role:hover
+    color #4caf50
+
+/** Inputs **/
+#form-create-question .collection input[type=text]
+    height 1.5rem
+    margin 0
+
+/** Icons **/
+i
+    cursor pointer
+
+/** SideNav **/
+#about-me li
+    line-height 25px;
+
+#slide-out .card
+    margin 0
+
+.side-nav .collection span.badge
+    margin 0
+
+#side-nav-collection
+    overflow visible
+
+/** Footer **/
+body
+    display flex
+    min-height 100vh
+    flex-direction column
+
+main
+    flex 1 0 auto

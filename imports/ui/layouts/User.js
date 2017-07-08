@@ -4,6 +4,7 @@ import { Tmeplate } from 'meteor/templating';
 import './User.html';
 
 Template.User.onCreated(function() {
+	
 });
 
 Template.User.onRendered(function() {
@@ -15,7 +16,5 @@ Template.User.helpers({
 });
 
 Template.User.events({
-	'click #logout-btn'(event) {
-		Accounts.logout();
-	}
+
 });

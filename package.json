@@ -2,7 +2,7 @@
   "name": "lifecost",
   "private": true,
   "scripts": {
-    "start": "meteor run"
+    "start": "meteor run --settings settings.json"
   },
   "devDependencies": {
     "chai": "^3.5.0",

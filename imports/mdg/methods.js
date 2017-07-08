@@ -8,13 +8,17 @@ export const createAccounts = new ValidatedMethod({
 		email: { type: String },
 		password: { type: String },
 		confirmPassword: { type: String },
-		userName: { type: String }
+		userName: { type: String },
+		birthday: { type: Date }
 	}).validator(),
-	run({ email, password, confirmPassword, userName }) {
+	run({ email, password, confirmPassword, userName, birthday }) {
 		Accounts.createUser({
 			email: email,
 			password: password,
 			username: userName,
+			profile: {
+				birthday: birthday
+			},
 			createdAt: new Date()
 		});
 	}

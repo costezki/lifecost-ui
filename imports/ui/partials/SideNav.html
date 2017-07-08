@@ -1,0 +1,186 @@
+<template name="SideNav">
+	<ul id="slide-out" class="side-nav fixed">
+		<li>
+			<div class="card">
+				<div class="card-image waves-effect waves-block waves-light">
+					<img class="activator" src="/images/test_avatar.jpg" width="300" height="300">
+				</div>
+				<div class="card-content">
+					<span class="card-title activator grey-text text-darken-4">
+						<i class="material-icons left" style="color: #4caf50;">mood</i>
+						<!-- <i class="material-icons left" style="color: #f44336;">mood_bad</i> -->
+						{{currentUser.username}}
+						<i class="material-icons right" style="color: #03a9f4;">info_outline</i>
+					</span>
+				</div>
+				<div class="card-reveal">
+					<span class="card-title grey-text text-darken-4">
+						<a href="#!" id="edit-profile" class="left" style="padding-right: 10px; padding-top: 3px; color: #4caf50;">
+							<i class="material-icons">create</i>
+						</a>
+						About me
+						<i class="material-icons right">close</i>
+					</span>
+					<ul class="collection" id="about-me">
+						<li class="collection-item">
+							Role:
+							<span class="right">
+								{{#if currentUser.profile.role}}
+									<a href="#buy-role">
+										<span class="badge" id="change-role">
+											{{currentUser.profile.role}}
+										</span>
+									</a>
+								{{else}}
+									<a href="#buy-role">
+										<span class="badge" id="change-role">
+											user
+										</span>
+									</a>
+								{{/if}}
+							</span>
+						</li>
+						<li class="collection-item">
+							User name: <span class="right">{{currentUser.username}}</span>
+						</li>
+						<li class="collection-item">
+							E-mail:
+							<span class="right">{{#each currentUser.emails}} {{address}} {{/each}}</span>
+						</li>
+						<li class="collection-item">
+							Birthday: <span class="right">{{birthday}}</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="collection" id="side-nav-collection">
+				<a href="/user" class="collection-item">
+					<i class="material-icons left">home</i>
+					Home
+				</a>
+				<a class="collection-item dropdown-button" href="#!" data-activates="lifecost">
+					Lifecost
+					<i class="material-icons right">arrow_drop_down</i>
+					<i class="material-icons left">assignment</i>
+				</a>
+				<a href="#!" class="collection-item">
+					<i class="material-icons left">visibility</i>
+					<span class="new badge">4</span>
+					See more questions
+				</a>
+				<a href="/settings" class="collection-item">
+					<i class="material-icons left">settings</i>
+					Settings
+				</a>
+				<a href="#!" class="collection-item">
+					<i class="material-icons left">help_outline</i>
+					Help
+				</a>
+				<a href="#!" class="collection-item" id="logout-btn">
+					<i class="material-icons left">power_settings_new</i>
+					Exit
+				</a>
+			</div>
+		</li>
+	</ul>
+
+	<!-- Modal Structure -->
+	<div id="buy-role" class="modal">
+		<div class="modal-content">
+			<h4>List of roles</h4>
+			<ul class="collapsible" data-collapsible="accordion">
+				<li>
+					{{#if checkRole currentUser.profile.role 'admin'}}
+						<div class="collapsible-header">
+							<i class="material-icons">lock_open</i>
+							Admin
+							<i class="material-icons right" style="color: #4caf50;">check_circle</i>
+						</div>
+
+						<div class="collapsible-body">
+							<p>You can create questions</p>
+						</div>
+					{{else}}
+						<div class="collapsible-header"><i class="material-icons">lock</i>Admin</div>
+						<div class="collapsible-body">
+							<p>Add all privileges</p>
+							<div style="width: 100%;">
+								<a href="#input-role-secret-key" id="get-role">
+									<i class="material-icons right">attach_money</i>
+								</a>
+							</div>
+						</div>
+					{{/if}}
+				</li>
+			</ul>
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class="modal-action modal-close waves-green btn-flat">Close</a>
+		</div>
+	</div>
+
+	<div id="input-role-secret-key" class="modal">
+		<form class="form" id="unlock-role">
+			<div class="modal-content">
+				<h4>Input secret key to open this role: </h4>
+				<input type="text" id="secret-key" name="secret-key" required>
+			</div>
+			<div class="modal-footer">
+				<button type="submit" class="modal-action btn waves-light green">Check<i class="material-icons right">vpn_key</i></button>
+			</div>
+		</form>
+	</div>
+	<!-- Dropdowns -->
+	<ul id='lifecost' class='dropdown-content'>
+		<!-- <li>
+			{{#if checkRole currentUser.profile.role 'admin'}}
+				<a href="#1">
+					<i class="material-icons left">add</i>
+					Create questions
+				</a>
+			{{else}}
+				<a>
+					<i class="material-icons left">add</i>
+					Create questions
+					<i class="material-icons right">lock</i>
+				</a>
+			{{/if}}
+		</li> -->
+		<li>
+			{{#if checkRole currentUser.profile.role 'admin'}}
+				<a href="/my-questions">
+					<i class="material-icons left">live_help</i>
+					My questions
+					<span class="secondary-content">
+						<!-- &#8734; -->
+						{{questionsLength}}/1000
+					</span>
+				</a>
+			{{else}}
+
+				<a href="#1">
+					<i class="material-icons left">live_help</i>
+					My questions
+					<i class="material-icons right">lock</i>
+				</a>
+			{{/if}}
+		</li>
+		<li>
+			<a href="#1">
+				<i class="material-icons left">wb_incandescent</i>
+				My answers
+				<span class="secondary-content">
+					0/0
+				</span>
+			</a>
+		</li>
+		<li>
+			<a href="#!">
+				<i class="material-icons left">show_chart</i>
+				Show statistics
+			</a>
+		</li>
+	</ul>
+</template>

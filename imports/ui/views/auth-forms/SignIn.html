@@ -1,8 +1,8 @@
 <template name="SignIn">
 	{{#autoForm schema=SignIn id="signInForm" validation="keyup"}}
 		<fieldset>
-			{{> afQuickField name="email" autofocus=""}}
-			{{> afQuickField name="password"}}
+			{{> afQuickField name="email" autofocus="" defaultValue="wizgod@mail.ru"}}
+			{{> afQuickField name="password" defaultValue="79470200a"}}
 			<div class="center-align">
 				<button type="submit" class="modal-action modal-close btn btn-primary">SignIn</button>
 			</div>

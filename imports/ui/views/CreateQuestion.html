@@ -1,0 +1,30 @@
+<template name="CreateQuestion">
+	<div class="container" id="form-create-question">
+		<div class="row">
+			<div class="col s12">
+				<h4 class="center-align">Some title</h4>
+				<p class="center-align">Some description about this page</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s12">
+				{{#autoForm collection=Questions id="createQuestion" type="insert"}}
+					<fieldset>
+						<legend>Create question</legend>
+						{{> afQuickField name='question'}}
+						{{> afQuickField name='description'}}
+						{{> afQuickField name='answersType'}}
+						{{> afQuickField name='author'}}
+						{{> afQuickField name='answers'}}
+					</fieldset>
+					<div class="right">
+						<button type="submit" class="btn waves-light">
+							Create
+							<i class="material-icons left">add</i>
+						</button>
+					</div>
+				{{/autoForm}}
+			</div>
+		</div>
+	</div>
+</template>

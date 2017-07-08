@@ -42,6 +42,24 @@ export const SignUp = new SimpleSchema({
 				return "passwordNotEqual";
 			}
 		}
+	},
+	birthday: {
+		type: Date,
+		label: 'Birthday',
+		autoform: {
+			type: 'pickadate',
+			class: 'with-gap',
+			pickadateOptions: {
+				closeOnSelect: true,
+				closeOnClear: true,
+				selectYears: 100,
+				selectMonths: true,
+				max: new Date()
+			}
+		},
+		autoValue: function() {
+			return new Date(this.value);
+		}
 	}
 }, { tracker: Tracker });
 
