@@ -42,7 +42,8 @@ Template.registerHelper('getDate', function(date) {
 });
 
 Template.registerHelper('getAuthor', function(author) {
-	return Meteor.users.findOne(author).username;
+	let user = Meteor.users.findOne(author);
+	if (user !== void 0) return user.username;
 });
 
 Template.registerHelper('checkUser', function(user) {
