@@ -5,7 +5,7 @@ import { Questions } from '/imports/collections/questionsCollections';
 import './SideNav.html';
 
 Template.SideNav.onCreated(function() {
-
+	Meteor.subscribe('questions');
 });
 
 Template.SideNav.onRendered(function() {

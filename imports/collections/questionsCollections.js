@@ -14,12 +14,12 @@ let questionsSchema = new SimpleSchema({
 	},
 	author: {
 		type: 'String',
-		defaultValue: function() {
-			return Meteor.userId();
-		},
 		autoform: {
 			type: 'hidden',
 			label: false
+		},
+		autoValue: function() {
+			return Meteor.userId();
 		}
 	},
 	description: {
@@ -50,6 +50,41 @@ let questionsSchema = new SimpleSchema({
 	},
 	'answers.$': {
 		type: String
+	},
+	answerId: {
+		type: String,
+		optional: true,
+		autoform: {
+			type: 'hidden',
+			label: false
+		}
+	},
+	publishedDate: {
+		type: Date,
+		optional: true,
+		autoform: {
+			type: 'hidden',
+			label: false
+		}
+	},
+	published: {
+		type: Boolean,
+		optional: true,
+		autoform: {
+			type: 'hidden',
+			label: false
+		}
+	},
+	createdAt: {
+		type: Date,
+		optional: true,
+		autoform: {
+			type: 'hidden',
+			label: false
+		},
+		autoValue: function() {
+			return new Date();
+		}
 	}
 }, { tracker: Tracker });
 
