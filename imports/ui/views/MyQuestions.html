@@ -11,7 +11,7 @@
 				<ul class="collection">
 					<li class="collection-item">
 						Options
-						<a href="/create-question" style="color: rgba(0, 0, 0, 0.87);">
+						<a href="/create-question" class="icon-link">
 							<i class="material-icons right" id="create-question">add</i>
 						</a>
 						<i class="material-icons right">show_chart</i>
@@ -51,7 +51,9 @@
 							</td>
 							<td>{{question}}</td>
 							<td class="center-align">
-								<i class="material-icons">create</i>
+								<a href="/edit-question/{{this._id}}" class="icon-link">
+									<i class="material-icons">create</i>
+								</a>
 								<i class="material-icons">star_border</i>
 								<i class="material-icons">delete_forever</i>
 							</td>

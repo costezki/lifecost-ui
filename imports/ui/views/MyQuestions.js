@@ -22,5 +22,5 @@ Template.MyQuestions.helpers({
 });
 
 Template.MyQuestions.events({
-
+	
 });

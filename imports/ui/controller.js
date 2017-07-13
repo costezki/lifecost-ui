@@ -66,6 +66,15 @@ FlowRouter.route('/create-question', {
     }
 });
 
+FlowRouter.route('/edit-question/:id', {
+    name: 'create-question',
+    action() {
+        if (Meteor.userId()) {
+            BlazeLayout.render('User', {main: 'EditQuestion'});
+        }
+    }
+});
+
 FlowRouter.route('/settings', {
     name: 'settings',
     action() {
