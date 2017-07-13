@@ -22,5 +22,11 @@ Template.MyQuestions.helpers({
 });
 
 Template.MyQuestions.events({
-	
+	'click .delete-question': function() {
+		var deleteQuestion = confirm("Delete this question?\n\"" + this.question + "\"");
+
+		if (deleteQuestion) {
+			Questions.remove(this._id);
+		}
+	}
 });
