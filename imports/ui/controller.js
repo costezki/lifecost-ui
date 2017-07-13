@@ -67,7 +67,7 @@ FlowRouter.route('/create-question', {
 });
 
 FlowRouter.route('/edit-question/:id', {
-    name: 'create-question',
+    name: 'edit-question',
     action() {
         if (Meteor.userId()) {
             BlazeLayout.render('User', {main: 'EditQuestion'});
@@ -76,9 +76,16 @@ FlowRouter.route('/edit-question/:id', {
 });
 
 FlowRouter.route('/published-questions', {
-    name: 'settings',
+    name: 'published-questions',
     action() {
         BlazeLayout.render('User', {main: 'PublishedQuestions'});
+    }
+});
+
+FlowRouter.route('/add-answer/:id', {
+    name: 'add-answer',
+    action() {
+        BlazeLayout.render('User', {main: 'Answers'});
     }
 });
 
