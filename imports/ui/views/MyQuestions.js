@@ -28,5 +28,14 @@ Template.MyQuestions.events({
 		if (deleteQuestion) {
 			Questions.remove(this._id);
 		}
+	},
+	'click .make-publish': function(event) {
+		let published = Questions.findOne(this._id);
+
+		if (published.published) {
+			Questions.update(this._id, {$set: {published: false, publishedDate: null}});
+		} else {
+			Questions.update(this._id, {$set: {published: true, publishedDate: new Date()}});
+		}
 	}
 });

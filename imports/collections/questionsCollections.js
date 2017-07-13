@@ -73,7 +73,8 @@ let questionsSchema = new SimpleSchema({
 		autoform: {
 			type: 'hidden',
 			label: false
-		}
+		},
+		defaultValue: false
 	},
 	createdAt: {
 		type: Date,
