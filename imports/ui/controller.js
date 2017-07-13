@@ -11,7 +11,7 @@ BlazeLayout.setRoot('body');
 if (Meteor.isClient) {
     Accounts.onLogin(function () {
         // FlowRouter.go('/' + Meteor.userId());
-        FlowRouter.go('/user');
+        FlowRouter.go('/published-questions');
     });
 
     Accounts.onLogout(function () {
@@ -72,6 +72,13 @@ FlowRouter.route('/edit-question/:id', {
         if (Meteor.userId()) {
             BlazeLayout.render('User', {main: 'EditQuestion'});
         }
+    }
+});
+
+FlowRouter.route('/published-questions', {
+    name: 'settings',
+    action() {
+        BlazeLayout.render('User', {main: 'PublishedQuestions'});
     }
 });
 
