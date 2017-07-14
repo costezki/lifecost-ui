@@ -5,7 +5,11 @@ import { Questions } from '/imports/collections/questionsCollections';
 import './CreateQuestion.html';
 
 Template.CreateQuestion.onCreated(function() {
-
+	AutoForm.addHooks('form-create-question', {
+		onSuccess: function(formType, result) {
+			FlowRouter.go('my-questions');
+		}
+	}, true);
 });
 
 Template.CreateQuestion.onRendered(function() {

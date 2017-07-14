@@ -39,7 +39,8 @@ let questionsSchema = new SimpleSchema({
 			options: function() {
 				return [
 					{label: 'Checkbox', value: 0},
-					{label: 'Radio button', value: 1}
+					{label: 'Radio button', value: 1},
+					{label: 'Input', value: 2},
 				]
 			}
 		}
