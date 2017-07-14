@@ -6,16 +6,11 @@ import { Answers } from '/imports/collections/answersCollections';
 import './Answers.html';
 
 Template.Answers.onCreated(function() {
+	Meteor.subscribe('answers');
 	AutoForm.addHooks('insertAnswer', {
-		// Called when form does not have a `type` attribute
 		onSubmit: function(insertDoc, updateDoc, currentDoc) {
-			// You must call this.done()!
 			this.done(insertDoc); // submitted successfully, call onSuccess
-			//this.done(new Error('foo')); // failed to submit, call onError with the provided error
-			//this.done(null, "foo"); // submitted successfully, call onSuccess with `result` arg set to "foo"
 		},
-
-		// Called when any submit operation succeeds
 		onSuccess: function(formType, result) {
 			let question = Questions.findOne(FlowRouter.getParam('id'));
 			if (question !== void 0) {
@@ -38,13 +33,11 @@ Template.Answers.onCreated(function() {
 			}
 
 		},
-		beginSubmit: function() {},
-		endSubmit: function() {}
 	}, true);
 });
 
 Template.Answers.onRendered(function() {
-	Meteor.subscribe('answers');
+
 });
 
 Template.Answers.helpers({
@@ -52,16 +45,22 @@ Template.Answers.helpers({
 		return Questions.findOne(FlowRouter.getParam('id'));
 	},
 	answer() {
-		return Answers.findOne({questionId: FlowRouter.getParam('id')});
+		let answers = Answers.find({author: Meteor.userId(), questionId: FlowRouter.getParam('id')});
+		let answer = answers.fetch()[answers.fetch().length - 1];
+		if (answer !== void 0) {
+			let question = Questions.findOne({_id: answer.questionId});
+
+			if (question !== void 0) {
+				if (question.answersType !== 2) {
+					return question.answers[answer.answersType];
+				} else {
+					return answer.answersType;
+				}
+			}
+		}
 	},
 	Answers() {
 		return Answers;
-	},
-	answersExists() {
-		let answer = Answers.findOne({questionId: FlowRouter.getParam('id')});
-		if (answer !== void 0) {
-			return true;
-		}
 	}
 });
 

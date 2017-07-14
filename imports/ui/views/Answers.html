@@ -10,51 +10,29 @@
 		</div>
 		<div class="row question">
 			<div class="col s12">
-				{{#if answersExists}}
-					{{#autoForm collection=Answers id="updateAnswer" doc=answer type="update"}}
-						<fieldset>
-							<legend class="center-align">{{question.question}}</legend>
-							<h6 class="center-align">{{question.description}}</h6>
-							{{> afQuickField name='question'}}
-							{{> afQuickField name='description'}}
-							{{> afQuickField name='author'}}
-							{{> afQuickField name='authorWhoCreated'}}
-							<div>
-								<label for="answersType">Update answer:</label>
-								{{> afQuickField name='answersType'}}
-							</div>
-							{{> afQuickField name='createdAt'}}
-						</fieldset>
-						<div class="right">
-							<button type="submit" class="btn waves-light">
-								Update answer
-								<i class="material-icons left">chat_bubble_outline</i>
-							</button>
+				{{#autoForm collection=Answers id="insertAnswer" type="insert"}}
+					<fieldset>
+						<legend class="center-align">{{question.question}}</legend>
+						<h5 class="center-align">{{question.description}}</h5>
+						<h6 class="center-align">
+							{{#if answer}}
+								Your last answer: {{answer}}
+							{{/if}}
+						</h6>
+						{{> afQuickField name='author'}}
+						<div>
+							<label for="answersType">Add answer:</label>
+							{{> afQuickField name='answersType'}}
 						</div>
-					{{/autoForm}}
-				{{else}}
-					{{#autoForm collection=Answers id="insertAnswer" type="insert"}}
-						<fieldset>
-							<legend class="center-align">{{question.question}}</legend>
-							<h6 class="center-align">{{question.description}}</h6>
-							{{> afQuickField name='question'}}
-							{{> afQuickField name='description'}}
-							{{> afQuickField name='author'}}
-							{{> afQuickField name='authorWhoCreated'}}
-							<div>
-								<label for="answersType">Add answer:</label>
-								{{> afQuickField name='answersType'}}
-							</div>
-							{{> afQuickField name='createdAt'}}
-						</fieldset>
-						<div class="right">
-							<button type="submit" class="btn waves-light">
-								Add answer
-								<i class="material-icons left">chat_bubble_outline</i>
-							</button>
-						</div>
-					{{/autoForm}}
-				{{/if}}
+						{{> afQuickField name='createdAt'}}
+					</fieldset>
+					<div class="right">
+						<button type="submit" class="btn waves-light">
+							Add answer
+							<i class="material-icons left">chat_bubble_outline</i>
+						</button>
+					</div>
+				{{/autoForm}}
 			</div>
 		</div>
 	</div>

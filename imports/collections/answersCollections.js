@@ -17,20 +17,6 @@ let answersSchema = new SimpleSchema({
 			label: false
 		},
 	},
-	question: {
-		type: 'String',
-		optional: true,
-		autoform: {
-			type: 'hidden'
-		}
-	},
-	authorWhoCreated: {
-		type: 'String',
-		optional: true,
-		autoform: {
-			type: 'hidden'
-		}
-	},
 	author: {
 		type: 'String',
 		autoform: {
@@ -41,39 +27,46 @@ let answersSchema = new SimpleSchema({
 			return Meteor.userId();
 		}
 	},
-	description: {
-		type: 'String',
-		optional: true,
-		autoform: {
-			type: 'hidden'
-		}
-	},
 	answersType: {
-		type: Number,
+		type: String,
 		autoform: {
 			type: function() {
 				let question = Questions.findOne({_id: FlowRouter.getParam('id')});
 				if (question !== void 0) {
 					if (question.answersType == 0) {
 						return 'select-checkbox-inline';
-					} else {
+					} else if (question.answersType == 1) {
 						return 'select-radio-inline';
+					} else if (question.answersType == 2) {
+						return 'text';
+					}
+				}
+			},
+			label: function() {
+				let question = Questions.findOne({_id: FlowRouter.getParam('id')});
+				if (question !== void 0) {
+					if (question.answersType == 2) {
+						return question.answers[0];
 					}
 				}
 			},
 			options: function (){
 				let question = Questions.findOne({_id: FlowRouter.getParam('id')});
 				if (question !== void 0) {
-					let answers = [];
+					if (question.answersType !== 2) {
+						let answers = [];
 
-					question.answers.forEach(function(item, index) {
-						answers.push({
-							label: item,
-							value: index
+						question.answers.forEach(function(item, index) {
+							answers.push({
+								label: item,
+								value: index
+							});
 						});
-					});
 
-					return answers;
+						return answers;
+					} else {
+						return null;
+					}
 				}
 			}
 		}
