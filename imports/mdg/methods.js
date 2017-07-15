@@ -1,6 +1,8 @@
 import { Meteor } from 'meteor/meteor';
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import SimpleSchema from 'simpl-schema';
+import { Questions } from '/imports/collections/questionsCollections';
+import { Answers } from '/imports/collections/answersCollections';
 
 export const createAccounts = new ValidatedMethod({
 	name: 'createAccounts',
@@ -31,5 +33,44 @@ export const setUsername = new ValidatedMethod({
 	}).validator(),
 	run({ userName }) {
 		Accounts.setUsername(Meteor.userId(), userName);
+	}
+});
+
+// TODO: doesn't work
+export const setAnswerId = new ValidatedMethod({
+	name: 'setAnswerId',
+	validate: new SimpleSchema({
+		questionId: { type: String },
+		answerId: { type: String }
+	}).validator(),
+	run({ questionId, answerId }) {
+		let question = Questions.findOne(questionId);
+
+		if (question.answersId) {
+			let array = question.answersId;
+			array.push(answerId);
+
+			let uniqueNames = [];
+			$.each(array, function(i, el){
+				if($.inArray(el, uniqueNames) === -1) uniqueNames.push(el);
+			});
+
+			Questions.update(
+				questionId,
+				{$set: {
+					answersId: [uniqueNames]
+				}}
+			);
+		} else {
+			Questions.update(
+				questionId,
+				{$set: {
+					answersId: [answerId]
+				}}
+			);
+		}
+
+
+		return question;
 	}
 });

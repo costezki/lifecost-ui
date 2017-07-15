@@ -1,11 +1,13 @@
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { Questions } from '/imports/collections/questionsCollections';
+import { Answers } from '/imports/collections/answersCollections';
 
 import './SideNav.html';
 
 Template.SideNav.onCreated(function() {
 	Meteor.subscribe('questions');
+	Meteor.subscribe('answers');
 });
 
 Template.SideNav.onRendered(function() {
@@ -47,6 +49,9 @@ Template.SideNav.helpers({
 	},
 	questionsLength() {
 		return Questions.find({author: Meteor.userId()}).fetch().length;
+	},
+	myAnswers() {
+		return Answers.find({author: Meteor.userId()}).fetch().length;
 	}
 });
 

@@ -89,6 +89,13 @@ FlowRouter.route('/add-answer/:id', {
     }
 });
 
+FlowRouter.route('/my-answers', {
+    name: 'my-answers',
+    action() {
+        BlazeLayout.render('User', {main: 'MyAnswers'});
+    }
+});
+
 FlowRouter.route('/settings', {
     name: 'settings',
     action() {

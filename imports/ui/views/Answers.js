@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { Questions } from '/imports/collections/questionsCollections';
 import { Answers } from '/imports/collections/answersCollections';
+import { setAnswerId } from '/imports/mdg/methods';
 
 import './Answers.html';
 
@@ -11,16 +12,22 @@ Template.Answers.onCreated(function() {
 		onSubmit: function(insertDoc, updateDoc, currentDoc) {
 			this.done(insertDoc); // submitted successfully, call onSuccess
 		},
-		onSuccess: function(formType, result) {
-			let question = Questions.findOne(FlowRouter.getParam('id'));
+		onSuccess: function(formType, answerId) {
+			let questionId = FlowRouter.getParam('id');
+			let question = Questions.findOne(questionId);
+
 			if (question !== void 0) {
 				let questionText = question.question;
 				let description = question.description;
-				let questionId = question._id;
 				let authorWhoCreated = question.author;
 
+				// setAnswerId.call({questionId, answerId}, (err, res) => {
+				// 	if (err) throw new Error(err);
+				// 	console.log(res);
+				// });
+
 				Answers.update(
-					result,
+					answerId,
 					{
 						$set:{
 							question: questionText,

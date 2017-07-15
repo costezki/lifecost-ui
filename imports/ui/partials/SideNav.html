@@ -134,27 +134,12 @@
 	</div>
 	<!-- Dropdowns -->
 	<ul id='lifecost' class='dropdown-content'>
-		<!-- <li>
-			{{#if checkRole currentUser.profile.role 'admin'}}
-				<a href="#1">
-					<i class="material-icons left">add</i>
-					Create questions
-				</a>
-			{{else}}
-				<a>
-					<i class="material-icons left">add</i>
-					Create questions
-					<i class="material-icons right">lock</i>
-				</a>
-			{{/if}}
-		</li> -->
 		<li>
 			{{#if checkRole currentUser.profile.role 'admin'}}
 				<a href="/my-questions">
 					<i class="material-icons left">live_help</i>
 					My questions
 					<span class="secondary-content">
-						<!-- &#8734; -->
 						{{questionsLength}}/1000
 					</span>
 				</a>
@@ -168,11 +153,11 @@
 			{{/if}}
 		</li>
 		<li>
-			<a href="#1">
+			<a href="/my-answers">
 				<i class="material-icons left">wb_incandescent</i>
 				My answers
 				<span class="secondary-content">
-					0/0
+					{{myAnswers}}
 				</span>
 			</a>
 		</li>

@@ -52,13 +52,16 @@ let questionsSchema = new SimpleSchema({
 	'answers.$': {
 		type: String
 	},
-	answerId: {
-		type: String,
+	answersId: {
+		type: Array,
 		optional: true,
 		autoform: {
 			type: 'hidden',
 			label: false
 		}
+	},
+	'answersId.$': {
+		type: String
 	},
 	publishedDate: {
 		type: Date,
