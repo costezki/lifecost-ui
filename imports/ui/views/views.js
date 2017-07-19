@@ -1,8 +1,8 @@
 import './auth-forms/forms';
-import './MyQuestions';
+import './Questions';
 import './CreateQuestion';
 import './EditQuestion';
-import './Answers';
-import './MyAnswers';
+import './AddAnswers';
+import './ShowAnswers';
 
 import './UserSettings.html';

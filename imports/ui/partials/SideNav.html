@@ -136,9 +136,9 @@
 	<ul id='lifecost' class='dropdown-content'>
 		<li>
 			{{#if checkRole currentUser.profile.role 'admin'}}
-				<a href="/my-questions">
+				<a href="/questions">
 					<i class="material-icons left">live_help</i>
-					My questions
+					Questions
 					<span class="secondary-content">
 						{{questionsLength}}/1000
 					</span>
@@ -147,15 +147,15 @@
 
 				<a href="#1">
 					<i class="material-icons left">live_help</i>
-					My questions
+					Questions
 					<i class="material-icons right">lock</i>
 				</a>
 			{{/if}}
 		</li>
 		<li>
-			<a href="/my-answers">
+			<a href="/answers">
 				<i class="material-icons left">wb_incandescent</i>
-				My answers
+				Answers
 				<span class="secondary-content">
 					{{myAnswers}}
 				</span>

@@ -3,21 +3,21 @@ import { Template } from 'meteor/templating';
 import { Questions } from '/imports/collections/questionsCollections';
 import { Answers } from '/imports/collections/answersCollections';
 
-import './MyAnswers.html';
+import './ShowAnswers.html';
 
-Template.MyAnswers.onCreated(function() {
+Template.ShowAnswers.onCreated(function() {
 	Meteor.subscribe('answers');
 });
 
-Template.MyAnswers.onRendered(function() {
+Template.ShowAnswers.onRendered(function() {
 
 });
 
-Template.MyAnswers.helpers({
+Template.ShowAnswers.helpers({
 
 });
 
-Template.MyAnswers.events({
+Template.ShowAnswers.events({
 
 });
 

@@ -4,9 +4,9 @@ import { Questions } from '/imports/collections/questionsCollections';
 import { Answers } from '/imports/collections/answersCollections';
 import { setAnswerId } from '/imports/mdg/methods';
 
-import './Answers.html';
+import './AddAnswers.html';
 
-Template.Answers.onCreated(function() {
+Template.AddAnswers.onCreated(function() {
 	Meteor.subscribe('answers');
 	AutoForm.addHooks('insertAnswer', {
 		onSubmit: function(insertDoc, updateDoc, currentDoc) {
@@ -43,11 +43,11 @@ Template.Answers.onCreated(function() {
 	}, true);
 });
 
-Template.Answers.onRendered(function() {
+Template.AddAnswers.onRendered(function() {
 
 });
 
-Template.Answers.helpers({
+Template.AddAnswers.helpers({
 	question() {
 		return Questions.findOne(FlowRouter.getParam('id'));
 	},
@@ -71,6 +71,6 @@ Template.Answers.helpers({
 	}
 });
 
-Template.Answers.events({
+Template.AddAnswers.events({
 
 });
