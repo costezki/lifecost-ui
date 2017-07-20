@@ -9,6 +9,7 @@ import './SideNav.html';
 Template.SideNav.onCreated(function() {
 	Meteor.subscribe('questions');
 	Meteor.subscribe('answers');
+	Meteor.subscribe('userSettings');
 });
 
 Template.SideNav.onRendered(function() {
