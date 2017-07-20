@@ -5,7 +5,23 @@ import { Questions } from '/imports/collections/questionsCollections';
 import './EditQuestion.html';
 
 Template.EditQuestion.onCreated(function() {
-
+	AutoForm.addHooks('updateQuestion', {
+		onSuccess: function(formType, result) {
+			FlowRouter.go('/questions');
+		},
+		formToModifier: function(modifier) {
+			console.log(modifier);
+			// return modifier;
+		},
+		formToDoc: function(doc) {
+			if (doc.answersType == 2) {
+				$('#updateQuestion').find('.collection').css('display', 'none');
+			} else {
+				$('#updateQuestion').find('.collection').css('display', 'inherit');
+			}
+			return doc;
+		}
+	}, true);
 });
 
 Template.EditQuestion.onRendered(function() {
@@ -25,5 +41,5 @@ Template.EditQuestion.helpers({
 });
 
 Template.EditQuestion.events({
-	
+
 });

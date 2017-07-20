@@ -8,6 +8,18 @@ Template.CreateQuestion.onCreated(function() {
 	AutoForm.addHooks('createQuestion', {
 		onSuccess: function(formType, result) {
 			FlowRouter.go('/questions');
+		},
+		formToModifier: function(modifier) {
+			console.log(modifier);
+			// return modifier;
+		},
+		formToDoc: function(doc) {
+			if (doc.answersType == 2) {
+				$('#createQuestion').find('.collection').css('display', 'none');
+			} else {
+				$('#createQuestion').find('.collection').css('display', 'inherit');
+			}
+			return doc;
 		}
 	}, true);
 });

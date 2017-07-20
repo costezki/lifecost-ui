@@ -37,8 +37,6 @@ let answersSchema = new SimpleSchema({
 						return 'select-checkbox-inline';
 					} else if (question.answersType == 1) {
 						return 'select-radio-inline';
-					} else if (question.answersType == 2) {
-						return 'text';
 					}
 				}
 			},
@@ -46,7 +44,7 @@ let answersSchema = new SimpleSchema({
 				let question = Questions.findOne({_id: FlowRouter.getParam('id')});
 				if (question !== void 0) {
 					if (question.answersType == 2) {
-						return question.answers[0];
+						return ' ';
 					}
 				}
 			},

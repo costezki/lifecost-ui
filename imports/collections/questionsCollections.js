@@ -38,19 +38,21 @@ let questionsSchema = new SimpleSchema({
 			type: 'select',
 			options: function() {
 				return [
-					{label: 'Checkbox', value: 0},
-					{label: 'Radio button', value: 1},
-					{label: 'Input', value: 2},
+					{ label: 'Checkbox', value: 0 },
+					{ label: 'Radio button', value: 1 },
+					{ label: 'Input', value: 2 },
 				]
 			}
 		}
 	},
 	answers: {
 		type: Array,
-		label: 'Answer'
+		label: 'Answer',
+		optional: true
 	},
 	'answers.$': {
-		type: String
+		type: String,
+		optional: true
 	},
 	answersId: {
 		type: Array,
