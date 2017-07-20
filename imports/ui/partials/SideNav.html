@@ -9,7 +9,7 @@
 					<span class="card-title activator grey-text text-darken-4">
 						<i class="material-icons left" style="color: #4caf50;">mood</i>
 						<!-- <i class="material-icons left" style="color: #f44336;">mood_bad</i> -->
-						{{currentUser.username}}
+						{{userSettings.userName}}
 						<i class="material-icons right" style="color: #03a9f4;">info_outline</i>
 					</span>
 				</div>
@@ -41,14 +41,14 @@
 							</span>
 						</li>
 						<li class="collection-item">
-							User name: <span class="right">{{currentUser.username}}</span>
+							User name: <span class="right">{{userSettings.userName}}</span>
 						</li>
 						<li class="collection-item">
 							E-mail:
-							<span class="right">{{#each currentUser.emails}} {{address}} {{/each}}</span>
+							<span class="right">{{userSettings.email}}</span>
 						</li>
 						<li class="collection-item">
-							Birthday: <span class="right">{{birthday}}</span>
+							Birthday: <span class="right">{{getBirthday userSettings.birthday}}</span>
 						</li>
 					</ul>
 				</div>
@@ -140,7 +140,7 @@
 					<i class="material-icons left">live_help</i>
 					Questions
 					<span class="secondary-content">
-						{{questionsLength}}/1000
+						{{questionsLength}}
 					</span>
 				</a>
 			{{else}}

@@ -13,7 +13,7 @@ export const SignUp = new SimpleSchema({
 	},
 	email: {
 		type: String,
-		label: 'Email',
+		label: 'E-mail',
 		regEx: SimpleSchema.RegEx.Email,
 		max: 100,
 		autoform: {

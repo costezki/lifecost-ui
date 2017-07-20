@@ -3,6 +3,7 @@ import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import SimpleSchema from 'simpl-schema';
 import { Questions } from '/imports/collections/questionsCollections';
 import { Answers } from '/imports/collections/answersCollections';
+import { UserSettings } from '/imports/collections/userCollections';
 
 export const createAccounts = new ValidatedMethod({
 	name: 'createAccounts',
@@ -14,7 +15,7 @@ export const createAccounts = new ValidatedMethod({
 		birthday: { type: Date }
 	}).validator(),
 	run({ email, password, confirmPassword, userName, birthday }) {
-		Accounts.createUser({
+		let userId = Accounts.createUser({
 			email: email,
 			password: password,
 			username: userName,
@@ -23,6 +24,17 @@ export const createAccounts = new ValidatedMethod({
 			},
 			createdAt: new Date()
 		});
+
+		if (userId !== void 0) {
+			UserSettings.insert({
+				user: userId,
+				userName: userName,
+				email: email,
+				birthday: birthday
+			}, (err, res) => {
+				if (err) throw new Error(err);
+			})
+		}
 	}
 });
 

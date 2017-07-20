@@ -5,4 +5,4 @@ import './EditQuestion';
 import './AddAnswers';
 import './ShowAnswers';
 
-import './UserSettings.html';
+import './UserSettings';

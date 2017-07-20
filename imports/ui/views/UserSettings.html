@@ -1,3 +1,15 @@
 <template name="UserSettings">
-	<h1 class="center-align">User settings page</h1>
+	<div class="container">
+		<div class="row">
+			<div class="col s12">
+				<h4 class="center-align">User settings</h4>
+				<p class="center-align">Some description</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s8 offset-s2">
+				{{> quickForm collection=UserSettings buttonClasses="btn right" buttonContent="Update" id="updateUserSettings" type="update" doc=settings}}
+			</div>
+		</div>
+	</div>
 </template>

@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { Questions } from '/imports/collections/questionsCollections';
 import { Answers } from '/imports/collections/answersCollections';
+import { UserSettings } from '/imports/collections/userCollections';
 
 import './SideNav.html';
 
@@ -43,9 +44,8 @@ Template.SideNav.onRendered(function() {
 });
 
 Template.SideNav.helpers({
-	birthday() {
-		let date = Meteor.users.findOne({_id: Meteor.userId()}).profile.birthday;
-		return moment(date).format('MMMM Do YYYY');
+	userSettings() {
+		return UserSettings.findOne({user: Meteor.userId()});
 	},
 	questionsLength() {
 		return Questions.find({author: Meteor.userId()}).fetch().length;
