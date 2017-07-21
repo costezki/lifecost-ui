@@ -33,8 +33,8 @@
 								{{question}}
 							</div>
 							<div class="right">
-								<a href="/edit-question/{{this._id}}" class="icon-link">
-									<i class="material-icons">create</i>
+								<a href="/edit-question/{{this._id}}"  class="icon-link">
+									<i class="material-icons tooltipped" data-tooltip="I am a tooltip">create</i>
 								</a>
 								<!-- <i class="material-icons">star_border</i> -->
 								<i class="material-icons make-publish">
@@ -44,7 +44,11 @@
 										visibility_off
 									{{/if}}
 								</i>
-								<i class="material-icons delete-question">delete_forever</i>
+								{{#if deprecated}}
+									<i class="material-icons delete-question" style="color: red;">delete_forever</i>
+								{{else}}
+									<i class="material-icons delete-question">delete_forever</i>
+								{{/if}}
 							</div>
 						</div>
 					</li>

@@ -79,8 +79,15 @@ let questionsSchema = new SimpleSchema({
 		autoform: {
 			type: 'hidden',
 			label: false
-		},
-		defaultValue: false
+		}
+	},
+	deprecated: {
+		type: Boolean,
+		optional: true,
+		autoform: {
+			type: 'hidden',
+			label: false
+		}
 	},
 	createdAt: {
 		type: Date,

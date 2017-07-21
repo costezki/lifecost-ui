@@ -25,3 +25,7 @@ Template.registerHelper('checkUser', function(user) {
 		return false;
 	}
 });
+
+Template.registerHelper('not', function(a) {
+	return !a;
+});

@@ -27,7 +27,7 @@ let answersSchema = new SimpleSchema({
 			return Meteor.userId();
 		}
 	},
-	answersType: {
+	answer: {
 		type: String,
 		autoform: {
 			type: function() {
@@ -43,7 +43,7 @@ let answersSchema = new SimpleSchema({
 			label: function() {
 				let question = Questions.findOne({_id: FlowRouter.getParam('id')});
 				if (question !== void 0) {
-					if (question.answersType == 2) {
+					if (question.answersType >= 2) {
 						return ' ';
 					}
 				}
@@ -51,7 +51,7 @@ let answersSchema = new SimpleSchema({
 			options: function (){
 				let question = Questions.findOne({_id: FlowRouter.getParam('id')});
 				if (question !== void 0) {
-					if (question.answersType !== 2) {
+					if (question.answersType < 2) {
 						let answers = [];
 
 						question.answers.forEach(function(item, index) {

@@ -3,11 +3,11 @@ import { Answers } from '/imports/collections/answersCollections';
 import { UserSettings } from '/imports/collections/userCollections';
 
 Meteor.publish('questions', function () {
-    return Questions.find({});
+    return Questions.find();
 });
 
 Meteor.publish('answers', function () {
-    return Answers.find({author: this.userId});
+    return Answers.find();
 });
 
 Meteor.publish('userSettings', function () {

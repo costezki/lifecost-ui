@@ -49,7 +49,14 @@ Template.AddAnswers.onRendered(function() {
 
 Template.AddAnswers.helpers({
 	question() {
-		return Questions.findOne(FlowRouter.getParam('id'));
+		let question = Questions.findOne(FlowRouter.getParam('id'));
+		if (question !== void 0) {
+			if (question.published) {
+				return question;
+			} else {
+				FlowRouter.go('/published-questions');
+			}
+		}
 	},
 	answer() {
 		let answers = Answers.find({author: Meteor.userId(), questionId: FlowRouter.getParam('id')});

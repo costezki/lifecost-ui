@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { Questions } from '/imports/collections/questionsCollections';
+import { Answers } from '/imports/collections/answersCollections';
 
 import './Questions.html';
 
@@ -9,9 +10,8 @@ Template.Questions.onCreated(function() {
 });
 
 Template.Questions.onRendered(function() {
-
+	$('.tooltipped').tooltip();
 });
-
 Template.Questions.helpers({
 	Questions() {
 		return Questions.find({author: Meteor.userId()});
@@ -23,16 +23,41 @@ Template.Questions.events({
 		var deleteQuestion = confirm("Delete this question?\n\"" + this.question + "\"");
 
 		if (deleteQuestion) {
-			Questions.remove(this._id);
+			let answers = Answers.find({questionId: this._id});
+			if (answers.fetch().length > 0) {
+				Questions.update(this._id, {$set: {
+					deprecated: true,
+					published: false,
+					publishedDate: null
+				}});
+			} else {
+				Questions.remove(this._id);
+			}
 		}
 	},
 	'click .make-publish': function(event) {
 		let published = Questions.findOne(this._id);
 
 		if (published.published) {
-			Questions.update(this._id, {$set: {published: false, publishedDate: null}});
+			Questions.update(this._id, {$set: {
+				published: false,
+				publishedDate: null
+			}}, (err, res) => {
+				if (err) throw new Error(err);
+			});
 		} else {
-			Questions.update(this._id, {$set: {published: true, publishedDate: new Date()}});
+			if (published.deprecated) {
+				Questions.update(this._id, {$set: {
+					published: true,
+					publishedDate: new Date(),
+					deprecated: false
+				}});
+			} else {
+				Questions.update(this._id, {$set: {
+					published: true,
+					publishedDate: new Date()
+				}});
+			}
 		}
 	}
 });
