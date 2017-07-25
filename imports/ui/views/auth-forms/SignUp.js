@@ -13,6 +13,7 @@ Template.SignUp.onCreated(function() {
 
 			Meteor.loginWithPassword(settings.email, settings.password, (err) => {
 				if (err) throw new Error(err);
+				location.reload();
 			});
 		},
 

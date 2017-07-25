@@ -2,14 +2,73 @@
 	<header>
 		<nav>
 			<div class="nav-wrapper">
-				<a href="#" class="brand-logo">Logo</a>
+				<a href="#" class="brand-logo">LifeCost</a>
 				<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
-				<ul id="nav-mobile" class="right hide-on-med-and-down">
-					<li><a href="sass.html">Sass</a></li>
-					<li><a href="badges.html">Components</a></li>
-					<li><a href="collapsible.html">JavaScript</a></li>
+				<ul class="right hide-on-med-and-down">
+					<li style="width: 175px;" class="center-align">
+						{{#if currentUser}}
+						<a data-activates='navbar-user-dropdown' class="dropdown-button">
+							{{currentUser.username}}
+							<i class="material-icons right">more_vert</i>
+						</a>
+						{{> NavbarUserDropdown}}
+						{{else}}
+						<a href="#authorization-modal" class="modal-trigger">LogIn</a>
+						{{/if}}
+					</li>
 				</ul>
 			</div>
 		</nav>
 	</header>
+	{{> AuthorizationModal}}
+</template>
+
+<template name="AuthorizationModal">
+	<div id="authorization-modal" class="modal">
+		<div class="modal-content">
+			<div class="row">
+				<i class="material-icons modal-action modal-close right">close</i>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col s12">
+						<ul class="tabs">
+							<li class="tab col s6"><a class="active" href="#authorization">SignIn</a></li>
+							<li class="tab col s6"><a href="#registration">SignUp</a></li>
+						</ul>
+					</div>
+					<div id="authorization" class="col s12">
+						{{> SignIn}}
+					</div>
+					<div id="registration" class="col s12">
+						{{> SignUp}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="NavbarUserDropdown">
+	<ul id='navbar-user-dropdown' class='dropdown-content'>
+		<li>
+			<a href="/user">
+				Application
+				<i class="material-icons left">assignment</i>
+			</a>
+		</li>
+		<li class="divider"></li>
+		<li>
+			<a href="/settings">
+				Settings
+				<i class="material-icons left">settings</i>
+			</a>
+		</li>
+		<li>
+			<a id="logout-btn">
+				Exit
+				<i class="material-icons left">power_settings_new</i>
+			</a>
+		</li>
+	</ul>
 </template>
