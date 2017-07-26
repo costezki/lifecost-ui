@@ -52,7 +52,37 @@ Template.SideNav.helpers({
 		return Questions.find({author: Meteor.userId()}).fetch().length;
 	},
 	myAnswers() {
-		return Answers.find({author: Meteor.userId()}).fetch().length;
+		let answers = Answers.find({author: Meteor.userId()});
+		if (answers.count() > 0) {
+			let questions = [];
+			let questionsIds = [];
+
+			answers.fetch().forEach(function(item, index, array) {
+				let latestAnswer = Answers.findOne({
+					author: Meteor.userId(),
+					questionId: item.questionId
+				});
+
+				let question = Questions.findOne(item.questionId);
+
+				if (question !== void 0) {
+					let flag = false;
+
+					questionsIds.forEach(function(id) {
+						if (item.questionId == id) {
+							flag = true;
+							return false;
+						}
+					});
+
+					if (!flag) {
+						questions.push(question);
+					}
+				}
+				questionsIds.push(item.questionId);
+			});
+			return questions.length;
+		}
 	}
 });
 

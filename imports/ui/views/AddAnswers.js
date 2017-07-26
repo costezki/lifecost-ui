@@ -66,7 +66,7 @@ Template.AddAnswers.helpers({
 
 			if (question !== void 0) {
 				if (question.answersType !== 2) {
-					return question.answers[answer.answersType];
+					return question.answers[answer.answers];
 				} else {
 					return answer.answer;
 				}
