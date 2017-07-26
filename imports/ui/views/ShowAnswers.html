@@ -10,23 +10,21 @@
 			<div class="col s12">
 				<ul class="collection" id="questions">
 					{{#each answers}}
-						{{#if published}}
-							<li class="collection-item avatar">
-								<img src="images/test_avatar.jpg" alt="" class="circle">
-								<span class="title"><b>Published:</b> {{getDate publishedDate}}</span>
-								<p><b>Author:</b> <a href="/user/{{author}}">{{getAuthor author}}</a><br>
-									<b>Question:</b> {{question}}
-								</p>
-								<div class="secondary-content">
-									{{#if checkUser author}}
-										<a href="/add-answer/{{_id}}">
-											<i class="material-icons">chat_bubble_outline</i>
-										</a>
-										<i class="material-icons">star_border</i>
-									{{/if}}
-								</div>
-							</li>
-						{{/if}}
+						<li class="collection-item avatar">
+							<img src="images/test_avatar.jpg" alt="" class="circle">
+							<span class="title"><b>Published:</b> {{getDate publishedDate}}</span>
+							<p><b>Author:</b> <a href="/user/{{author}}">{{getAuthor author}}</a><br>
+								<b>Question:</b> {{question}}
+							</p>
+							<div class="secondary-content">
+								{{#if checkUser author}}
+									<a href="/add-answer/{{_id}}">
+										<i class="material-icons">chat_bubble_outline</i>
+									</a>
+									<i class="material-icons">star_border</i>
+								{{/if}}
+							</div>
+						</li>
 					{{/each}}
 				</ul>
 			</div>

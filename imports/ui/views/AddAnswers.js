@@ -54,7 +54,11 @@ Template.AddAnswers.helpers({
 			if (question.published) {
 				return question;
 			} else {
-				FlowRouter.go('/published-questions');
+				if (question.deprecated) {
+					return question;
+				} else {
+					FlowRouter.go('/published-questions');
+				}
 			}
 		}
 	},

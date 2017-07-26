@@ -16,7 +16,6 @@ Template.ShowAnswers.onRendered(function() {
 Template.ShowAnswers.helpers({
 	answers() {
 		let answers = Answers.find({author: Meteor.userId()});
-		console.log(answers.fetch());
 		if (answers.count() > 0) {
 			let questions = [];
 			let questionsIds = [];
