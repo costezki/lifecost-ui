@@ -21,11 +21,6 @@ Template.AddAnswers.onCreated(function() {
 				let description = question.description;
 				let authorWhoCreated = question.author;
 
-				// setAnswerId.call({questionId, answerId}, (err, res) => {
-				// 	if (err) throw new Error(err);
-				// 	console.log(res);
-				// });
-
 				Answers.update(
 					answerId,
 					{
@@ -69,7 +64,7 @@ Template.AddAnswers.helpers({
 			let question = Questions.findOne({_id: answer.questionId});
 
 			if (question !== void 0) {
-				if (question.answersType !== 2) {
+				if (question.answersType == 1) {
 					return question.answers[answer.answer];
 				} else {
 					return answer.answer;

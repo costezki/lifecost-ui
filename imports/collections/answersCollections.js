@@ -28,7 +28,7 @@ let answersSchema = new SimpleSchema({
 		}
 	},
 	answer: {
-		type: String,
+		type: Array,
 		autoform: {
 			type: function() {
 				let question = Questions.findOne({_id: FlowRouter.getParam('id')});
@@ -60,13 +60,18 @@ let answersSchema = new SimpleSchema({
 								value: index
 							});
 						});
-
 						return answers;
 					} else {
 						return null;
 					}
 				}
 			}
+		},
+	},
+	'answer.$': {
+		type: String,
+		autoValue: function() {
+			console.log(this.value);
 		}
 	},
 	createdAt: {
