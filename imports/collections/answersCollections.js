@@ -69,10 +69,7 @@ let answersSchema = new SimpleSchema({
 		},
 	},
 	'answer.$': {
-		type: String,
-		autoValue: function() {
-			console.log(this.value);
-		}
+		type: String
 	},
 	createdAt: {
 		type: Date,
