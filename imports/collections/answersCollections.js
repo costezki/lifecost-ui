@@ -8,7 +8,9 @@ SimpleSchema.extendOptions(['autoform']);
 
 export const Answers = new Mongo.Collection('answers');
 
-let answersSchema = new SimpleSchema({
+export const AnswersSchema = {};
+
+AnswersSchema.checkboxType = new SimpleSchema({
 	questionId: {
 		type: String,
 		optional: true,
@@ -21,49 +23,29 @@ let answersSchema = new SimpleSchema({
 		type: 'String',
 		autoform: {
 			type: 'hidden',
-			label: false
-		},
-		autoValue: function() {
-			return Meteor.userId();
+			label: false,
+			value: function() {
+				return Meteor.userId();
+			}
 		}
 	},
 	answer: {
 		type: Array,
 		autoform: {
-			type: function() {
+			type: 'select-checkbox-inline',
+			options: function () {
 				let question = Questions.findOne({_id: FlowRouter.getParam('id')});
 				if (question !== void 0) {
-					if (question.answersType == 0) {
-						return 'select-checkbox-inline';
-					} else if (question.answersType == 1) {
-						return 'select-radio-inline';
-					}
-				}
-			},
-			label: function() {
-				let question = Questions.findOne({_id: FlowRouter.getParam('id')});
-				if (question !== void 0) {
-					if (question.answersType >= 2) {
-						return ' ';
-					}
-				}
-			},
-			options: function (){
-				let question = Questions.findOne({_id: FlowRouter.getParam('id')});
-				if (question !== void 0) {
-					if (question.answersType < 2) {
-						let answers = [];
+					let answers = [];
 
-						question.answers.forEach(function(item, index) {
-							answers.push({
-								label: item,
-								value: index
-							});
+					question.answers.forEach(function(item, index) {
+						answers.push({
+							label: item,
+							value: index
 						});
-						return answers;
-					} else {
-						return null;
-					}
+					});
+
+					return answers;
 				}
 			}
 		},
@@ -76,12 +58,102 @@ let answersSchema = new SimpleSchema({
 		optional: true,
 		autoform: {
 			type: 'hidden',
-			label: false
-		},
-		autoValue: function() {
-			return new Date();
+			label: false,
+			value: function() {
+				return new Date();
+			}
 		}
 	}
 }, { tracker: Tracker });
 
-Answers.attachSchema(answersSchema);
+AnswersSchema.radioButtonType = new SimpleSchema({
+	questionId: {
+		type: String,
+		optional: true,
+		autoform: {
+			type: 'hidden',
+			label: false
+		},
+	},
+	author: {
+		type: 'String',
+		autoform: {
+			type: 'hidden',
+			label: false,
+			value: function() {
+				return Meteor.userId();
+			}
+		}
+	},
+	answer: {
+		type: String,
+		autoform: {
+			type: 'select-radio-inline',
+			options: function () {
+				let question = Questions.findOne({_id: FlowRouter.getParam('id')});
+				if (question !== void 0) {
+					let answers = [];
+
+					question.answers.forEach(function(item, index) {
+						answers.push({
+							label: item,
+							value: index
+						});
+					});
+
+					return answers;
+				}
+			}
+		},
+	},
+	createdAt: {
+		type: Date,
+		optional: true,
+		autoform: {
+			type: 'hidden',
+			label: false,
+			value: function() {
+				return new Date();
+			}
+		}
+	}
+}, { tracker: Tracker });
+
+AnswersSchema.textType = new SimpleSchema({
+	questionId: {
+		type: String,
+		optional: true,
+		autoform: {
+			type: 'hidden',
+			label: false
+		}
+	},
+	author: {
+		type: 'String',
+		autoform: {
+			type: 'hidden',
+			label: false,
+			value: function() {
+				return Meteor.userId();
+			}
+		}
+	},
+	answer: {
+		type: String,
+		autoform: {
+			type: 'text',
+			label: false
+		}
+	},
+	createdAt: {
+		type: Date,
+		optional: true,
+		autoform: {
+			type: 'hidden',
+			label: false,
+			value: function() {
+				return new Date();
+			}
+		}
+	}
+}, { tracker: Tracker });

@@ -10,7 +10,7 @@
 		</div>
 		<div class="row question">
 			<div class="col s12">
-				{{#autoForm collection=Answers id="insertAnswer" type="insert"}}
+				{{#autoForm schema=answersSchema collection=Answers id="insertAnswer" type="insert"}}
 					<fieldset>
 						<legend class="center-align">{{question.question}}</legend>
 						<h5 class="center-align">{{question.description}}</h5>
@@ -20,6 +20,7 @@
 							{{/if}}
 						</h6>
 						{{#if not question.deprecated}}
+							{{> afQuickField name='questionId'}}
 							{{> afQuickField name='author'}}
 							<div>
 								<label for="answersType">Add answer:</label>

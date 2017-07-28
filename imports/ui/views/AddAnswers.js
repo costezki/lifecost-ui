@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { Questions } from '/imports/collections/questionsCollections';
-import { Answers } from '/imports/collections/answersCollections';
+import { Answers, AnswersSchema } from '/imports/collections/answersCollections';
 import { setAnswerId } from '/imports/mdg/methods';
 
 import './AddAnswers.html';
@@ -14,26 +14,14 @@ Template.AddAnswers.onCreated(function() {
 		},
 		onSuccess: function(formType, answerId) {
 			let questionId = FlowRouter.getParam('id');
-			let question = Questions.findOne(questionId);
-
-			if (question !== void 0) {
-				let questionText = question.question;
-				let description = question.description;
-				let authorWhoCreated = question.author;
-
-				Answers.update(
-					answerId,
-					{
-						$set:{
-							question: questionText,
-							description: description,
-							questionId: questionId,
-							authorWhoCreated: authorWhoCreated
-						},
-					}
-				);
-			}
-
+			Answers.update(
+				answerId,
+				{
+					$set:{
+						questionId: questionId
+					},
+				}
+			);
 		},
 	}, true);
 });
@@ -45,6 +33,7 @@ Template.AddAnswers.onRendered(function() {
 Template.AddAnswers.helpers({
 	question() {
 		let question = Questions.findOne(FlowRouter.getParam('id'));
+
 		if (question !== void 0) {
 			if (question.published) {
 				return question;
@@ -59,16 +48,41 @@ Template.AddAnswers.helpers({
 	},
 	answer() {
 		let answers = Answers.find({author: Meteor.userId(), questionId: FlowRouter.getParam('id')});
-		let answer = answers.fetch()[answers.fetch().length - 1];
-		if (answer !== void 0) {
+
+		if (answers.count() > 0) {
+			let answer = answers.fetch()[answers.count() - 1];
 			let question = Questions.findOne({_id: answer.questionId});
 
 			if (question !== void 0) {
-				if (question.answersType == 1) {
+				let answerType = question.answersType;
+				if (answerType == 0) {
+					let selectedAnsers = [];
+
+					answer.answer.forEach(function(item) {
+						selectedAnsers.push(question.answers[item])
+					});
+
+					return selectedAnsers;
+				} else if (answerType == 1) {
 					return question.answers[answer.answer];
 				} else {
 					return answer.answer;
 				}
+			}
+		}
+	},
+	answersSchema() {
+		let question = Questions.findOne(FlowRouter.getParam('id'));
+
+		if (question !== void 0) {
+			let answerType = question.answersType;
+
+			if (answerType == 0) {
+				return AnswersSchema.checkboxType;
+			} else if (answerType == 1) {
+				return AnswersSchema.radioButtonType;
+			} else {
+				return AnswersSchema.textType;
 			}
 		}
 	},
