@@ -1,6 +1,3 @@
-import { Meteor } from 'meteor/meteor';
-import { Accounts } from 'meteor/accounts-base';
-
 import './authorization/Accounts';
 import './layouts/layouts';
 import './views/views';
@@ -10,8 +7,7 @@ BlazeLayout.setRoot('body');
 
 if (Meteor.isClient) {
     Accounts.onLogin(function () {
-        // FlowRouter.go('/' + Meteor.userId());
-        // FlowRouter.go('/published-questions');
+
     });
 
     Accounts.onLogout(function () {
@@ -35,12 +31,6 @@ FlowRouter.route('/', {
     }
 });
 
-// FlowRouter.route('/:id', {
-//     name: 'user',
-//     action() {
-//         BlazeLayout.render('User');
-//     }
-// });
 FlowRouter.route('/user', {
     name: 'user',
     action() {
@@ -75,6 +65,31 @@ FlowRouter.route('/edit-question/:id', {
     }
 });
 
+FlowRouter.route('/create-questionnaire', {
+    name: 'create-questionnaire',
+    action() {
+        if (Meteor.userId()) {
+            BlazeLayout.render('User', {main: 'CreateQuestionnaire'});
+        }
+    }
+});
+
+FlowRouter.route('/edit-questionnaire/:id', {
+    name: 'edit-questionnaire',
+    action() {
+        if (Meteor.userId()) {
+            BlazeLayout.render('User', {main: 'EditQuestionnaire'});
+        }
+    }
+});
+
+FlowRouter.route('/show-questionnaire/:id', {
+    name: 'show-questionnaire',
+    action() {
+        BlazeLayout.render('User', {main: 'ShowQuestionnaire'});
+    }
+});
+
 FlowRouter.route('/published-questions', {
     name: 'published-questions',
     action() {
@@ -92,13 +107,17 @@ FlowRouter.route('/add-answer/:id', {
 FlowRouter.route('/answers', {
     name: 'answers',
     action() {
-        BlazeLayout.render('User', {main: 'ShowAnswers'});
+        if (Meteor.userId()) {
+            BlazeLayout.render('User', {main: 'ShowAnswers'});
+        }
     }
 });
 
 FlowRouter.route('/settings', {
     name: 'settings',
     action() {
-        BlazeLayout.render('User', {main: 'UserSettings'});
+        if (Meteor.userId()) {
+            BlazeLayout.render('User', {main: 'UserSettings'});
+        }
     }
 });

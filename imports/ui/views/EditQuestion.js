@@ -1,6 +1,4 @@
-import { Meteor } from 'meteor/meteor';
-import { Template } from 'meteor/templating';
-import { Questions } from '/imports/collections/questionsCollections';
+import { Questions } from '/imports/collections/questionsCollection';
 
 import './EditQuestion.html';
 
@@ -9,12 +7,8 @@ Template.EditQuestion.onCreated(function() {
 		onSuccess: function(formType, result) {
 			FlowRouter.go('/questions');
 		},
-		formToModifier: function(modifier) {
-			console.log(modifier);
-			// return modifier;
-		},
 		formToDoc: function(doc) {
-			if (doc.answersType == 2) {
+			if (doc.answersType === 2) {
 				$('#updateQuestion').find('.collection').css('display', 'none');
 			} else {
 				$('#updateQuestion').find('.collection').css('display', 'inherit');
@@ -38,8 +32,4 @@ Template.EditQuestion.helpers({
 	Questions() {
 		return Questions;
 	}
-});
-
-Template.EditQuestion.events({
-
 });

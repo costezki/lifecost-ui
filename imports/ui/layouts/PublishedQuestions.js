@@ -1,26 +1,29 @@
-import { Meteor } from 'meteor/meteor';
-import { Template } from 'meteor/templating';
-import { Questions } from '/imports/collections/questionsCollections';
+import { Questions } from '/imports/collections/questionsCollection';
+import { Questionnaires } from '/imports/collections/questionnairesCollection';
 
 import './PublishedQuestions.html';
 
 Template.PublishedQuestions.onCreated(function() {
 	Meteor.subscribe('userSettings');
+	Meteor.subscribe('questionnaires');
 });
 
 Template.PublishedQuestions.onRendered(function() {
-
+	$('ul.tabs').tabs();
 });
 
 Template.PublishedQuestions.helpers({
 	Questions() {
 		return Questions.find();
+	},
+	questionnaires() {
+		return Questionnaires.find();
 	}
 });
 
 Template.PublishedQuestions.events({
 	'click .delete-question': function() {
-		var deleteQuestion = confirm("Delete this question?\n\"" + this.question + "\"");
+		let deleteQuestion = confirm("Delete this question?\n\"" + this.question + "\"");
 
 		if (deleteQuestion) {
 			Questions.remove(this._id);

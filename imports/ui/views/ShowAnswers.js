@@ -1,7 +1,5 @@
-import { Meteor } from 'meteor/meteor';
-import { Template } from 'meteor/templating';
-import { Questions } from '/imports/collections/questionsCollections';
-import { Answers } from '/imports/collections/answersCollections';
+import { Questions } from '/imports/collections/questionsCollection';
+import { Answers } from '/imports/collections/answersCollection';
 
 import './ShowAnswers.html';
 
@@ -9,13 +7,10 @@ Template.ShowAnswers.onCreated(function() {
 	Meteor.subscribe('answers');
 });
 
-Template.ShowAnswers.onRendered(function() {
-
-});
-
 Template.ShowAnswers.helpers({
 	answers() {
 		let answers = Answers.find({author: Meteor.userId()});
+
 		if (answers.count() > 0) {
 			let questions = [];
 			let questionsIds = [];
@@ -32,14 +27,39 @@ Template.ShowAnswers.helpers({
 					let flag = false;
 
 					questionsIds.forEach(function(id) {
-						if (item.questionId == id) {
+						if (item.questionId === id) {
 							flag = true;
 							return false;
 						}
 					});
 
 					if (!flag) {
-						questions.push(question);
+						if (question.answersType === 0) {
+							let answer = item.answer.split(',');
+							let addedAnswers = [];
+
+							answer.forEach(function(item) {
+								addedAnswers.push(question.answers[item]);
+							});
+
+							questions.push({
+								question: question,
+								answer: addedAnswers,
+								answerCreatedAt: item.createdAt
+							});
+						} else if (question.answersType === 1) {
+							questions.push({
+								question: question,
+								answer: question.answers[item.answer],
+								answerCreatedAt: item.createdAt
+							});
+						} else {
+							questions.push({
+								question: question,
+								answer: item.answer,
+								answerCreatedAt: item.createdAt
+							});
+						}
 					}
 				}
 				questionsIds.push(item.questionId);
@@ -47,8 +67,4 @@ Template.ShowAnswers.helpers({
 			return questions;
 		}
 	}
-});
-
-Template.ShowAnswers.events({
-
 });

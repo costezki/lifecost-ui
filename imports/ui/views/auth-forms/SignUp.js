@@ -1,5 +1,3 @@
-import { Meteor } from 'meteor/meteor';
-import { Template } from 'meteor/templating';
 import { SignUp } from '/imports/ui/authorization/Accounts';
 
 import './SignUp.html';
@@ -30,8 +28,4 @@ Template.SignUp.helpers({
 	SignUp() {
 		return SignUp;
 	}
-});
-
-Template.SignUp.events({
-
 });

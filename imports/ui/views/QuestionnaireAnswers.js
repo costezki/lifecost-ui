@@ -1,33 +1,27 @@
 import { ReactiveVar } from 'meteor/reactive-var';
 
-import { Answers, AnswersSchemaFactory } from '/imports/collections/answersCollection';
 import { Questions } from '/imports/collections/questionsCollection';
-import { insertAnswer } from './utils';
+import { Answers } from '/imports/collections/answersCollection';
+import { questionnaireInsertAnswer } from '/imports/ui/views/utils';
 
-import './AddAnswers.html';
+import './QuestionnaireAnswers.html';
 
-Template.AddAnswers.onCreated(function() {
-	Meteor.subscribe('answers');
+Template.QuestionnaireAnswers.onCreated(function() {
+	this.questionActive = new ReactiveVar(1);
 });
 
-Template.Answer.helpers({
+Template.QuestionnaireAnswers.helpers({
 	question() {
-		let question = Questions.findOne(FlowRouter.getParam('id'));
+		let questionId = Template.currentData().activeQuestion;
+		let question = Questions.findOne(questionId);
 
 		if (question !== void 0) {
-			if (question.published) {
-				return question;
-			} else {
-				if (question.deprecated) {
-					return question;
-				} else {
-					FlowRouter.go('/published-questions');
-				}
-			}
+			return question;
 		}
 	},
 	answer() {
-		let answers = Answers.find({author: Meteor.userId(), questionId: FlowRouter.getParam('id')});
+		let questionId = Template.currentData().activeQuestion;
+		let answers = Answers.find({author: Meteor.userId(), questionId: questionId});
 
 		if (answers.count() > 0) {
 			let answer = answers.fetch()[answers.count() - 1];
@@ -35,6 +29,7 @@ Template.Answer.helpers({
 
 			if (question !== void 0) {
 				let answerType = question.answersType;
+
 				if (answerType === 0) {
 					let selectedAnsers = [];
 					answer = answer.answer.split(',');
@@ -53,55 +48,57 @@ Template.Answer.helpers({
 		}
 	},
 	answerOptions() {
-		let question = Questions.findOne(FlowRouter.getParam('id'));
+		let questionId = Template.currentData().activeQuestion;
+		let question = Questions.findOne(questionId);
 
 		if (question !== void 0) {
 			let answers = [];
+			let answersType = question.answersType;
 
-			if (question.answersType !== 2) {
+			if (answersType !== 2) {
 				question.answers.forEach(function(item, index) {
 					answers.push({
 						label: item,
 						value: index
 					});
 				});
-				if (question.answersType === 1) {
-					return {answers, answerType: 'radioButton'};
-				} else {
-					return {answers, answerType: 'checkbox'};
-				}
+
+				let answerType = answersType === 1 ? 'radioButton':'checkbox';
+
+				return {answers, answerType: answerType};
 			}
 		}
 	}
 });
 
-Template.Answer.events({
-	'submit #insert-answer': function(event) {
+Template.QuestionnaireAnswers.events({
+	'submit #insert-answer': function(event, template) {
 		event.preventDefault();
 
-		let questionId = FlowRouter.getParam('id');
+		let questionId = Template.currentData().activeQuestion;
 		let question = Questions.findOne(questionId);
 
 		if (question.answersType === 0) {
 			let answers = [];
 			let checkboxes = event.target.answer;
 
-			for (let i = 0; i < checkboxes.length; i++) {
+			for (var i = 0; i < checkboxes.length; i++) {
 				if (checkboxes[i].checked) {
 					answers.push(i);
 				}
 			}
-			insertAnswer(answers.toString(), questionId);
+
+			questionnaireInsertAnswer(answers.toString(), questionId, template);
 		} else if (question.answersType === 1) {
 			event.target.answer.forEach(function(item, answer) {
 				if (item.checked) {
-					insertAnswer(answer.toString(), questionId);
+					questionnaireInsertAnswer(answer.toString(), questionId, template);
 				}
 			});
 		} else {
 			let answer = event.target.answer.value;
 
-			insertAnswer(answer, questionId);
+			questionnaireInsertAnswer(answer, questionId, template);
 		}
 	}
 });

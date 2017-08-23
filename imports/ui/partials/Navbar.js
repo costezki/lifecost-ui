@@ -1,11 +1,4 @@
-import { Meteor } from 'meteor/meteor';
-import { Template } from 'meteor/templating';
-
 import './Navbar.html';
-
-Template.Navbar.onCreated(function() {
-
-});
 
 Template.Navbar.onRendered(function() {
 	$('.modal').modal();
@@ -22,10 +15,6 @@ Template.Navbar.onRendered(function() {
 			stopPropagation: false // Stops event propagation
 		});
 	}, 500);
-});
-
-Template.Navbar.helpers({
-
 });
 
 Template.Navbar.events({

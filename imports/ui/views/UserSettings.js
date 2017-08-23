@@ -1,15 +1,9 @@
-import { Meteor } from 'meteor/meteor';
-import { Template } from 'meteor/templating';
-import { UserSettings } from '/imports/collections/userCollections';
+import { UserSettings } from '/imports/collections/userCollection';
 
 import './UserSettings.html';
 
 Template.UserSettings.onCreated(function() {
 	Meteor.subscribe('userSettings');
-});
-
-Template.UserSettings.onRendered(function() {
-
 });
 
 Template.UserSettings.helpers({
@@ -19,8 +13,4 @@ Template.UserSettings.helpers({
 	settings() {
 		return UserSettings.findOne({user: Meteor.userId()});
 	}
-});
-
-Template.UserSettings.events({
-
 });

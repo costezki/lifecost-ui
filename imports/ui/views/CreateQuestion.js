@@ -1,20 +1,14 @@
-import { Meteor } from 'meteor/meteor';
-import { Template } from 'meteor/templating';
-import { Questions } from '/imports/collections/questionsCollections';
+import { Questions } from '/imports/collections/questionsCollection';
 
 import './CreateQuestion.html';
 
 Template.CreateQuestion.onCreated(function() {
 	AutoForm.addHooks('createQuestion', {
-		onSuccess: function(formType, result) {
+		onSuccess: function() {
 			FlowRouter.go('/questions');
 		},
-		formToModifier: function(modifier) {
-			console.log(modifier);
-			// return modifier;
-		},
 		formToDoc: function(doc) {
-			if (doc.answersType == 2) {
+			if (doc.answersType === 2) {
 				$('#createQuestion').find('.collection').css('display', 'none');
 			} else {
 				$('#createQuestion').find('.collection').css('display', 'inherit');
@@ -27,13 +21,11 @@ Template.CreateQuestion.onCreated(function() {
 Template.CreateQuestion.onRendered(function() {
 	$('input#question-title, textarea#question-desc').characterCounter();
 
-	$('.tooltipped').tooltip(
-		{
-			delay: 50,
-			tooltip: 'Add to publish page',
-			position: 'top'
-		}
-	);
+	$('.tooltipped').tooltip({
+		delay: 50,
+		tooltip: 'Add to publish page',
+		position: 'top'
+	});
 });
 
 Template.CreateQuestion.helpers({
@@ -45,7 +37,7 @@ Template.CreateQuestion.helpers({
 Template.CreateQuestion.events({
 	'click .make-publish': function(event) {
 		// TODO: It is necessary to simplify
-		if (event.target.innerText == "visibility_off") {
+		if (event.target.innerText === "visibility_off") {
 			event.target.innerText = "visibility";
 			event.target.parentNode.parentNode.parentNode.parentNode.published.value = true;
 			event.target.parentNode.parentNode.parentNode.parentNode.publishedDate.value = new Date();

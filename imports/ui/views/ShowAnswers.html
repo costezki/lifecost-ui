@@ -11,18 +11,18 @@
 				<ul class="collection" id="questions">
 					{{#each answers}}
 						<li class="collection-item avatar">
-							<img src="images/test_avatar.jpg" alt="" class="circle">
-							<span class="title"><b>Published:</b> {{getDate publishedDate}}</span>
-							<p><b>Author:</b> <a href="/user/{{author}}">{{getAuthor author}}</a><br>
-								<b>Question:</b> {{question}}
-							</p>
+							<i class="material-icons circle green">assignment</i>
+							<h5><b>Title:</b> {{question.question}}</h5>
+							<p><b>Latest answer:</b> {{answer}}</p>
+							<div class="title">
+								<b>Author: </b>
+								<a href="/user/{{author}}">{{getAuthor question.author}}</a><br>
+							</div>
+							<div class="title"><b>Answer added in:</b> {{getDate answerCreatedAt}}</div>
 							<div class="secondary-content">
-								{{#if checkUser author}}
-									<a href="/add-answer/{{_id}}">
-										<i class="material-icons">chat_bubble_outline</i>
-									</a>
-									<i class="material-icons">star_border</i>
-								{{/if}}
+								<a href="/add-answer/{{_id}}">
+									<i class="material-icons">chat_bubble_outline</i>
+								</a>
 							</div>
 						</li>
 					{{/each}}
