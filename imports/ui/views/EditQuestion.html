@@ -13,6 +13,9 @@
                         <legend>Create question</legend>
                         {{> afQuickField name='question'}}
                         {{> afQuickField name='description'}}
+                        {{#if checkRole currentUser.profile.role "admin"}}
+                            {{> afQuickField name='variableName'}}
+                        {{/if}}
                         {{> afQuickField name='answersType'}}
                         {{> afQuickField name='author'}}
                         {{> afQuickField name='answers'}}
@@ -21,9 +24,9 @@
                         {{> afQuickField name='createdAt'}}
                     </fieldset>
                     <div class="right">
-                        <button type="submit" class="btn waves-light">
-                            Create
-                            <i class="material-icons left">add</i>
+                        <button class="btn waves-light">
+                            Update
+                            <i class="material-icons left">autorenew</i>
                         </button>
                     </div>
                 {{/autoForm}}

@@ -119,7 +119,7 @@ function addDefaultQuestionnaire(existingQuestionsIds, defaultQuestionnaire, use
             title: title,
             questionsList: existingQuestionsIds,
             createdAt: new Date,
-            publishedDate: new Date(),
+            publishedAt: new Date(),
             published: true
         });
     }

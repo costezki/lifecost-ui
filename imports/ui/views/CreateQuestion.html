@@ -24,6 +24,9 @@
                         </div>
                         {{> afQuickField name='question'}}
                         {{> afQuickField name='description'}}
+                        {{#if checkRole currentUser.profile.role "admin"}}
+                            {{> afQuickField name='variableName'}}
+                        {{/if}}
                         {{> afQuickField name='answersType'}}
                         {{> afQuickField name='author'}}
                         {{> afQuickField class="answers" name='answers'}}
@@ -31,6 +34,7 @@
                         {{> afQuickField name='published'}}
                         {{> afQuickField name='deprecated'}}
                         {{> afQuickField name='createdAt'}}
+
                     </fieldset>
                     <div class="right">
                         <button type="submit" class="btn waves-light">

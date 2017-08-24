@@ -45,7 +45,7 @@ let questionsSchema = new SimpleSchema({
     },
     variableName: {
         type: String,
-        label: false,
+        label: "Variable name",
         optional: true
     },
     answers: {

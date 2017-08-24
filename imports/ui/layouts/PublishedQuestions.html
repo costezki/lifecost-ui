@@ -1,88 +1,96 @@
 <template name="PublishedQuestions">
-	<div class="container" id="published-questions">
-		<div class="row">
-			<div class="col s12">
-				<h4 class="center-align">Some title</h4>
-				<p class="center-align">Some description about this page</p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col s12">
-				<ul class="tabs">
-					<li class="tab col s6">
-						<a href="#questions">Questions</a>
-					</li>
-					<li class="tab col s6">
-						<a href="#questionnaires">Questionnaires</a>
-					</li>
-				</ul>
-			</div>
-			<div class="col s12" id="questions">
-				<ul class="collection">
-					{{#each Questions}}
-						{{#if published}}
-							<li class="collection-item avatar">
-								<i class="material-icons circle green">assignment</i>
-								<h5><b>Title:</b> {{question}}</h5>
-								<div class="title">
-									<b>Author: </b>
-									<a href="/user/{{author}}">{{getAuthor author}}</a>
-								</div>
-								<p class="title"><b>Published:</b> {{getDate publishedDate}}</p>
-								<div class="secondary-content">
-									{{#if checkUser author}}
-										<a href="/add-answer/{{_id}}">
-											<i class="material-icons">chat_bubble_outline</i>
-										</a>
-									{{else}}
-										<a href="/edit-question/{{_id}}" class="icon-link">
-											<i class="material-icons">edit</i>
-										</a>
-									{{/if}}
-								</div>
-							</li>
-						{{/if}}
-					{{/each}}
-				</ul>
-			</div>
-			<div class="col s12" id="questionnaires">
-				<ul class="collection">
-					{{#each questionnaires}}
-						{{#if published}}
-							<li class="collection-item avatar">
-								<i class="material-icons circle blue">assignment</i>
-								<h5><b>Title:</b> {{title}}</h5>
-								<div class="title">
-									<b>Author: </b>
-									<a href="/user/{{author}}">{{getAuthor author}}</a>
-								</div>
-								<p class="title"><b>Published:</b> {{getDate publishedAt}}</p>
-								<ul class="collection with-header">
-									<li class="collection-header center-align"><b>Questions list</b></li>
-									{{#each getQuestions questionsList}}
-										{{#if checkUser author}}
-											<li class="collection-item">{{upIndex @index}}.	<a href="/add-answer/{{_id}}">{{question}}</a></li>
-										{{else}}
-											<li class="collection-item">{{upIndex @index}}.	<a href="">{{question}}</a></li>
-										{{/if}}
-									{{/each}}
-								</ul>
-								<div class="secondary-content">
-									{{#if checkUser author}}
-										<a href="/show-questionnaire/{{_id}}">
-											<i class="material-icons">chat_bubble_outline</i>
-										</a>
-									{{else}}
-										<a href="/edit-questionnaire/{{_id}}" class="icon-link">
-											<i class="material-icons">edit</i>
-										</a>
-									{{/if}}
-								</div>
-							</li>
-						{{/if}}
-					{{/each}}
-				</ul>
-			</div>
-		</div>
-	</div>
+    <div class="container" id="published-questions">
+        <div class="row">
+            <div class="col s12">
+                <h4 class="center-align">Some title</h4>
+                <p class="center-align">Some description about this page</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <ul class="tabs">
+                    <li class="tab col s6">
+                        <a href="#questions">Questions</a>
+                    </li>
+                    <li class="tab col s6">
+                        <a href="#questionnaires">Questionnaires</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col s12" id="questions">
+                <ul class="collection">
+                    {{#each Questions}}
+                        {{#if published}}
+                            <li class="collection-item avatar">
+                                <i class="material-icons circle green">assignment</i>
+                                <h5><b>Title:</b> {{question}}</h5>
+                                {{#if variableName}}
+                                    <div class="title">
+                                        <b>Variable name:</b>
+                                        {{variableName}}
+                                    </div>
+                                {{/if}}
+                                <div class="title">
+                                    <b>Author: </b>
+                                    <a href="/user/{{author}}">{{getAuthor author}}</a>
+                                </div>
+                                <p class="title"><b>Published:</b> {{getDate publishedDate}}</p>
+                                <div class="secondary-content">
+                                    {{#if checkUser author}}
+                                        <a href="/add-answer/{{_id}}">
+                                            <i class="material-icons">chat_bubble_outline</i>
+                                        </a>
+                                    {{else}}
+                                        <a href="/edit-question/{{_id}}" class="icon-link">
+                                            <i class="material-icons">edit</i>
+                                        </a>
+                                    {{/if}}
+                                </div>
+                            </li>
+                        {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="col s12" id="questionnaires">
+                <ul class="collection">
+                    {{#each questionnaires}}
+                        {{#if published}}
+                            <li class="collection-item avatar">
+                                <i class="material-icons circle blue">assignment</i>
+                                <h5><b>Title:</b> {{title}}</h5>
+                                <div class="title">
+                                    <b>Author: </b>
+                                    <a href="/user/{{author}}">{{getAuthor author}}</a>
+                                </div>
+                                <p class="title"><b>Published:</b> {{getDate publishedAt}}</p>
+                                <ul class="collection with-header">
+                                    <li class="collection-header center-align"><b>Questions list</b></li>
+                                    {{#each getQuestions questionsList}}
+                                        {{#if checkUser author}}
+                                            <li class="collection-item">{{upIndex @index}}. <a
+                                                    href="/add-answer/{{_id}}">{{question}}</a></li>
+                                        {{else}}
+                                            <li class="collection-item">{{upIndex @index}}. <a href="">{{question}}</a>
+                                            </li>
+                                        {{/if}}
+                                    {{/each}}
+                                </ul>
+                                <div class="secondary-content">
+                                    {{#if checkUser author}}
+                                        <a href="/show-questionnaire/{{_id}}">
+                                            <i class="material-icons">chat_bubble_outline</i>
+                                        </a>
+                                    {{else}}
+                                        <a href="/edit-questionnaire/{{_id}}" class="icon-link">
+                                            <i class="material-icons">edit</i>
+                                        </a>
+                                    {{/if}}
+                                </div>
+                            </li>
+                        {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
 </template>

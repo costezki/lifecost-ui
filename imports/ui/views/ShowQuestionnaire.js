@@ -1,6 +1,5 @@
 import {ReactiveVar} from 'meteor/reactive-var';
 
-import {Questions} from '/imports/collections/questionsCollection';
 import {Questionnaires} from '/imports/collections/questionnairesCollection';
 import {qqList} from './utils';
 
