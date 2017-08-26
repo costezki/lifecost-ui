@@ -63,12 +63,7 @@ Template.SideNav.helpers({
             let questions = [];
             let questionsIds = [];
 
-            answers.fetch().forEach(function (item, index, array) {
-                let latestAnswer = Answers.findOne({
-                    author: Meteor.userId(),
-                    questionId: item.questionId
-                });
-
+            answers.fetch().forEach(function (item) {
                 let question = Questions.findOne(item.questionId);
 
                 if (question !== void 0) {
@@ -88,6 +83,8 @@ Template.SideNav.helpers({
                 questionsIds.push(item.questionId);
             });
             return questions.length;
+        } else {
+            return 0;
         }
     }
 });
@@ -117,10 +114,5 @@ Template.SideNav.events({
                 alert('Your key is broken!\nPlease try another key.');
             }
         })
-    },
-    'click #add-default-questionnaire': function () {
-        Meteor.call('createDefaultQuestionnaire', {}, (err) => {
-            if (err) throw new Error(err);
-        });
     }
 });

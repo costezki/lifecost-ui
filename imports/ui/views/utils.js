@@ -10,7 +10,7 @@ export function insertQuestionnaire(published, title, date, questions) {
         createdAt: new Date(),
         published: published,
         publishedAt: date
-    }, (err, res) => {
+    }, (err) => {
         if (err) throw new Error(err);
         FlowRouter.go('/questions');
     });
@@ -59,19 +59,32 @@ export function qqList(questionnaireId) {
 }
 
 export function questionnaireInsertAnswer(answer, questionId, template) {
-    addAnswer.call({answer, questionId}, (err, res) => {
+    addAnswer.call({answer, questionId}, (err) => {
         if (err) throw new Error(err);
 
         let activeQuestion = template.parent().activeQuestion.get();
+        let activeQuestionNumber = activeQuestion.questionNumber;
         let questionnaire = Questionnaires.findOne(FlowRouter.getParam('id'));
 
         if (questionnaire !== void 0) {
             let questions = Questions.find({_id: {$in: questionnaire.questionsList}, published: true});
+            let clearedQuestions = template.parent().clearedQuestions.get();
 
-            if (questions.count() > activeQuestion + 1) {
+            template.parent().clearedQuestions.get()[clearedQuestions.length - 1].cleared = true;
+
+            if (questions.count() > activeQuestionNumber + 1) {
                 $('.pagination').find('li').removeClass('active');
-                $('.pagination').find('li:nth-child(' + (activeQuestion + 2) + ')').addClass('active');
-                template.parent().activeQuestion.set(activeQuestion + 1);
+                $('.pagination').find('li:nth-child(' + (activeQuestionNumber + 2) + ')').addClass('active');
+
+                let nextQuestion = {
+                    questionNumber: activeQuestionNumber + 1,
+                    cleared: false
+                };
+
+                clearedQuestions.push(nextQuestion);
+
+                template.parent().clearedQuestions.set(clearedQuestions);
+                template.parent().activeQuestion.set(nextQuestion);
             } else {
                 FlowRouter.go('/published-questions');
             }
@@ -80,18 +93,37 @@ export function questionnaireInsertAnswer(answer, questionId, template) {
 }
 
 export function updatePublicationQuestionnaire(questionnaireId, published, date) {
-    Questionnaires.update(questionnaireId, {
-        $set: {
-            published: published,
-            publishedAt: date
+    let questionnaire = Questionnaires.findOne(questionnaireId);
+
+    if (questionnaire !== void 0) {
+        if (published) {
+            let questions = Questions.find({
+                _id: {
+                    $in: questionnaire.questionsList
+                },
+                published: true
+            });
+
+            if (questions.count() < 2) {
+                alert("To publish this questionnaire you must have 2 or more published questions...");
+
+                return false;
+            }
         }
-    }, (err, res) => {
-        if (err) throw new Error(err);
-    });
+
+        Questionnaires.update(questionnaireId, {
+            $set: {
+                published: published,
+                publishedAt: date
+            }
+        }, (err) => {
+            if (err) throw new Error(err);
+        });
+    }
 }
 
 export function insertAnswer(answer, questionId) {
-    addAnswer.call({answer, questionId}, (err, res) => {
+    addAnswer.call({answer, questionId}, (err) => {
         if (err) throw new Error(err);
     });
 }
@@ -103,7 +135,7 @@ export function updatePublicationQuestion(questionId, published, date, deprecate
             publishedDate: date,
             deprecated: deprecated
         }
-    }, (err, res) => {
+    }, (err) => {
         if (err) throw new Error(err);
     });
 }

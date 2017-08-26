@@ -1,50 +1,50 @@
 <template name="QuestionnaireAnswers">
-	<form class="form" id="insert-answer">
-		<fieldset>
-			<legend class="center-align">{{question.question}}</legend>
-			<h5 class="center-align">{{question.description}}</h5>
-			<h6 class="center-align">
-				{{#if answer}}
-					Your last answer: {{answer}}
-				{{/if}}
-			</h6>
-			{{#if not question.deprecated}}
-				<label for="answersType">Add answer:</label>
-				{{#if answerOptions}}
-					{{#if checkAnswerType answerOptions.answerType}}
-						<ul class="collection">
-							{{#each answerOptions.answers}}
-								<li class="collection-item">
-									<input type="checkbox" name="answer" id="{{label}}">
-									<label for="{{label}}">{{label}}</label>
-								</li>
-							{{/each}}
-						</ul>
-					{{else}}
-						<ul class="collection">
-							{{#each answerOptions.answers}}
-								<li class="collection-item">
-									<input type="radio" name="answer" id="{{label}}">
-									<label for="{{label}}">{{label}}</label>
-								</li>
-							{{/each}}
-						</ul>
-					{{/if}}
-				{{else}}
-					<div class="input-field">
-						<input type="text" name="answer" id="answer">
-						<label for="answer"></label>
-					</div>
-				{{/if}}
-				<div class="right">
-					<button type="submit" class="btn waves-light">
-						Add answer
-						<i class="material-icons left">chat_bubble_outline</i>
-					</button>
-				</div>
-			{{else}}
-				<h5 class="center-align" style="color: red;">Question was deprecated!</h5>
-			{{/if}}
-		</fieldset>
-	</form>
+    <form class="form" id="insert-answer">
+        <fieldset>
+            <legend class="center-align">{{question.question}}</legend>
+            <h5 class="center-align">{{question.description}}</h5>
+            <h6 class="center-align">
+                {{#if answer}}
+                    Your last answer: {{answer}}
+                {{/if}}
+            </h6>
+            {{#if not question.deprecated}}
+                <label for="answersType">Add answer:</label>
+                {{#if answerOptions}}
+                    {{#if checkAnswerType answerOptions.answerType}}
+                        <ul class="collection">
+                            {{#each answerOptions.answers}}
+                                <li class="collection-item">
+                                    <input type="checkbox" name="answer" id="{{label}}">
+                                    <label for="{{label}}">{{label}}</label>
+                                </li>
+                            {{/each}}
+                        </ul>
+                    {{else}}
+                        <ul class="collection">
+                            {{#each answerOptions.answers}}
+                                <li class="collection-item">
+                                    <input type="radio" name="answer" id="{{label}}">
+                                    <label for="{{label}}">{{label}}</label>
+                                </li>
+                            {{/each}}
+                        </ul>
+                    {{/if}}
+                {{else}}
+                    <div class="input-field">
+                        <input type="text" name="answer" id="answer" required>
+                        <label for="answer"></label>
+                    </div>
+                {{/if}}
+                <div class="right">
+                    <button type="submit" class="btn waves-light">
+                        Add answer
+                        <i class="material-icons left">chat_bubble_outline</i>
+                    </button>
+                </div>
+            {{else}}
+                <h5 class="center-align" style="color: red;">Question was deprecated!</h5>
+            {{/if}}
+        </fieldset>
+    </form>
 </template>

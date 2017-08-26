@@ -1,111 +1,160 @@
 <template name="Questions">
-	<div class="container">
-		<div class="row">
-			<h4 class="center-align">My questions</h4>
-			<p class="center-align">
-				Some description about this page
-			</p>
-		</div>
-		<div class="row">
-			<ul class="collection with-header">
-				<li class="collection-header">
-					<div class="row">
-						<div class="col s11">
-							<ul class="tabs">
-								<li class="tab col s6">
-									<a href="#questions">Questions</a>
-								</li>
-								<li class="tab col s6">
-									<a href="#questionnaires">Questionnaires</a>
-								</li>
-							</ul>
-						</div>
-						<div class="col s1">
-							<a class="btn-floating modal-trigger right" data-target="create-questions" id="create-question">
-								<i class="material-icons left">add</i>
-							</a>
-						</div>
-					</div>
-				</li>
-			</ul>
-			<ul class="collection" id="questions">
-				{{#each Questions}}
-					<li class="collection-item">
-						<div class="row">
-							<div class="left">
-								<h5><b>Title: </b>{{question}}</h5>
-								<p><b>CreatedAt:</b> {{getDate createdAt}}</p>
-							</div>
-							<div class="right">
-								<a href="/edit-question/{{this._id}}"  class="icon-link">
-									<i class="material-icons" data-tooltip="I am a tooltip">create</i>
-								</a>
-								<i class="material-icons make-publish">
-									{{#if published}}
-										visibility
-									{{else}}
-										visibility_off
-									{{/if}}
-								</i>
-								{{#if deprecated}}
-									<i class="material-icons delete">delete_forever</i>
-								{{else}}
-									<i class="material-icons delete">delete</i>
-								{{/if}}
-							</div>
-						</div>
-					</li>
-				{{/each}}
-			</ul>
-			<ul class="collection" id="questionnaires">
-				{{#each Questionnaires}}
-					<li class="collection-item">
-						<div class="row">
-							<div class="left">
-								<h5><b>Title:</b> {{title}}</h5>
-								<p><b>CreatedAt:</b> {{getDate createdAt}}</p>
-							</div>
-							<div class="right">
-								<a href="/edit-questionnaire/{{this._id}}"  class="icon-link">
-									<i class="material-icons" data-tooltip="I am a tooltip">create</i>
-								</a>
-								<i class="material-icons make-publish">
-									{{#if published}}
-										visibility
-									{{else}}
-										visibility_off
-									{{/if}}
-								</i>
-								<i class="material-icons delete">delete</i>
-							</div>
-						</div>
-						<div class="row">
-							<ul class="collection with-header">
-								<li class="collection-header center-align">
-									<b>Questions list</b>
-								</li>
-								{{#each getQuestions questionsList}}
-									<li class="collection-item">{{upIndex @index}}.	{{question}}</li>
-								{{/each}}
-							</ul>
-						</div>
-					</li>
-				{{/each}}
-			</ul>
-		</div>
-	</div>
+    <div class="container">
+        <div class="row">
+            <h4 class="center-align">My questions</h4>
+            <p class="center-align">
+                Some description about this page
+            </p>
+        </div>
+        <div class="row">
+            <ul class="collection with-header">
+                <li class="collection-header">
+                    <div class="row">
+                        <div class="col s11">
+                            <ul class="tabs">
+                                <li class="tab col s6">
+                                    <a href="#questions">Questions</a>
+                                </li>
+                                <li class="tab col s6">
+                                    <a href="#questionnaires">Questionnaires</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col s1">
+                            <a class="btn-floating modal-trigger right" data-target="create-questions"
+                               id="create-question">
+                                <i class="material-icons left">add</i>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="collection" id="questions">
+                {{#each Questions}}
+                    <li class="collection-item">
+                        <div class="row">
+                            <div class="left">
+                                <h5><b>Title: </b>{{question}}</h5>
+                                <p><b>CreatedAt:</b> {{getDate createdAt}}</p>
+                            </div>
+                            <div class="right">
+                                <a href="/edit-question/{{this._id}}" class="icon-link">
+                                    <i class="material-icons" data-tooltip="I am a tooltip">create</i>
+                                </a>
+                                <i class="material-icons make-publish">
+                                    {{#if published}}
+                                        visibility
+                                    {{else}}
+                                        visibility_off
+                                    {{/if}}
+                                </i>
+                                {{#if deprecated}}
+                                    <i class="material-icons delete">delete_forever</i>
+                                {{else}}
+                                    <i class="material-icons delete">delete</i>
+                                {{/if}}
+                            </div>
+                        </div>
+                    </li>
+                {{/each}}
+            </ul>
+            <ul class="collection" id="questionnaires">
+                {{#each Questionnaires}}
+                    <li class="collection-item">
+                        <div class="row">
+                            <div class="left">
+                                <h5><b>Title:</b> {{title}}</h5>
+                                <p><b>CreatedAt:</b> {{getDate createdAt}}</p>
+                            </div>
+                            <div class="right">
+                                <a href="/edit-questionnaire/{{this._id}}" class="icon-link">
+                                    <i class="material-icons" data-tooltip="I am a tooltip">create</i>
+                                </a>
+                                <i class="material-icons make-publish">
+                                    {{#if published}}
+                                        visibility
+                                    {{else}}
+                                        visibility_off
+                                    {{/if}}
+                                </i>
+                                <i class="material-icons delete">delete</i>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <ul class="collection with-header">
+                                <li class="collection-header center-align">
+                                    <b>Questions list</b>
+                                </li>
+                                {{#each getQuestions questionsList}}
+                                    <li class="collection-item">{{upIndex @index}}.    {{question}}</li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
 
-	<div id="create-questions" class="modal">
-		<div class="modal-content">
-			<i class="material-icons right modal-action modal-close">close</i>
-			<div class="row">
-				<div class="col s6 center-align">
-					<a href="/create-question" class="btn modal-action modal-close">Create question</a>
-				</div>
-				<div class="col s5 center-align">
-					<a href="/create-questionnaire" class="btn modal-action modal-close">Create questionnaier</a>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div id="create-questions" class="modal">
+        <div class="modal-content">
+            <i class="material-icons right modal-action modal-close">close</i>
+            <div class="row">
+                <ul class="collection collapsible with-header" data-collapsible="accordion">
+                    <li class="collection-header">
+                        <h5 class="center-align">Create question or questionnaire</h5>
+                    </li>
+                    <li class="collection-item">
+                        Create new question
+                        <a href="/create-question" class="icon-link">
+                            <i class="material-icons right modal-action modal-close">arrow_forward</i>
+                        </a>
+                    </li>
+                    <li class="collection-item">
+                        Create new questionnaire
+                        <span class="red-text" hidden>
+                            (you must have 2 questions or more to create questionnaire)
+                        </span>
+                        <a href="" id="create-questionnaire" class="icon-link">
+                            <i class="material-icons right">arrow_forward</i>
+                        </a>
+                    </li>
+                    {{#if currentUser.profile.role}}
+                        <li id="add-default-questionnaire">
+                            <div class="collapsible-header">
+                                Create default questionnaire from existing modules
+                                <a href="" class="icon-link">
+                                    <i class="material-icons right">arrow_downward</i>
+                                </a>
+                            </div>
+                            <div class="collapsible-body">
+                                <ul class="collection with-header" id="default-modules">
+                                    {{#each modules}}
+                                        <li class="collection-item">
+                                            <div>
+                                                {{changeModuleName this}}
+                                                <i class="material-icons right insert-module">add</i>
+                                                <i class="material-icons right show-module"
+                                                   data-target="module-content">pageview</i>
+                                            </div>
+                                        </li>
+                                    {{/each}}
+                                </ul>
+                            </div>
+                        </li>
+                    {{/if}}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="module-content" class="modal">
+        <div class="modal-content">
+            <div class="row">
+                <i class="material-icons right" id="end-module-view">close</i>
+                <div id="json-data">
+                    <pre>{{moduleContent}}</pre>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>

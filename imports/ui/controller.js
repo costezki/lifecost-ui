@@ -2,6 +2,7 @@ import './authorization/Accounts';
 import './layouts/layouts';
 import './views/views';
 import './partials/partials';
+import './errors/ErrorHandler';
 
 BlazeLayout.setRoot('body');
 

@@ -1,6 +1,7 @@
 import {Questions} from '/imports/collections/questionsCollection';
 import {Answers} from '/imports/collections/answersCollection';
 import {questionnaireInsertAnswer} from '/imports/ui/views/utils';
+import {ErrorHandler} from '/imports/ui/errors/ErrorHandler';
 
 import './QuestionnaireAnswers.html';
 
@@ -75,6 +76,15 @@ Template.QuestionnaireAnswers.events({
 
         let questionId = Template.currentData().activeQuestion;
         let question = Questions.findOne(questionId);
+        let answer = event.target.answer;
+
+        if (answer.length < 1) {
+            if (answer.value === "" || answer.value === null || answer.value === void 0) {
+                new ErrorHandler("The response field must be filled in", "rounded");
+
+                return false;
+            }
+        }
 
         if (question.answersType === 0) {
             let answers = [];
@@ -86,13 +96,28 @@ Template.QuestionnaireAnswers.events({
                 }
             }
 
-            questionnaireInsertAnswer(answers.toString(), questionId, template);
+            if (answers.length !== 0) {
+                questionnaireInsertAnswer(answers.toString(), questionId, template);
+            } else {
+                new ErrorHandler("You must select 1 or more answers", "rounded");
+
+                return false;
+            }
         } else if (question.answersType === 1) {
+            let flag = true;
+
             event.target.answer.forEach(function (item, answer) {
                 if (item.checked) {
                     questionnaireInsertAnswer(answer.toString(), questionId, template);
+                    flag = false;
                 }
             });
+
+            if (flag) {
+                new ErrorHandler("You must select one answer to continue...", "rounded");
+
+                return false;
+            }
         } else {
             let answer = event.target.answer.value;
 
