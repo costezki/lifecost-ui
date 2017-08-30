@@ -16,7 +16,7 @@ Template.Questions.onCreated(function () {
     this.moduleContent = new ReactiveVar();
 
     Meteor.call('getModules', (err, modules) => {
-        if (err) throw new Error(err);
+        if (err) new ErrorHandler(err.reason, "rounded");
 
         this.modules.set(modules);
     });
@@ -69,6 +69,8 @@ Template.Questions.events({
                             published: false,
                             publishedDate: null
                         }
+                    }, (err) => {
+                        if (err) new ErrorHandler(err.reason, "rounded");
                     });
                 } else {
                     Questions.remove(this._id);
@@ -95,7 +97,7 @@ Template.Questions.events({
 
         if (module !== "" && module !== void 0) {
             Meteor.call('createDefaultQuestionnaire', module, (err) => {
-                if (err) throw new Error(err);
+                if (err) new ErrorHandler(err.reason + ". Check module fields");
             });
         }
     },
@@ -114,7 +116,7 @@ Template.Questions.events({
 
         if (module !== "" && module !== void 0) {
             Meteor.call('getModuleContent', module, (err, content) => {
-                if (err) throw new Error(err);
+                if (err) new ErrorHandler(err.reason, "rounded");
                 template.moduleContent.set(content);
             });
         }

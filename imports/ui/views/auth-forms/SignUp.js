@@ -1,31 +1,30 @@
-import { SignUp } from '/imports/ui/authorization/Accounts';
+import {SignUp} from '/imports/ui/authorization/Accounts';
+import {ErrorHandler} from "../../errors/ErrorHandler";
 
 import './SignUp.html';
 
-Template.SignUp.onCreated(function() {
-	AutoForm.addFormType('signUpForm')
-	AutoForm.addHooks('signUpForm', {
-		// Called when any submit operation succeeds
-		onSuccess: function(formType, result) {
-			let settings = this.insertDoc;
+Template.SignUp.onCreated(function () {
+    AutoForm.addFormType('signUpForm');
+    AutoForm.addHooks('signUpForm', {
+        // Called when any submit operation succeeds
+        onSuccess: function (formType, result) {
+            let settings = this.insertDoc;
 
-			Meteor.loginWithPassword(settings.email, settings.password, (err) => {
-				if (err) throw new Error(err);
-				location.reload();
-			});
-		},
+            Meteor.loginWithPassword(settings.email, settings.password, (err) => {
+                if (err) new ErrorHandler(err.reason, "rounded");
+                location.reload();
+            });
+        },
 
-		// Called when any submit operation fails
-		onError: function(formType, err) {
-			if (err !== void 0 && err.reason !== void 0) {
-				alert(err.reason);
-			}
-		}
-	})
+        // Called when any submit operation fails
+        onError: function (formType, err) {
+            if (err) new ErrorHandler(err.reason, "rounded");
+        }
+    })
 });
 
 Template.SignUp.helpers({
-	SignUp() {
-		return SignUp;
-	}
+    SignUp() {
+        return SignUp;
+    }
 });

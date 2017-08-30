@@ -15,12 +15,7 @@ Template.ShowAnswers.helpers({
 			let questions = [];
 			let questionsIds = [];
 
-			answers.fetch().forEach(function(item, index, array) {
-				let latestAnswer = Answers.findOne({
-					author: Meteor.userId(),
-					questionId: item.questionId
-				});
-
+			answers.fetch().forEach(function(item) {
 				let question = Questions.findOne(item.questionId);
 
 				if (question !== void 0) {

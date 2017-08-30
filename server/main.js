@@ -1,7 +1,6 @@
 import '/imports/mdg/methods';
 import {Questions} from '/imports/collections/questionsCollection';
 import {Questionnaires} from "../imports/collections/questionnairesCollection";
-import {ErrorHandler} from "../imports/ui/errors/ErrorHandler";
 
 let fs = require('fs');
 
@@ -41,7 +40,7 @@ Meteor.methods({
         addDefaultQuestions(module.questionsList, existingQuestions, userId);
 
         addDefaultQuestionnaire(
-            getQuestionsIds(existingQuestions),
+            getQuestionsIds(module.questionsList, existingQuestions),
             defaultQuestionnaire,
             userId,
             module.title,
@@ -89,20 +88,28 @@ function addDefaultQuestions(defaultQuestions, existingQuestions, userId) {
 }
 
 /**
- * Get questions ids with and filed="variableName" from mongodb, and return array with ids
+ * Get questions ids with filed="variableName" from mongodb, and return array with ids
+ * @param defaultQuestions
  * @param existingQuestions
  * @returns {Array}
  */
-function getQuestionsIds(existingQuestions) {
+function getQuestionsIds(defaultQuestions, existingQuestions) {
     // After creating the missing questions, create a list with their ids
     let existingQuestionsIds = [];
+    // Each question in mongodb
+    existingQuestions.fetch().forEach(function (exQuestion) {
+        // This flag say, when question can be add in to existing questions ids
+        let flag = false;
 
-    if (existingQuestions.count() > 0) {
-        // Each default question from mongodb and push their ids into array
-        existingQuestions.fetch().forEach(function (question) {
-            existingQuestionsIds.push(question._id);
+        defaultQuestions.forEach(function (question) {
+            // Each existing questions with filed="variableName" and compare with default question from module
+            if (exQuestion.variableName === question.variableName) {
+                flag = true;
+            }
         });
-    }
+
+        if (flag) existingQuestionsIds.push(exQuestion._id);
+    });
 
     return existingQuestionsIds;
 }

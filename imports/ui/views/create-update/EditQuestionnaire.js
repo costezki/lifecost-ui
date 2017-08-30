@@ -1,6 +1,7 @@
 import {Questions} from '/imports/collections/questionsCollection';
 import {Questionnaires} from '/imports/collections/questionnairesCollection';
-import {updateQuestionnaire} from './utils';
+import {updateQuestionnaire} from '../utils';
+import {ErrorHandler} from "../../errors/ErrorHandler";
 
 import './EditQuestionnaire.html';
 
@@ -66,7 +67,12 @@ Template.EditQuestionnaire.events({
             let title = event.target['questionnaire-title'].value.trim();
             updateQuestionnaire(FlowRouter.getParam('id'), title, questions);
         } else {
-            alert("You must have 2 or more question in questionnaire to update him...");
+            new ErrorHandler(
+                "You must have 2 or more question in questionnaire to update him...",
+                "rounded",
+                null,
+                "warning",
+            );
         }
     }
 });

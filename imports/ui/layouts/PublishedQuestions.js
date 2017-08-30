@@ -1,5 +1,6 @@
 import {Questions} from '/imports/collections/questionsCollection';
 import {Questionnaires} from '/imports/collections/questionnairesCollection';
+import {ErrorHandler} from "../errors/ErrorHandler";
 
 import './PublishedQuestions.html';
 
@@ -38,6 +39,8 @@ Template.PublishedQuestions.helpers({
                             published: false,
                             publishedAt: null
                         }
+                    }, (err) => {
+                        if (err) new ErrorHandler(err.reason, "rounded");
                     })
                 }
             });
@@ -52,16 +55,22 @@ Template.PublishedQuestions.events({
         let deleteQuestion = confirm("Delete this question?\n\"" + this.question + "\"");
 
         if (deleteQuestion) {
-            Questions.remove(this._id);
+            Questions.remove(this._id, (err) => {
+                if (err) new ErrorHandler(err.reason, "rounded");
+            });
         }
     },
     'click .make-publish': function (event) {
         let published = Questions.findOne(this._id);
 
         if (published.published) {
-            Questions.update(this._id, {$set: {published: false, publishedDate: null}});
+            Questions.update(this._id, {$set: {published: false, publishedDate: null}}, (err) => {
+                if (err) new ErrorHandler(err.reason, "rounded");
+            });
         } else {
-            Questions.update(this._id, {$set: {published: true, publishedDate: new Date()}});
+            Questions.update(this._id, {$set: {published: true, publishedDate: new Date()}}, (err) => {
+                if (err) new ErrorHandler(err.reason, "rounded");
+            });
         }
     }
 });

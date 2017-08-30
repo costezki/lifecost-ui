@@ -1,6 +1,7 @@
 import {addAnswer} from '/imports/mdg/methods';
 import {Questions} from '/imports/collections/questionsCollection';
 import {Questionnaires} from '/imports/collections/questionnairesCollection';
+import {ErrorHandler} from "../errors/ErrorHandler";
 
 export function insertQuestionnaire(published, title, date, questions) {
     Questionnaires.insert({
@@ -11,7 +12,7 @@ export function insertQuestionnaire(published, title, date, questions) {
         published: published,
         publishedAt: date
     }, (err) => {
-        if (err) throw new Error(err);
+        if (err) new ErrorHandler(err.reason, "rounded");
         FlowRouter.go('/questions');
     });
 }
@@ -24,7 +25,7 @@ export function updateQuestionnaire(id, title, questions) {
             createdAt: new Date()
         }
     }, (err) => {
-        if (err) throw new Error(err);
+        if (err) new ErrorHandler(err.reason, "rounded");
         FlowRouter.go('/questions');
     });
 }
@@ -60,7 +61,7 @@ export function qqList(questionnaireId) {
 
 export function questionnaireInsertAnswer(answer, questionId, template) {
     addAnswer.call({answer, questionId}, (err) => {
-        if (err) throw new Error(err);
+        if (err) new ErrorHandler(err.reason, "rounded");
 
         let activeQuestion = template.parent().activeQuestion.get();
         let activeQuestionNumber = activeQuestion.questionNumber;
@@ -105,7 +106,12 @@ export function updatePublicationQuestionnaire(questionnaireId, published, date)
             });
 
             if (questions.count() < 2) {
-                alert("To publish this questionnaire you must have 2 or more published questions...");
+                new ErrorHandler(
+                    "To publish this questionnaire you must have 2 or more published questions...",
+                    null,
+                    null,
+                    "warning"
+                );
 
                 return false;
             }
@@ -117,14 +123,14 @@ export function updatePublicationQuestionnaire(questionnaireId, published, date)
                 publishedAt: date
             }
         }, (err) => {
-            if (err) throw new Error(err);
+            if (err) new ErrorHandler(err.reason, "rounded");
         });
     }
 }
 
 export function insertAnswer(answer, questionId) {
     addAnswer.call({answer, questionId}, (err) => {
-        if (err) throw new Error(err);
+        if (err) new ErrorHandler(err.reason, "rounded");
     });
 }
 
@@ -136,6 +142,6 @@ export function updatePublicationQuestion(questionId, published, date, deprecate
             deprecated: deprecated
         }
     }, (err) => {
-        if (err) throw new Error(err);
+        if (err) new ErrorHandler(err.reason, "rounded");
     });
 }

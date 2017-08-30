@@ -30,8 +30,10 @@
                         {{> afQuickField name='answersType'}}
                         {{> afQuickField name='author'}}
                         {{> afQuickField class="answers" name='answers'}}
-                        {{> afQuickField name='publishedDate'}}
-                        {{> afQuickField name='published'}}
+                        {{#if published}}
+                            {{> afQuickField name='publishedDate' defaultValue=Date}}
+                        {{/if}}
+                        {{> afQuickField name='published' defaultValue=published}}
                         {{> afQuickField name='deprecated'}}
                         {{> afQuickField name='createdAt'}}
 

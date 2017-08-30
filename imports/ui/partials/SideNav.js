@@ -2,6 +2,7 @@ import {Questions} from '/imports/collections/questionsCollection';
 import {Questionnaires} from '/imports/collections/questionnairesCollection';
 import {Answers} from '/imports/collections/answersCollection';
 import {UserSettings} from '/imports/collections/userCollection';
+import {ErrorHandler} from "../errors/ErrorHandler";
 
 import './SideNav.html';
 
@@ -102,11 +103,11 @@ Template.SideNav.events({
         let secretKey = event.target['secret-key'].value;
 
         Meteor.call('checkKey', secretKey, (err, res) => {
-            if (err) throw new Error(err);
+            if (err) new ErrorHandler(err.reason, "rounded");
 
             if (res) {
                 Meteor.call('change-role', (err, res) => {
-                    if (err) throw new Error(err);
+                    if (err) new ErrorHandler(err.reason, "rounded");
                     $('#input-role-secret-key').modal('close');
                     $('#buy-role').modal('close');
                 });

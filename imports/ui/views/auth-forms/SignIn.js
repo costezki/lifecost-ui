@@ -1,9 +1,10 @@
 import { SignIn } from '/imports/ui/authorization/Accounts';
+import {ErrorHandler} from "../../errors/ErrorHandler";
 
 import './SignIn.html';
 
 Template.SignIn.onCreated(function() {
-	AutoForm.addFormType('signInForm')
+	AutoForm.addFormType('signInForm');
 	AutoForm.addHooks('signInForm', {
 		onSubmit: function(insertDoc, updateDoc, currentDoc) {
 			this.done(null, insertDoc); // submitted successfully, call onSuccess
@@ -13,7 +14,7 @@ Template.SignIn.onCreated(function() {
 		},
 		onSuccess: function(formType, settings) {
 			Meteor.loginWithPassword(settings.email, settings.password, (err) => {
-				if (err) throw new Error(err);
+				if (err) new ErrorHandler(err.reason, "rounded");
 				location.reload();
 			});
 		}

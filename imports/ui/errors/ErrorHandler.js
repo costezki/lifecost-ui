@@ -23,6 +23,13 @@ export class ErrorHandler {
     showError() {
         Materialize.toast(this.currentError, this.lifeTime, this.errorStyle);
 
+        if (this.errorType === "warning") {
+            $('.toast').addClass("yellow");
+            $('.toast span').addClass("black-text");
+        } else {
+            $('#toast-container').find('.toast').addClass("red darken-1")
+        }
+
         this.callCallback();
     }
 
