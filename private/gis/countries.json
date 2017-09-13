@@ -1,0 +1,3650 @@
+[
+  {
+    "id": "YEM",
+    "country": "Yemen, Rep.",
+    "city": "Sana'a",
+    "region": {
+      "id": "MEA",
+      "name": "Middle East & North Africa"
+    },
+    "longitude": "44.2075",
+    "latitude": "15.352",
+    "iso2Code": "YE"
+  },
+  {
+    "id": "ZAF",
+    "country": "South Africa",
+    "city": "Pretoria",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "28.1871",
+    "latitude": "-25.746",
+    "iso2Code": "ZA"
+  },
+  {
+    "id": "ZMB",
+    "country": "Zambia",
+    "city": "Lusaka",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "28.2937",
+    "latitude": "-15.3982",
+    "iso2Code": "ZM"
+  },
+  {
+    "id": "ZWE",
+    "country": "Zimbabwe",
+    "city": "Harare",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "31.0672",
+    "latitude": "-17.8312",
+    "iso2Code": "ZW"
+  },
+  {
+    "id": "SSA",
+    "country": "Sub-Saharan Africa (excluding high income)",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "ZF"
+  },
+  {
+    "id": "SSD",
+    "country": "South Sudan",
+    "city": "Juba",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "31.6",
+    "latitude": "4.85",
+    "iso2Code": "SS"
+  },
+  {
+    "id": "SSF",
+    "country": "Sub-Saharan Africa ",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "ZG"
+  },
+  {
+    "id": "SST",
+    "country": "Small states",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "S1"
+  },
+  {
+    "id": "STP",
+    "country": "Sao Tome and Principe",
+    "city": "Sao Tome",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "6.6071",
+    "latitude": "0.20618",
+    "iso2Code": "ST"
+  },
+  {
+    "id": "SUR",
+    "country": "Suriname",
+    "city": "Paramaribo",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "-55.1679",
+    "latitude": "5.8232",
+    "iso2Code": "SR"
+  },
+  {
+    "id": "SVK",
+    "country": "Slovak Republic",
+    "city": "Bratislava",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "17.1073",
+    "latitude": "48.1484",
+    "iso2Code": "SK"
+  },
+  {
+    "id": "SVN",
+    "country": "Slovenia",
+    "city": "Ljubljana",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "14.5044",
+    "latitude": "46.0546",
+    "iso2Code": "SI"
+  },
+  {
+    "id": "SWE",
+    "country": "Sweden",
+    "city": "Stockholm",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "18.0645",
+    "latitude": "59.3327",
+    "iso2Code": "SE"
+  },
+  {
+    "id": "SWZ",
+    "country": "Swaziland",
+    "city": "Mbabane",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "31.4659",
+    "latitude": "-26.5225",
+    "iso2Code": "SZ"
+  },
+  {
+    "id": "SXM",
+    "country": "Sint Maarten (Dutch part)",
+    "city": "Philipsburg",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "SX"
+  },
+  {
+    "id": "SXZ",
+    "country": "Sub-Saharan Africa excluding South Africa",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "A4"
+  },
+  {
+    "id": "SYC",
+    "country": "Seychelles",
+    "city": "Victoria",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "55.4466",
+    "latitude": "-4.6309",
+    "iso2Code": "SC"
+  },
+  {
+    "id": "SYR",
+    "country": "Syrian Arab Republic",
+    "city": "Damascus",
+    "region": {
+      "id": "MEA",
+      "name": "Middle East & North Africa"
+    },
+    "longitude": "36.3119",
+    "latitude": "33.5146",
+    "iso2Code": "SY"
+  },
+  {
+    "id": "TCA",
+    "country": "Turks and Caicos Islands",
+    "city": "Grand Turk",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "-71.141389",
+    "latitude": "21.4602778",
+    "iso2Code": "TC"
+  },
+  {
+    "id": "TCD",
+    "country": "Chad",
+    "city": "N'Djamena",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "15.0445",
+    "latitude": "12.1048",
+    "iso2Code": "TD"
+  },
+  {
+    "id": "TEA",
+    "country": "East Asia & Pacific (IDA & IBRD countries)",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "T4"
+  },
+  {
+    "id": "TEC",
+    "country": "Europe & Central Asia (IDA & IBRD countries)",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "T7"
+  },
+  {
+    "id": "TGO",
+    "country": "Togo",
+    "city": "Lome",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "1.2255",
+    "latitude": "6.1228",
+    "iso2Code": "TG"
+  },
+  {
+    "id": "THA",
+    "country": "Thailand",
+    "city": "Bangkok",
+    "region": {
+      "id": "EAS",
+      "name": "East Asia & Pacific"
+    },
+    "longitude": "100.521",
+    "latitude": "13.7308",
+    "iso2Code": "TH"
+  },
+  {
+    "id": "TJK",
+    "country": "Tajikistan",
+    "city": "Dushanbe",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "68.7864",
+    "latitude": "38.5878",
+    "iso2Code": "TJ"
+  },
+  {
+    "id": "TKM",
+    "country": "Turkmenistan",
+    "city": "Ashgabat",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "58.3794",
+    "latitude": "37.9509",
+    "iso2Code": "TM"
+  },
+  {
+    "id": "TLA",
+    "country": "Latin America & the Caribbean (IDA & IBRD countries)",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "T2"
+  },
+  {
+    "id": "TLS",
+    "country": "Timor-Leste",
+    "city": "Dili",
+    "region": {
+      "id": "EAS",
+      "name": "East Asia & Pacific"
+    },
+    "longitude": "125.567",
+    "latitude": "-8.56667",
+    "iso2Code": "TL"
+  },
+  {
+    "id": "TMN",
+    "country": "Middle East & North Africa (IDA & IBRD countries)",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "T3"
+  },
+  {
+    "id": "TON",
+    "country": "Tonga",
+    "city": "Nuku'alofa",
+    "region": {
+      "id": "EAS",
+      "name": "East Asia & Pacific"
+    },
+    "longitude": "-175.216",
+    "latitude": "-21.136",
+    "iso2Code": "TO"
+  },
+  {
+    "id": "TSA",
+    "country": "South Asia (IDA & IBRD)",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "T5"
+  },
+  {
+    "id": "TSS",
+    "country": "Sub-Saharan Africa (IDA & IBRD countries)",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "T6"
+  },
+  {
+    "id": "TTO",
+    "country": "Trinidad and Tobago",
+    "city": "Port-of-Spain",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "-61.4789",
+    "latitude": "10.6596",
+    "iso2Code": "TT"
+  },
+  {
+    "id": "TUN",
+    "country": "Tunisia",
+    "city": "Tunis",
+    "region": {
+      "id": "MEA",
+      "name": "Middle East & North Africa"
+    },
+    "longitude": "10.21",
+    "latitude": "36.7899",
+    "iso2Code": "TN"
+  },
+  {
+    "id": "TUR",
+    "country": "Turkey",
+    "city": "Ankara",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "32.3606",
+    "latitude": "39.7153",
+    "iso2Code": "TR"
+  },
+  {
+    "id": "TUV",
+    "country": "Tuvalu",
+    "city": "Funafuti",
+    "region": {
+      "id": "EAS",
+      "name": "East Asia & Pacific"
+    },
+    "longitude": "179.089567",
+    "latitude": "-8.6314877",
+    "iso2Code": "TV"
+  },
+  {
+    "id": "TWN",
+    "country": "Taiwan, China",
+    "city": "",
+    "region": {
+      "id": "EAS",
+      "name": "East Asia & Pacific"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "TW"
+  },
+  {
+    "id": "TZA",
+    "country": "Tanzania",
+    "city": "Dodoma",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "35.7382",
+    "latitude": "-6.17486",
+    "iso2Code": "TZ"
+  },
+  {
+    "id": "UGA",
+    "country": "Uganda",
+    "city": "Kampala",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "32.5729",
+    "latitude": "0.314269",
+    "iso2Code": "UG"
+  },
+  {
+    "id": "UKR",
+    "country": "Ukraine",
+    "city": "Kiev",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "30.5038",
+    "latitude": "50.4536",
+    "iso2Code": "UA"
+  },
+  {
+    "id": "UMC",
+    "country": "Upper middle income",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "XT"
+  },
+  {
+    "id": "URY",
+    "country": "Uruguay",
+    "city": "Montevideo",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "-56.0675",
+    "latitude": "-34.8941",
+    "iso2Code": "UY"
+  },
+  {
+    "id": "USA",
+    "country": "United States",
+    "city": "Washington D.C.",
+    "region": {
+      "id": "NAC",
+      "name": "North America"
+    },
+    "longitude": "-77.032",
+    "latitude": "38.8895",
+    "iso2Code": "US"
+  },
+  {
+    "id": "UZB",
+    "country": "Uzbekistan",
+    "city": "Tashkent",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "69.269",
+    "latitude": "41.3052",
+    "iso2Code": "UZ"
+  },
+  {
+    "id": "VCT",
+    "country": "St. Vincent and the Grenadines",
+    "city": "Kingstown",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "-61.2653",
+    "latitude": "13.2035",
+    "iso2Code": "VC"
+  },
+  {
+    "id": "VEN",
+    "country": "Venezuela, RB",
+    "city": "Caracas",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "-69.8371",
+    "latitude": "9.08165",
+    "iso2Code": "VE"
+  },
+  {
+    "id": "VGB",
+    "country": "British Virgin Islands",
+    "city": "Road Town",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "-64.623056",
+    "latitude": "18.431389",
+    "iso2Code": "VG"
+  },
+  {
+    "id": "VIR",
+    "country": "Virgin Islands (U.S.)",
+    "city": "Charlotte Amalie",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "-64.8963",
+    "latitude": "18.3358",
+    "iso2Code": "VI"
+  },
+  {
+    "id": "VNM",
+    "country": "Vietnam",
+    "city": "Hanoi",
+    "region": {
+      "id": "EAS",
+      "name": "East Asia & Pacific"
+    },
+    "longitude": "105.825",
+    "latitude": "21.0069",
+    "iso2Code": "VN"
+  },
+  {
+    "id": "VUT",
+    "country": "Vanuatu",
+    "city": "Port-Vila",
+    "region": {
+      "id": "EAS",
+      "name": "East Asia & Pacific"
+    },
+    "longitude": "168.321",
+    "latitude": "-17.7404",
+    "iso2Code": "VU"
+  },
+  {
+    "id": "WLD",
+    "country": "World",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "1W"
+  },
+  {
+    "id": "WSM",
+    "country": "Samoa",
+    "city": "Apia",
+    "region": {
+      "id": "EAS",
+      "name": "East Asia & Pacific"
+    },
+    "longitude": "-171.752",
+    "latitude": "-13.8314",
+    "iso2Code": "WS"
+  },
+  {
+    "id": "XKX",
+    "country": "Kosovo",
+    "city": "Pristina",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "20.926",
+    "latitude": "42.565",
+    "iso2Code": "XK"
+  },
+  {
+    "id": "XZN",
+    "country": "Sub-Saharan Africa excluding South Africa and Nigeria",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "A5"
+  },
+  {
+    "id": "NAM",
+    "country": "Namibia",
+    "city": "Windhoek",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "17.0931",
+    "latitude": "-22.5648",
+    "iso2Code": "NA"
+  },
+  {
+    "id": "NCL",
+    "country": "New Caledonia",
+    "city": "Noum'ea",
+    "region": {
+      "id": "EAS",
+      "name": "East Asia & Pacific"
+    },
+    "longitude": "166.464",
+    "latitude": "-22.2677",
+    "iso2Code": "NC"
+  },
+  {
+    "id": "NER",
+    "country": "Niger",
+    "city": "Niamey",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "2.1073",
+    "latitude": "13.514",
+    "iso2Code": "NE"
+  },
+  {
+    "id": "NGA",
+    "country": "Nigeria",
+    "city": "Abuja",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "7.48906",
+    "latitude": "9.05804",
+    "iso2Code": "NG"
+  },
+  {
+    "id": "NIC",
+    "country": "Nicaragua",
+    "city": "Managua",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "-86.2734",
+    "latitude": "12.1475",
+    "iso2Code": "NI"
+  },
+  {
+    "id": "NLD",
+    "country": "Netherlands",
+    "city": "Amsterdam",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "4.89095",
+    "latitude": "52.3738",
+    "iso2Code": "NL"
+  },
+  {
+    "id": "NLS",
+    "country": "Non-resource rich Sub-Saharan Africa countries, of which landlocked",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "6L"
+  },
+  {
+    "id": "NOR",
+    "country": "Norway",
+    "city": "Oslo",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "10.7387",
+    "latitude": "59.9138",
+    "iso2Code": "NO"
+  },
+  {
+    "id": "NPL",
+    "country": "Nepal",
+    "city": "Kathmandu",
+    "region": {
+      "id": "SAS",
+      "name": "South Asia"
+    },
+    "longitude": "85.3157",
+    "latitude": "27.6939",
+    "iso2Code": "NP"
+  },
+  {
+    "id": "NRS",
+    "country": "Non-resource rich Sub-Saharan Africa countries",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "6X"
+  },
+  {
+    "id": "NRU",
+    "country": "Nauru",
+    "city": "Yaren District",
+    "region": {
+      "id": "EAS",
+      "name": "East Asia & Pacific"
+    },
+    "longitude": "166.920867",
+    "latitude": "-0.5477",
+    "iso2Code": "NR"
+  },
+  {
+    "id": "NXS",
+    "country": "IDA countries not classified as fragile situations, excluding Sub-Saharan Africa",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "6N"
+  },
+  {
+    "id": "NZL",
+    "country": "New Zealand",
+    "city": "Wellington",
+    "region": {
+      "id": "EAS",
+      "name": "East Asia & Pacific"
+    },
+    "longitude": "174.776",
+    "latitude": "-41.2865",
+    "iso2Code": "NZ"
+  },
+  {
+    "id": "OED",
+    "country": "OECD members",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "OE"
+  },
+  {
+    "id": "OMN",
+    "country": "Oman",
+    "city": "Muscat",
+    "region": {
+      "id": "MEA",
+      "name": "Middle East & North Africa"
+    },
+    "longitude": "58.5874",
+    "latitude": "23.6105",
+    "iso2Code": "OM"
+  },
+  {
+    "id": "OSS",
+    "country": "Other small states",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "S4"
+  },
+  {
+    "id": "PAK",
+    "country": "Pakistan",
+    "city": "Islamabad",
+    "region": {
+      "id": "SAS",
+      "name": "South Asia"
+    },
+    "longitude": "72.8",
+    "latitude": "30.5167",
+    "iso2Code": "PK"
+  },
+  {
+    "id": "PAN",
+    "country": "Panama",
+    "city": "Panama City",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "-79.5188",
+    "latitude": "8.99427",
+    "iso2Code": "PA"
+  },
+  {
+    "id": "PER",
+    "country": "Peru",
+    "city": "Lima",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "-77.0465",
+    "latitude": "-12.0931",
+    "iso2Code": "PE"
+  },
+  {
+    "id": "PHL",
+    "country": "Philippines",
+    "city": "Manila",
+    "region": {
+      "id": "EAS",
+      "name": "East Asia & Pacific"
+    },
+    "longitude": "121.035",
+    "latitude": "14.5515",
+    "iso2Code": "PH"
+  },
+  {
+    "id": "PLW",
+    "country": "Palau",
+    "city": "Koror",
+    "region": {
+      "id": "EAS",
+      "name": "East Asia & Pacific"
+    },
+    "longitude": "134.479",
+    "latitude": "7.34194",
+    "iso2Code": "PW"
+  },
+  {
+    "id": "PNG",
+    "country": "Papua New Guinea",
+    "city": "Port Moresby",
+    "region": {
+      "id": "EAS",
+      "name": "East Asia & Pacific"
+    },
+    "longitude": "147.194",
+    "latitude": "-9.47357",
+    "iso2Code": "PG"
+  },
+  {
+    "id": "POL",
+    "country": "Poland",
+    "city": "Warsaw",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "21.02",
+    "latitude": "52.26",
+    "iso2Code": "PL"
+  },
+  {
+    "id": "PRE",
+    "country": "Pre-demographic dividend",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "V1"
+  },
+  {
+    "id": "PRI",
+    "country": "Puerto Rico",
+    "city": "San Juan",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "-66",
+    "latitude": "18.23",
+    "iso2Code": "PR"
+  },
+  {
+    "id": "PRK",
+    "country": "Korea, Dem. People\u2019s Rep.",
+    "city": "Pyongyang",
+    "region": {
+      "id": "EAS",
+      "name": "East Asia & Pacific"
+    },
+    "longitude": "125.754",
+    "latitude": "39.0319",
+    "iso2Code": "KP"
+  },
+  {
+    "id": "PRT",
+    "country": "Portugal",
+    "city": "Lisbon",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "-9.13552",
+    "latitude": "38.7072",
+    "iso2Code": "PT"
+  },
+  {
+    "id": "PRY",
+    "country": "Paraguay",
+    "city": "Asuncion",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "-57.6362",
+    "latitude": "-25.3005",
+    "iso2Code": "PY"
+  },
+  {
+    "id": "PSE",
+    "country": "West Bank and Gaza",
+    "city": "",
+    "region": {
+      "id": "MEA",
+      "name": "Middle East & North Africa"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "PS"
+  },
+  {
+    "id": "PSS",
+    "country": "Pacific island small states",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "S2"
+  },
+  {
+    "id": "PST",
+    "country": "Post-demographic dividend",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "V4"
+  },
+  {
+    "id": "PYF",
+    "country": "French Polynesia",
+    "city": "Papeete",
+    "region": {
+      "id": "EAS",
+      "name": "East Asia & Pacific"
+    },
+    "longitude": "-149.57",
+    "latitude": "-17.535",
+    "iso2Code": "PF"
+  },
+  {
+    "id": "QAT",
+    "country": "Qatar",
+    "city": "Doha",
+    "region": {
+      "id": "MEA",
+      "name": "Middle East & North Africa"
+    },
+    "longitude": "51.5082",
+    "latitude": "25.2948",
+    "iso2Code": "QA"
+  },
+  {
+    "id": "ROU",
+    "country": "Romania",
+    "city": "Bucharest",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "26.0979",
+    "latitude": "44.4479",
+    "iso2Code": "RO"
+  },
+  {
+    "id": "RRS",
+    "country": "Resource rich Sub-Saharan Africa countries",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "R6"
+  },
+  {
+    "id": "RSO",
+    "country": "Resource rich Sub-Saharan Africa countries, of which oil exporters",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "O6"
+  },
+  {
+    "id": "RUS",
+    "country": "Russian Federation",
+    "city": "Moscow",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "37.6176",
+    "latitude": "55.7558",
+    "iso2Code": "RU"
+  },
+  {
+    "id": "RWA",
+    "country": "Rwanda",
+    "city": "Kigali",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "30.0587",
+    "latitude": "-1.95325",
+    "iso2Code": "RW"
+  },
+  {
+    "id": "SAS",
+    "country": "South Asia",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "8S"
+  },
+  {
+    "id": "SAU",
+    "country": "Saudi Arabia",
+    "city": "Riyadh",
+    "region": {
+      "id": "MEA",
+      "name": "Middle East & North Africa"
+    },
+    "longitude": "46.6977",
+    "latitude": "24.6748",
+    "iso2Code": "SA"
+  },
+  {
+    "id": "SCE",
+    "country": "Southern Cone",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "L7"
+  },
+  {
+    "id": "SDN",
+    "country": "Sudan",
+    "city": "Khartoum",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "32.5363",
+    "latitude": "15.5932",
+    "iso2Code": "SD"
+  },
+  {
+    "id": "SEN",
+    "country": "Senegal",
+    "city": "Dakar",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "-17.4734",
+    "latitude": "14.7247",
+    "iso2Code": "SN"
+  },
+  {
+    "id": "SGP",
+    "country": "Singapore",
+    "city": "Singapore",
+    "region": {
+      "id": "EAS",
+      "name": "East Asia & Pacific"
+    },
+    "longitude": "103.85",
+    "latitude": "1.28941",
+    "iso2Code": "SG"
+  },
+  {
+    "id": "SLB",
+    "country": "Solomon Islands",
+    "city": "Honiara",
+    "region": {
+      "id": "EAS",
+      "name": "East Asia & Pacific"
+    },
+    "longitude": "159.949",
+    "latitude": "-9.42676",
+    "iso2Code": "SB"
+  },
+  {
+    "id": "SLE",
+    "country": "Sierra Leone",
+    "city": "Freetown",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "-13.2134",
+    "latitude": "8.4821",
+    "iso2Code": "SL"
+  },
+  {
+    "id": "SLV",
+    "country": "El Salvador",
+    "city": "San Salvador",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "-89.2073",
+    "latitude": "13.7034",
+    "iso2Code": "SV"
+  },
+  {
+    "id": "SMR",
+    "country": "San Marino",
+    "city": "San Marino",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "12.4486",
+    "latitude": "43.9322",
+    "iso2Code": "SM"
+  },
+  {
+    "id": "SOM",
+    "country": "Somalia",
+    "city": "Mogadishu",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "45.3254",
+    "latitude": "2.07515",
+    "iso2Code": "SO"
+  },
+  {
+    "id": "SRB",
+    "country": "Serbia",
+    "city": "Belgrade",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "20.4656",
+    "latitude": "44.8024",
+    "iso2Code": "RS"
+  },
+  {
+    "id": "KNA",
+    "country": "St. Kitts and Nevis",
+    "city": "Basseterre",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "-62.7309",
+    "latitude": "17.3",
+    "iso2Code": "KN"
+  },
+  {
+    "id": "KOR",
+    "country": "Korea, Rep.",
+    "city": "Seoul",
+    "region": {
+      "id": "EAS",
+      "name": "East Asia & Pacific"
+    },
+    "longitude": "126.957",
+    "latitude": "37.5323",
+    "iso2Code": "KR"
+  },
+  {
+    "id": "KWT",
+    "country": "Kuwait",
+    "city": "Kuwait City",
+    "region": {
+      "id": "MEA",
+      "name": "Middle East & North Africa"
+    },
+    "longitude": "47.9824",
+    "latitude": "29.3721",
+    "iso2Code": "KW"
+  },
+  {
+    "id": "LAC",
+    "country": "Latin America & Caribbean (excluding high income)",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "XJ"
+  },
+  {
+    "id": "LAO",
+    "country": "Lao PDR",
+    "city": "Vientiane",
+    "region": {
+      "id": "EAS",
+      "name": "East Asia & Pacific"
+    },
+    "longitude": "102.177",
+    "latitude": "18.5826",
+    "iso2Code": "LA"
+  },
+  {
+    "id": "LBN",
+    "country": "Lebanon",
+    "city": "Beirut",
+    "region": {
+      "id": "MEA",
+      "name": "Middle East & North Africa"
+    },
+    "longitude": "35.5134",
+    "latitude": "33.8872",
+    "iso2Code": "LB"
+  },
+  {
+    "id": "LBR",
+    "country": "Liberia",
+    "city": "Monrovia",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "-10.7957",
+    "latitude": "6.30039",
+    "iso2Code": "LR"
+  },
+  {
+    "id": "LBY",
+    "country": "Libya",
+    "city": "Tripoli",
+    "region": {
+      "id": "MEA",
+      "name": "Middle East & North Africa"
+    },
+    "longitude": "13.1072",
+    "latitude": "32.8578",
+    "iso2Code": "LY"
+  },
+  {
+    "id": "LCA",
+    "country": "St. Lucia",
+    "city": "Castries",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "-60.9832",
+    "latitude": "14",
+    "iso2Code": "LC"
+  },
+  {
+    "id": "LCN",
+    "country": "Latin America & Caribbean ",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "ZJ"
+  },
+  {
+    "id": "LCR",
+    "country": "Latin America and the Caribbean",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "L4"
+  },
+  {
+    "id": "LDC",
+    "country": "Least developed countries: UN classification",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "XL"
+  },
+  {
+    "id": "LIC",
+    "country": "Low income",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "XM"
+  },
+  {
+    "id": "LIE",
+    "country": "Liechtenstein",
+    "city": "Vaduz",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "9.52148",
+    "latitude": "47.1411",
+    "iso2Code": "LI"
+  },
+  {
+    "id": "LKA",
+    "country": "Sri Lanka",
+    "city": "Colombo",
+    "region": {
+      "id": "SAS",
+      "name": "South Asia"
+    },
+    "longitude": "79.8528",
+    "latitude": "6.92148",
+    "iso2Code": "LK"
+  },
+  {
+    "id": "LMC",
+    "country": "Lower middle income",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "XN"
+  },
+  {
+    "id": "LMY",
+    "country": "Low & middle income",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "XO"
+  },
+  {
+    "id": "LSO",
+    "country": "Lesotho",
+    "city": "Maseru",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "27.7167",
+    "latitude": "-29.5208",
+    "iso2Code": "LS"
+  },
+  {
+    "id": "LTE",
+    "country": "Late-demographic dividend",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "V3"
+  },
+  {
+    "id": "LTU",
+    "country": "Lithuania",
+    "city": "Vilnius",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "25.2799",
+    "latitude": "54.6896",
+    "iso2Code": "LT"
+  },
+  {
+    "id": "LUX",
+    "country": "Luxembourg",
+    "city": "Luxembourg",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "6.1296",
+    "latitude": "49.61",
+    "iso2Code": "LU"
+  },
+  {
+    "id": "LVA",
+    "country": "Latvia",
+    "city": "Riga",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "24.1048",
+    "latitude": "56.9465",
+    "iso2Code": "LV"
+  },
+  {
+    "id": "MAC",
+    "country": "Macao SAR, China",
+    "city": "",
+    "region": {
+      "id": "EAS",
+      "name": "East Asia & Pacific"
+    },
+    "longitude": "113.55",
+    "latitude": "22.1667",
+    "iso2Code": "MO"
+  },
+  {
+    "id": "MAF",
+    "country": "St. Martin (French part)",
+    "city": "Marigot",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "MF"
+  },
+  {
+    "id": "MAR",
+    "country": "Morocco",
+    "city": "Rabat",
+    "region": {
+      "id": "MEA",
+      "name": "Middle East & North Africa"
+    },
+    "longitude": "-6.8704",
+    "latitude": "33.9905",
+    "iso2Code": "MA"
+  },
+  {
+    "id": "MCA",
+    "country": "Central America",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "L6"
+  },
+  {
+    "id": "MCO",
+    "country": "Monaco",
+    "city": "Monaco",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "7.41891",
+    "latitude": "43.7325",
+    "iso2Code": "MC"
+  },
+  {
+    "id": "MDA",
+    "country": "Moldova",
+    "city": "Chisinau",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "28.8497",
+    "latitude": "47.0167",
+    "iso2Code": "MD"
+  },
+  {
+    "id": "MDE",
+    "country": "Middle East (developing only)",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "M1"
+  },
+  {
+    "id": "MDG",
+    "country": "Madagascar",
+    "city": "Antananarivo",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "45.7167",
+    "latitude": "-20.4667",
+    "iso2Code": "MG"
+  },
+  {
+    "id": "MDV",
+    "country": "Maldives",
+    "city": "Male",
+    "region": {
+      "id": "SAS",
+      "name": "South Asia"
+    },
+    "longitude": "73.5109",
+    "latitude": "4.1742",
+    "iso2Code": "MV"
+  },
+  {
+    "id": "MEA",
+    "country": "Middle East & North Africa",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "ZQ"
+  },
+  {
+    "id": "MEX",
+    "country": "Mexico",
+    "city": "Mexico City",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "-99.1276",
+    "latitude": "19.427",
+    "iso2Code": "MX"
+  },
+  {
+    "id": "MHL",
+    "country": "Marshall Islands",
+    "city": "Majuro",
+    "region": {
+      "id": "EAS",
+      "name": "East Asia & Pacific"
+    },
+    "longitude": "171.135",
+    "latitude": "7.11046",
+    "iso2Code": "MH"
+  },
+  {
+    "id": "MIC",
+    "country": "Middle income",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "XP"
+  },
+  {
+    "id": "MKD",
+    "country": "Macedonia, FYR",
+    "city": "Skopje",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "21.4361",
+    "latitude": "42.0024",
+    "iso2Code": "MK"
+  },
+  {
+    "id": "MLI",
+    "country": "Mali",
+    "city": "Bamako",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "-7.50034",
+    "latitude": "13.5667",
+    "iso2Code": "ML"
+  },
+  {
+    "id": "MLT",
+    "country": "Malta",
+    "city": "Valletta",
+    "region": {
+      "id": "MEA",
+      "name": "Middle East & North Africa"
+    },
+    "longitude": "14.5189",
+    "latitude": "35.9042",
+    "iso2Code": "MT"
+  },
+  {
+    "id": "MMR",
+    "country": "Myanmar",
+    "city": "Naypyidaw",
+    "region": {
+      "id": "EAS",
+      "name": "East Asia & Pacific"
+    },
+    "longitude": "95.9562",
+    "latitude": "21.914",
+    "iso2Code": "MM"
+  },
+  {
+    "id": "MNA",
+    "country": "Middle East & North Africa (excluding high income)",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "XQ"
+  },
+  {
+    "id": "MNE",
+    "country": "Montenegro",
+    "city": "Podgorica",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "19.2595",
+    "latitude": "42.4602",
+    "iso2Code": "ME"
+  },
+  {
+    "id": "MNG",
+    "country": "Mongolia",
+    "city": "Ulaanbaatar",
+    "region": {
+      "id": "EAS",
+      "name": "East Asia & Pacific"
+    },
+    "longitude": "106.937",
+    "latitude": "47.9129",
+    "iso2Code": "MN"
+  },
+  {
+    "id": "MNP",
+    "country": "Northern Mariana Islands",
+    "city": "Saipan",
+    "region": {
+      "id": "EAS",
+      "name": "East Asia & Pacific"
+    },
+    "longitude": "145.765",
+    "latitude": "15.1935",
+    "iso2Code": "MP"
+  },
+  {
+    "id": "MOZ",
+    "country": "Mozambique",
+    "city": "Maputo",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "32.5713",
+    "latitude": "-25.9664",
+    "iso2Code": "MZ"
+  },
+  {
+    "id": "MRT",
+    "country": "Mauritania",
+    "city": "Nouakchott",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "-15.9824",
+    "latitude": "18.2367",
+    "iso2Code": "MR"
+  },
+  {
+    "id": "MUS",
+    "country": "Mauritius",
+    "city": "Port Louis",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "57.4977",
+    "latitude": "-20.1605",
+    "iso2Code": "MU"
+  },
+  {
+    "id": "MWI",
+    "country": "Malawi",
+    "city": "Lilongwe",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "33.7703",
+    "latitude": "-13.9899",
+    "iso2Code": "MW"
+  },
+  {
+    "id": "MYS",
+    "country": "Malaysia",
+    "city": "Kuala Lumpur",
+    "region": {
+      "id": "EAS",
+      "name": "East Asia & Pacific"
+    },
+    "longitude": "101.684",
+    "latitude": "3.12433",
+    "iso2Code": "MY"
+  },
+  {
+    "id": "NAC",
+    "country": "North America",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "XU"
+  },
+  {
+    "id": "NAF",
+    "country": "North Africa",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "M2"
+  },
+  {
+    "id": "FRA",
+    "country": "France",
+    "city": "Paris",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "2.35097",
+    "latitude": "48.8566",
+    "iso2Code": "FR"
+  },
+  {
+    "id": "FRO",
+    "country": "Faroe Islands",
+    "city": "Torshavn",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "-6.91181",
+    "latitude": "61.8926",
+    "iso2Code": "FO"
+  },
+  {
+    "id": "FSM",
+    "country": "Micronesia, Fed. Sts.",
+    "city": "Palikir",
+    "region": {
+      "id": "EAS",
+      "name": "East Asia & Pacific"
+    },
+    "longitude": "158.185",
+    "latitude": "6.91771",
+    "iso2Code": "FM"
+  },
+  {
+    "id": "FXS",
+    "country": "IDA countries classified as fragile situations, excluding Sub-Saharan Africa",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "6F"
+  },
+  {
+    "id": "GAB",
+    "country": "Gabon",
+    "city": "Libreville",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "9.45162",
+    "latitude": "0.38832",
+    "iso2Code": "GA"
+  },
+  {
+    "id": "GBR",
+    "country": "United Kingdom",
+    "city": "London",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "-0.126236",
+    "latitude": "51.5002",
+    "iso2Code": "GB"
+  },
+  {
+    "id": "GEO",
+    "country": "Georgia",
+    "city": "Tbilisi",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "44.793",
+    "latitude": "41.71",
+    "iso2Code": "GE"
+  },
+  {
+    "id": "GHA",
+    "country": "Ghana",
+    "city": "Accra",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "-0.20795",
+    "latitude": "5.57045",
+    "iso2Code": "GH"
+  },
+  {
+    "id": "GIB",
+    "country": "Gibraltar",
+    "city": "",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "GI"
+  },
+  {
+    "id": "GIN",
+    "country": "Guinea",
+    "city": "Conakry",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "-13.7",
+    "latitude": "9.51667",
+    "iso2Code": "GN"
+  },
+  {
+    "id": "GMB",
+    "country": "Gambia, The",
+    "city": "Banjul",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "-16.5885",
+    "latitude": "13.4495",
+    "iso2Code": "GM"
+  },
+  {
+    "id": "GNB",
+    "country": "Guinea-Bissau",
+    "city": "Bissau",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "-15.1804",
+    "latitude": "11.8037",
+    "iso2Code": "GW"
+  },
+  {
+    "id": "GNQ",
+    "country": "Equatorial Guinea",
+    "city": "Malabo",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "8.7741",
+    "latitude": "3.7523",
+    "iso2Code": "GQ"
+  },
+  {
+    "id": "GRC",
+    "country": "Greece",
+    "city": "Athens",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "23.7166",
+    "latitude": "37.9792",
+    "iso2Code": "GR"
+  },
+  {
+    "id": "GRD",
+    "country": "Grenada",
+    "city": "Saint George's",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "-61.7449",
+    "latitude": "12.0653",
+    "iso2Code": "GD"
+  },
+  {
+    "id": "GRL",
+    "country": "Greenland",
+    "city": "Nuuk",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "-51.7214",
+    "latitude": "64.1836",
+    "iso2Code": "GL"
+  },
+  {
+    "id": "GTM",
+    "country": "Guatemala",
+    "city": "Guatemala City",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "-90.5328",
+    "latitude": "14.6248",
+    "iso2Code": "GT"
+  },
+  {
+    "id": "GUM",
+    "country": "Guam",
+    "city": "Agana",
+    "region": {
+      "id": "EAS",
+      "name": "East Asia & Pacific"
+    },
+    "longitude": "144.794",
+    "latitude": "13.4443",
+    "iso2Code": "GU"
+  },
+  {
+    "id": "GUY",
+    "country": "Guyana",
+    "city": "Georgetown",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "-58.1548",
+    "latitude": "6.80461",
+    "iso2Code": "GY"
+  },
+  {
+    "id": "HIC",
+    "country": "High income",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "XD"
+  },
+  {
+    "id": "HKG",
+    "country": "Hong Kong SAR, China",
+    "city": "",
+    "region": {
+      "id": "EAS",
+      "name": "East Asia & Pacific"
+    },
+    "longitude": "114.109",
+    "latitude": "22.3964",
+    "iso2Code": "HK"
+  },
+  {
+    "id": "HND",
+    "country": "Honduras",
+    "city": "Tegucigalpa",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "-87.4667",
+    "latitude": "15.1333",
+    "iso2Code": "HN"
+  },
+  {
+    "id": "HPC",
+    "country": "Heavily indebted poor countries (HIPC)",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "XE"
+  },
+  {
+    "id": "HRV",
+    "country": "Croatia",
+    "city": "Zagreb",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "15.9614",
+    "latitude": "45.8069",
+    "iso2Code": "HR"
+  },
+  {
+    "id": "HTI",
+    "country": "Haiti",
+    "city": "Port-au-Prince",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "-72.3288",
+    "latitude": "18.5392",
+    "iso2Code": "HT"
+  },
+  {
+    "id": "HUN",
+    "country": "Hungary",
+    "city": "Budapest",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "19.0408",
+    "latitude": "47.4984",
+    "iso2Code": "HU"
+  },
+  {
+    "id": "IBB",
+    "country": "IBRD, including blend",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "ZB"
+  },
+  {
+    "id": "IBD",
+    "country": "IBRD only",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "XF"
+  },
+  {
+    "id": "IBT",
+    "country": "IDA & IBRD total",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "ZT"
+  },
+  {
+    "id": "IDA",
+    "country": "IDA total",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "XG"
+  },
+  {
+    "id": "IDB",
+    "country": "IDA blend",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "XH"
+  },
+  {
+    "id": "IDN",
+    "country": "Indonesia",
+    "city": "Jakarta",
+    "region": {
+      "id": "EAS",
+      "name": "East Asia & Pacific"
+    },
+    "longitude": "106.83",
+    "latitude": "-6.19752",
+    "iso2Code": "ID"
+  },
+  {
+    "id": "IDX",
+    "country": "IDA only",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "XI"
+  },
+  {
+    "id": "IMN",
+    "country": "Isle of Man",
+    "city": "Douglas",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "-4.47928",
+    "latitude": "54.1509",
+    "iso2Code": "IM"
+  },
+  {
+    "id": "IND",
+    "country": "India",
+    "city": "New Delhi",
+    "region": {
+      "id": "SAS",
+      "name": "South Asia"
+    },
+    "longitude": "77.225",
+    "latitude": "28.6353",
+    "iso2Code": "IN"
+  },
+  {
+    "id": "INX",
+    "country": "Not classified",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "XY"
+  },
+  {
+    "id": "IRL",
+    "country": "Ireland",
+    "city": "Dublin",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "-6.26749",
+    "latitude": "53.3441",
+    "iso2Code": "IE"
+  },
+  {
+    "id": "IRN",
+    "country": "Iran, Islamic Rep.",
+    "city": "Tehran",
+    "region": {
+      "id": "MEA",
+      "name": "Middle East & North Africa"
+    },
+    "longitude": "51.4447",
+    "latitude": "35.6878",
+    "iso2Code": "IR"
+  },
+  {
+    "id": "IRQ",
+    "country": "Iraq",
+    "city": "Baghdad",
+    "region": {
+      "id": "MEA",
+      "name": "Middle East & North Africa"
+    },
+    "longitude": "44.394",
+    "latitude": "33.3302",
+    "iso2Code": "IQ"
+  },
+  {
+    "id": "ISL",
+    "country": "Iceland",
+    "city": "Reykjavik",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "-21.8952",
+    "latitude": "64.1353",
+    "iso2Code": "IS"
+  },
+  {
+    "id": "ISR",
+    "country": "Israel",
+    "city": "",
+    "region": {
+      "id": "MEA",
+      "name": "Middle East & North Africa"
+    },
+    "longitude": "35.2035",
+    "latitude": "31.7717",
+    "iso2Code": "IL"
+  },
+  {
+    "id": "ITA",
+    "country": "Italy",
+    "city": "Rome",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "12.4823",
+    "latitude": "41.8955",
+    "iso2Code": "IT"
+  },
+  {
+    "id": "JAM",
+    "country": "Jamaica",
+    "city": "Kingston",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "-76.792",
+    "latitude": "17.9927",
+    "iso2Code": "JM"
+  },
+  {
+    "id": "JOR",
+    "country": "Jordan",
+    "city": "Amman",
+    "region": {
+      "id": "MEA",
+      "name": "Middle East & North Africa"
+    },
+    "longitude": "35.9263",
+    "latitude": "31.9497",
+    "iso2Code": "JO"
+  },
+  {
+    "id": "JPN",
+    "country": "Japan",
+    "city": "Tokyo",
+    "region": {
+      "id": "EAS",
+      "name": "East Asia & Pacific"
+    },
+    "longitude": "139.77",
+    "latitude": "35.67",
+    "iso2Code": "JP"
+  },
+  {
+    "id": "KAZ",
+    "country": "Kazakhstan",
+    "city": "Astana",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "71.4382",
+    "latitude": "51.1879",
+    "iso2Code": "KZ"
+  },
+  {
+    "id": "KEN",
+    "country": "Kenya",
+    "city": "Nairobi",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "36.8126",
+    "latitude": "-1.27975",
+    "iso2Code": "KE"
+  },
+  {
+    "id": "KGZ",
+    "country": "Kyrgyz Republic",
+    "city": "Bishkek",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "74.6057",
+    "latitude": "42.8851",
+    "iso2Code": "KG"
+  },
+  {
+    "id": "KHM",
+    "country": "Cambodia",
+    "city": "Phnom Penh",
+    "region": {
+      "id": "EAS",
+      "name": "East Asia & Pacific"
+    },
+    "longitude": "104.874",
+    "latitude": "11.5556",
+    "iso2Code": "KH"
+  },
+  {
+    "id": "KIR",
+    "country": "Kiribati",
+    "city": "Tarawa",
+    "region": {
+      "id": "EAS",
+      "name": "East Asia & Pacific"
+    },
+    "longitude": "172.979",
+    "latitude": "1.32905",
+    "iso2Code": "KI"
+  },
+  {
+    "id": "CIV",
+    "country": "Cote d'Ivoire",
+    "city": "Yamoussoukro",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "-4.0305",
+    "latitude": "5.332",
+    "iso2Code": "CI"
+  },
+  {
+    "id": "CLA",
+    "country": "Latin America and the Caribbean (IFC classification)",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "C6"
+  },
+  {
+    "id": "CME",
+    "country": "Middle East and North Africa (IFC classification)",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "C7"
+  },
+  {
+    "id": "CMR",
+    "country": "Cameroon",
+    "city": "Yaounde",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "11.5174",
+    "latitude": "3.8721",
+    "iso2Code": "CM"
+  },
+  {
+    "id": "COD",
+    "country": "Congo, Dem. Rep.",
+    "city": "Kinshasa",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "15.3222",
+    "latitude": "-4.325",
+    "iso2Code": "CD"
+  },
+  {
+    "id": "COG",
+    "country": "Congo, Rep.",
+    "city": "Brazzaville",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "15.2662",
+    "latitude": "-4.2767",
+    "iso2Code": "CG"
+  },
+  {
+    "id": "COL",
+    "country": "Colombia",
+    "city": "Bogota",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "-74.082",
+    "latitude": "4.60987",
+    "iso2Code": "CO"
+  },
+  {
+    "id": "COM",
+    "country": "Comoros",
+    "city": "Moroni",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "43.2418",
+    "latitude": "-11.6986",
+    "iso2Code": "KM"
+  },
+  {
+    "id": "CPV",
+    "country": "Cabo Verde",
+    "city": "Praia",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "-23.5087",
+    "latitude": "14.9218",
+    "iso2Code": "CV"
+  },
+  {
+    "id": "CRI",
+    "country": "Costa Rica",
+    "city": "San Jose",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "-84.0089",
+    "latitude": "9.63701",
+    "iso2Code": "CR"
+  },
+  {
+    "id": "CSA",
+    "country": "South Asia (IFC classification)",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "C8"
+  },
+  {
+    "id": "CSS",
+    "country": "Caribbean small states",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "S3"
+  },
+  {
+    "id": "CUB",
+    "country": "Cuba",
+    "city": "Havana",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "-82.3667",
+    "latitude": "23.1333",
+    "iso2Code": "CU"
+  },
+  {
+    "id": "CUW",
+    "country": "Curacao",
+    "city": "Willemstad",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "CW"
+  },
+  {
+    "id": "CYM",
+    "country": "Cayman Islands",
+    "city": "George Town",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "-81.3857",
+    "latitude": "19.3022",
+    "iso2Code": "KY"
+  },
+  {
+    "id": "CYP",
+    "country": "Cyprus",
+    "city": "Nicosia",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "33.3736",
+    "latitude": "35.1676",
+    "iso2Code": "CY"
+  },
+  {
+    "id": "CZE",
+    "country": "Czech Republic",
+    "city": "Prague",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "14.4205",
+    "latitude": "50.0878",
+    "iso2Code": "CZ"
+  },
+  {
+    "id": "DEA",
+    "country": "East Asia & Pacific (IDA-eligible countries)",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "D4"
+  },
+  {
+    "id": "DEC",
+    "country": "Europe & Central Asia (IDA-eligible countries)",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "D7"
+  },
+  {
+    "id": "DEU",
+    "country": "Germany",
+    "city": "Berlin",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "13.4115",
+    "latitude": "52.5235",
+    "iso2Code": "DE"
+  },
+  {
+    "id": "DFS",
+    "country": "IDA countries classified as Fragile Situations",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "D8"
+  },
+  {
+    "id": "DJI",
+    "country": "Djibouti",
+    "city": "Djibouti",
+    "region": {
+      "id": "MEA",
+      "name": "Middle East & North Africa"
+    },
+    "longitude": "43.1425",
+    "latitude": "11.5806",
+    "iso2Code": "DJ"
+  },
+  {
+    "id": "DLA",
+    "country": "Latin America & the Caribbean (IDA-eligible countries)",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "D2"
+  },
+  {
+    "id": "DMA",
+    "country": "Dominica",
+    "city": "Roseau",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "-61.39",
+    "latitude": "15.2976",
+    "iso2Code": "DM"
+  },
+  {
+    "id": "DMN",
+    "country": "Middle East & North Africa (IDA-eligible countries)",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "D3"
+  },
+  {
+    "id": "DNF",
+    "country": "IDA countries not classified as Fragile Situations",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "D9"
+  },
+  {
+    "id": "DNK",
+    "country": "Denmark",
+    "city": "Copenhagen",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "12.5681",
+    "latitude": "55.6763",
+    "iso2Code": "DK"
+  },
+  {
+    "id": "DNS",
+    "country": "IDA countries in Sub-Saharan Africa not classified as fragile situations ",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "N6"
+  },
+  {
+    "id": "DOM",
+    "country": "Dominican Republic",
+    "city": "Santo Domingo",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "-69.8908",
+    "latitude": "18.479",
+    "iso2Code": "DO"
+  },
+  {
+    "id": "DSA",
+    "country": "South Asia (IDA-eligible countries)",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "D5"
+  },
+  {
+    "id": "DSF",
+    "country": "IDA countries in Sub-Saharan Africa classified as fragile situations ",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "F6"
+  },
+  {
+    "id": "DSS",
+    "country": "Sub-Saharan Africa (IDA-eligible countries)",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "D6"
+  },
+  {
+    "id": "DXS",
+    "country": "IDA total, excluding Sub-Saharan Africa",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "6D"
+  },
+  {
+    "id": "DZA",
+    "country": "Algeria",
+    "city": "Algiers",
+    "region": {
+      "id": "MEA",
+      "name": "Middle East & North Africa"
+    },
+    "longitude": "3.05097",
+    "latitude": "36.7397",
+    "iso2Code": "DZ"
+  },
+  {
+    "id": "EAP",
+    "country": "East Asia & Pacific (excluding high income)",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "4E"
+  },
+  {
+    "id": "EAR",
+    "country": "Early-demographic dividend",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "V2"
+  },
+  {
+    "id": "EAS",
+    "country": "East Asia & Pacific",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "Z4"
+  },
+  {
+    "id": "ECA",
+    "country": "Europe & Central Asia (excluding high income)",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "7E"
+  },
+  {
+    "id": "ECS",
+    "country": "Europe & Central Asia",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "Z7"
+  },
+  {
+    "id": "ECU",
+    "country": "Ecuador",
+    "city": "Quito",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "-78.5243",
+    "latitude": "-0.229498",
+    "iso2Code": "EC"
+  },
+  {
+    "id": "EGY",
+    "country": "Egypt, Arab Rep.",
+    "city": "Cairo",
+    "region": {
+      "id": "MEA",
+      "name": "Middle East & North Africa"
+    },
+    "longitude": "31.2461",
+    "latitude": "30.0982",
+    "iso2Code": "EG"
+  },
+  {
+    "id": "EMU",
+    "country": "Euro area",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "XC"
+  },
+  {
+    "id": "ERI",
+    "country": "Eritrea",
+    "city": "Asmara",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "38.9183",
+    "latitude": "15.3315",
+    "iso2Code": "ER"
+  },
+  {
+    "id": "ESP",
+    "country": "Spain",
+    "city": "Madrid",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "-3.70327",
+    "latitude": "40.4167",
+    "iso2Code": "ES"
+  },
+  {
+    "id": "EST",
+    "country": "Estonia",
+    "city": "Tallinn",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "24.7586",
+    "latitude": "59.4392",
+    "iso2Code": "EE"
+  },
+  {
+    "id": "ETH",
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "38.7468",
+    "latitude": "9.02274",
+    "iso2Code": "ET"
+  },
+  {
+    "id": "EUU",
+    "country": "European Union",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "EU"
+  },
+  {
+    "id": "FCS",
+    "country": "Fragile and conflict affected situations",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "F1"
+  },
+  {
+    "id": "FIN",
+    "country": "Finland",
+    "city": "Helsinki",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "24.9525",
+    "latitude": "60.1608",
+    "iso2Code": "FI"
+  },
+  {
+    "id": "FJI",
+    "country": "Fiji",
+    "city": "Suva",
+    "region": {
+      "id": "EAS",
+      "name": "East Asia & Pacific"
+    },
+    "longitude": "178.399",
+    "latitude": "-18.1149",
+    "iso2Code": "FJ"
+  },
+  {
+    "id": "ABW",
+    "country": "Aruba",
+    "city": "Oranjestad",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "-70.0167",
+    "latitude": "12.5167",
+    "iso2Code": "AW"
+  },
+  {
+    "id": "AFG",
+    "country": "Afghanistan",
+    "city": "Kabul",
+    "region": {
+      "id": "SAS",
+      "name": "South Asia"
+    },
+    "longitude": "69.1761",
+    "latitude": "34.5228",
+    "iso2Code": "AF"
+  },
+  {
+    "id": "AFR",
+    "country": "Africa",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "A9"
+  },
+  {
+    "id": "AGO",
+    "country": "Angola",
+    "city": "Luanda",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "13.242",
+    "latitude": "-8.81155",
+    "iso2Code": "AO"
+  },
+  {
+    "id": "ALB",
+    "country": "Albania",
+    "city": "Tirane",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "19.8172",
+    "latitude": "41.3317",
+    "iso2Code": "AL"
+  },
+  {
+    "id": "AND",
+    "country": "Andorra",
+    "city": "Andorra la Vella",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "1.5218",
+    "latitude": "42.5075",
+    "iso2Code": "AD"
+  },
+  {
+    "id": "ANR",
+    "country": "Andean Region",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "L5"
+  },
+  {
+    "id": "ARB",
+    "country": "Arab World",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "1A"
+  },
+  {
+    "id": "ARE",
+    "country": "United Arab Emirates",
+    "city": "Abu Dhabi",
+    "region": {
+      "id": "MEA",
+      "name": "Middle East & North Africa"
+    },
+    "longitude": "54.3705",
+    "latitude": "24.4764",
+    "iso2Code": "AE"
+  },
+  {
+    "id": "ARG",
+    "country": "Argentina",
+    "city": "Buenos Aires",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "-58.4173",
+    "latitude": "-34.6118",
+    "iso2Code": "AR"
+  },
+  {
+    "id": "ARM",
+    "country": "Armenia",
+    "city": "Yerevan",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "44.509",
+    "latitude": "40.1596",
+    "iso2Code": "AM"
+  },
+  {
+    "id": "ASM",
+    "country": "American Samoa",
+    "city": "Pago Pago",
+    "region": {
+      "id": "EAS",
+      "name": "East Asia & Pacific"
+    },
+    "longitude": "-170.691",
+    "latitude": "-14.2846",
+    "iso2Code": "AS"
+  },
+  {
+    "id": "ATG",
+    "country": "Antigua and Barbuda",
+    "city": "Saint John's",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "-61.8456",
+    "latitude": "17.1175",
+    "iso2Code": "AG"
+  },
+  {
+    "id": "AUS",
+    "country": "Australia",
+    "city": "Canberra",
+    "region": {
+      "id": "EAS",
+      "name": "East Asia & Pacific"
+    },
+    "longitude": "149.129",
+    "latitude": "-35.282",
+    "iso2Code": "AU"
+  },
+  {
+    "id": "AUT",
+    "country": "Austria",
+    "city": "Vienna",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "16.3798",
+    "latitude": "48.2201",
+    "iso2Code": "AT"
+  },
+  {
+    "id": "AZE",
+    "country": "Azerbaijan",
+    "city": "Baku",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "49.8932",
+    "latitude": "40.3834",
+    "iso2Code": "AZ"
+  },
+  {
+    "id": "BDI",
+    "country": "Burundi",
+    "city": "Bujumbura",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "29.3639",
+    "latitude": "-3.3784",
+    "iso2Code": "BI"
+  },
+  {
+    "id": "BEA",
+    "country": "East Asia & Pacific (IBRD-only countries)",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "B4"
+  },
+  {
+    "id": "BEC",
+    "country": "Europe & Central Asia (IBRD-only countries)",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "B7"
+  },
+  {
+    "id": "BEL",
+    "country": "Belgium",
+    "city": "Brussels",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "4.36761",
+    "latitude": "50.8371",
+    "iso2Code": "BE"
+  },
+  {
+    "id": "BEN",
+    "country": "Benin",
+    "city": "Porto-Novo",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "2.6323",
+    "latitude": "6.4779",
+    "iso2Code": "BJ"
+  },
+  {
+    "id": "BFA",
+    "country": "Burkina Faso",
+    "city": "Ouagadougou",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "-1.53395",
+    "latitude": "12.3605",
+    "iso2Code": "BF"
+  },
+  {
+    "id": "BGD",
+    "country": "Bangladesh",
+    "city": "Dhaka",
+    "region": {
+      "id": "SAS",
+      "name": "South Asia"
+    },
+    "longitude": "90.4113",
+    "latitude": "23.7055",
+    "iso2Code": "BD"
+  },
+  {
+    "id": "BGR",
+    "country": "Bulgaria",
+    "city": "Sofia",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "23.3238",
+    "latitude": "42.7105",
+    "iso2Code": "BG"
+  },
+  {
+    "id": "BHI",
+    "country": "IBRD countries classified as high income",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "B1"
+  },
+  {
+    "id": "BHR",
+    "country": "Bahrain",
+    "city": "Manama",
+    "region": {
+      "id": "MEA",
+      "name": "Middle East & North Africa"
+    },
+    "longitude": "50.5354",
+    "latitude": "26.1921",
+    "iso2Code": "BH"
+  },
+  {
+    "id": "BHS",
+    "country": "Bahamas, The",
+    "city": "Nassau",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "-77.339",
+    "latitude": "25.0661",
+    "iso2Code": "BS"
+  },
+  {
+    "id": "BIH",
+    "country": "Bosnia and Herzegovina",
+    "city": "Sarajevo",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "18.4214",
+    "latitude": "43.8607",
+    "iso2Code": "BA"
+  },
+  {
+    "id": "BLA",
+    "country": "Latin America & the Caribbean (IBRD-only countries)",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "B2"
+  },
+  {
+    "id": "BLR",
+    "country": "Belarus",
+    "city": "Minsk",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "27.5766",
+    "latitude": "53.9678",
+    "iso2Code": "BY"
+  },
+  {
+    "id": "BLZ",
+    "country": "Belize",
+    "city": "Belmopan",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "-88.7713",
+    "latitude": "17.2534",
+    "iso2Code": "BZ"
+  },
+  {
+    "id": "BMN",
+    "country": "Middle East & North Africa (IBRD-only countries)",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "B3"
+  },
+  {
+    "id": "BMU",
+    "country": "Bermuda",
+    "city": "Hamilton",
+    "region": {
+      "id": "NAC",
+      "name": "North America"
+    },
+    "longitude": "-64.706",
+    "latitude": "32.3293",
+    "iso2Code": "BM"
+  },
+  {
+    "id": "BOL",
+    "country": "Bolivia",
+    "city": "La Paz",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "-66.1936",
+    "latitude": "-13.9908",
+    "iso2Code": "BO"
+  },
+  {
+    "id": "BRA",
+    "country": "Brazil",
+    "city": "Brasilia",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "-47.9292",
+    "latitude": "-15.7801",
+    "iso2Code": "BR"
+  },
+  {
+    "id": "BRB",
+    "country": "Barbados",
+    "city": "Bridgetown",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "-59.6105",
+    "latitude": "13.0935",
+    "iso2Code": "BB"
+  },
+  {
+    "id": "BRN",
+    "country": "Brunei Darussalam",
+    "city": "Bandar Seri Begawan",
+    "region": {
+      "id": "EAS",
+      "name": "East Asia & Pacific"
+    },
+    "longitude": "114.946",
+    "latitude": "4.94199",
+    "iso2Code": "BN"
+  },
+  {
+    "id": "BSS",
+    "country": "Sub-Saharan Africa (IBRD-only countries)",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "B6"
+  },
+  {
+    "id": "BTN",
+    "country": "Bhutan",
+    "city": "Thimphu",
+    "region": {
+      "id": "SAS",
+      "name": "South Asia"
+    },
+    "longitude": "89.6177",
+    "latitude": "27.5768",
+    "iso2Code": "BT"
+  },
+  {
+    "id": "BWA",
+    "country": "Botswana",
+    "city": "Gaborone",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "25.9201",
+    "latitude": "-24.6544",
+    "iso2Code": "BW"
+  },
+  {
+    "id": "CAA",
+    "country": "Sub-Saharan Africa (IFC classification)",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "C9"
+  },
+  {
+    "id": "CAF",
+    "country": "Central African Republic",
+    "city": "Bangui",
+    "region": {
+      "id": "SSF",
+      "name": "Sub-Saharan Africa "
+    },
+    "longitude": "21.6407",
+    "latitude": "5.63056",
+    "iso2Code": "CF"
+  },
+  {
+    "id": "CAN",
+    "country": "Canada",
+    "city": "Ottawa",
+    "region": {
+      "id": "NAC",
+      "name": "North America"
+    },
+    "longitude": "-75.6919",
+    "latitude": "45.4215",
+    "iso2Code": "CA"
+  },
+  {
+    "id": "CEA",
+    "country": "East Asia and the Pacific (IFC classification)",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "C4"
+  },
+  {
+    "id": "CEB",
+    "country": "Central Europe and the Baltics",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "B8"
+  },
+  {
+    "id": "CEU",
+    "country": "Europe and Central Asia (IFC classification)",
+    "city": "",
+    "region": {
+      "id": "NA",
+      "name": "Aggregates"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "C5"
+  },
+  {
+    "id": "CHE",
+    "country": "Switzerland",
+    "city": "Bern",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "7.44821",
+    "latitude": "46.948",
+    "iso2Code": "CH"
+  },
+  {
+    "id": "CHI",
+    "country": "Channel Islands",
+    "city": "",
+    "region": {
+      "id": "ECS",
+      "name": "Europe & Central Asia"
+    },
+    "longitude": "",
+    "latitude": "",
+    "iso2Code": "JG"
+  },
+  {
+    "id": "CHL",
+    "country": "Chile",
+    "city": "Santiago",
+    "region": {
+      "id": "LCN",
+      "name": "Latin America & Caribbean "
+    },
+    "longitude": "-70.6475",
+    "latitude": "-33.475",
+    "iso2Code": "CL"
+  },
+  {
+    "id": "CHN",
+    "country": "China",
+    "city": "Beijing",
+    "region": {
+      "id": "EAS",
+      "name": "East Asia & Pacific"
+    },
+    "longitude": "116.286",
+    "latitude": "40.0495",
+    "iso2Code": "CN"
+  }
+]

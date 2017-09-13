@@ -15,7 +15,7 @@ Template.Questions.onCreated(function () {
     this.modules = new ReactiveVar();
     this.moduleContent = new ReactiveVar();
 
-    Meteor.call('getModules', (err, modules) => {
+    Meteor.call('getModulesList', (err, modules) => {
         if (err) new ErrorHandler(err.reason, "rounded");
 
         this.modules.set(modules);
@@ -32,11 +32,6 @@ Template.Questions.helpers({
     Questions() {
         return Questions.find({author: Meteor.userId()});
     },
-    // questionsCount() {
-    //     let questions = Questions.find({author: Meteor.userId()});
-    //
-    //     if (questions.count() > 2) return "hidden";
-    // },
     Questionnaires() {
         return Questionnaires.find({author: Meteor.userId()});
     },

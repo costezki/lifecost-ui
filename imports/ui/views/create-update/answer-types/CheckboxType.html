@@ -1,0 +1,16 @@
+<template name="CheckboxType">
+    <h6 class="center-align">
+        {{#if lastAnswer}}
+            Your last answer: {{lastAnswer}}
+        {{/if}}
+    </h6>
+    <p>Answer:</p>
+    <ul class="collection">
+        {{#each answerOptions.answers}}
+            <li class="collection-item">
+                <input type="checkbox" name="answer" id="{{label}}">
+                <label for="{{label}}">{{label}}</label>
+            </li>
+        {{/each}}
+    </ul>
+</template>

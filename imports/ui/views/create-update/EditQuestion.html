@@ -13,9 +13,8 @@
                         <legend>Create question</legend>
                         {{> afQuickField name='question'}}
                         {{> afQuickField name='description'}}
-                        {{#if checkRole currentUser.profile.role "admin"}}
-                            {{> afQuickField name='variableName'}}
-                        {{/if}}
+                        {{> afQuickField name='variableName'}}
+                        {{> afQuickField name='otherAnswerType'}}
                         {{> afQuickField name='answersType'}}
                         {{> afQuickField name='author'}}
                         {{> afQuickField name='answers'}}

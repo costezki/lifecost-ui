@@ -49,8 +49,8 @@ Template.registerHelper('checkRole', function (a, b) {
     return a === b;
 });
 
-Template.registerHelper('checkAnswerType', function (type) {
-    return type === 'checkbox';
+Template.registerHelper('checkAnswerType', function (a, b) {
+    return a === b;
 });
 
 Template.registerHelper('changeModuleName', function (module) {

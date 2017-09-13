@@ -1,0 +1,94 @@
+{
+  "id": "simple-linear",
+  "title": "Simple linear questionnaire",
+  "questionsList": [
+    {
+      "question": "How much do you plan to spend on housing?",
+      "description": "Enter an approximate amount that you would spend on this object",
+      "answersType": 2,
+      "variableName": "housing",
+      "deprecated": false,
+      "published": true
+    },
+    {
+      "question": "How much do you plan to spend on utilities?",
+      "description": "Enter an approximate amount that you would spend on this object",
+      "answersType": 2,
+      "variableName": "utilities",
+      "deprecated": false,
+      "published": true
+    },
+    {
+      "question": "How much do you plan to spend on food?",
+      "description": "Enter an approximate amount that you would spend on this object",
+      "answersType": 2,
+      "variableName": "food",
+      "deprecated": false,
+      "published": true
+    },
+    {
+      "question": "How much do you plan to spend on transportation?",
+      "description": "Enter an approximate amount that you would spend on this object",
+      "answersType": 2,
+      "variableName": "transportation",
+      "deprecated": false,
+      "published": true
+    },
+    {
+      "question": "How much do you plan to spend on clothing?",
+      "description": "Enter an approximate amount that you would spend on this object",
+      "answersType": 2,
+      "variableName": "clothing",
+      "deprecated": false,
+      "published": true
+    },
+    {
+      "question": "How much do you plan to spend on personal?",
+      "description": "Enter an approximate amount that you would spend on this object",
+      "answersType": 2,
+      "variableName": "personal",
+      "deprecated": false,
+      "published": true
+    },
+    {
+      "question": "How much do you plan to spend on education?",
+      "description": "Enter an approximate amount that you would spend on this object",
+      "answersType": 2,
+      "variableName": "education",
+      "deprecated": false,
+      "published": true
+    },
+    {
+      "question": "How much do you plan to spend on savings?",
+      "description": "Enter an approximate amount that you would spend on this object",
+      "answersType": 2,
+      "variableName": "savings",
+      "deprecated": false,
+      "published": true
+    },
+    {
+      "question": "How old are you?",
+      "description": "Input your age",
+      "answersType": 2,
+      "variableName": "age",
+      "deprecated": false,
+      "published": true
+    },
+    {
+      "question": "What is the inflation rate in your country?",
+      "description": "Input inflation rate",
+      "answersType": 2,
+      "variableName": "inflation-rate",
+      "deprecated": false,
+      "published": true
+    },
+    {
+      "question": "How much do you plan to live?",
+      "description": "Enter how many years you would have lived",
+      "answersType": 2,
+      "variableName": "life-span",
+      "deprecated": false,
+      "published": true
+    }
+  ]
+}

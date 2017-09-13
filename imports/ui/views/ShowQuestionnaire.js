@@ -15,22 +15,30 @@ Template.ShowQuestionnaire.onCreated(function () {
         cleared: false
     };
 
+    this.questionnaireId = new ReactiveVar(FlowRouter.getParam('id'));
+    this.questionsList = new ReactiveVar();
     this.clearedQuestions = new ReactiveVar([firstQuestions]);
     this.activeQuestion = new ReactiveVar(firstQuestions);
 });
 
 Template.ShowQuestionnaire.helpers({
     questionnaire() {
-        let questionnaire = Questionnaires.findOne(FlowRouter.getParam('id'));
+        const questionnaire = Questionnaires.findOne(Template.instance().questionnaireId.get());
+
         if (questionnaire !== void 0) return questionnaire.questionsList;
     },
     question() {
-        let questions = qqList(FlowRouter.getParam('id'));
+        const questions = qqList(Template.instance().questionnaireId.get());
+        Template.instance().questionsList.set(questions);
+
         if (questions !== void 0) {
             let activeQuestion = Template.instance().activeQuestion.get();
 
             return questions[activeQuestion.questionNumber];
         }
+    },
+    isQuestionnaire() {
+        return true;
     }
 });
 
@@ -38,20 +46,18 @@ Template.ShowQuestionnaire.helpers({
 // TODO: It is necessary to make pagination for convenient movement on the questionnaire
 Template.ShowQuestionnaire.events({
     'click .pagination a': function (event, template) {
-        let questionId = event.target.id;
-        let activeQuestion = qqList(FlowRouter.getParam('id'));
+        const questionId = event.target.id;
+        const activeQuestion = Template.instance().questionsList.get();
 
         if (activeQuestion !== void 0) {
-            let question = activeQuestion.indexOf(questionId);
-            let clearedQuestion = template.clearedQuestions.get()[question];
+            const question = activeQuestion.indexOf(questionId);
+            const clearedQuestion = template.clearedQuestions.get()[question];
 
             if (clearedQuestion !== void 0 && clearedQuestion.cleared) {
                 $('.pagination').find('li').removeClass('active');
                 $(event.target.parentNode).addClass('active');
 
-                let nextQuestions = template.clearedQuestions.get()[question];
-
-                template.activeQuestion.set(nextQuestions);
+                template.activeQuestion.set(template.clearedQuestions.get()[question]);
             } else {
                 new ErrorHandler("Complete the previous question to answer the following questions...")
             }

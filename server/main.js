@@ -3,6 +3,14 @@ import {Questions} from '/imports/collections/questionsCollection';
 import {Questionnaires} from "../imports/collections/questionnairesCollection";
 
 let fs = require('fs');
+let path = Npm.require('path');
+
+// Full path to private folder in project
+// Meteor application structure dependent
+path = path.resolve('.').split(path.sep + '.meteor')[0] + '/private';
+
+// Load all locations to use in future
+const locations = JSON.parse(fs.readFileSync(path + '/gis/countries.json', 'utf-8'));
 
 Meteor.startup(() => {
     // code to run on server at startup
@@ -29,7 +37,7 @@ Meteor.methods({
     },
     'createDefaultQuestionnaire': function (file) {
         // Get default questions with node-js plugin from module on knowModules folder
-        let module = JSON.parse(fs.readFileSync('/knowModules/' + file, 'utf-8'));
+        let module = JSON.parse(fs.readFileSync(path + '/knowModules/' + file, 'utf-8'));
         // Get existing questions with field="variableName" from mongodb, if they exists
         let existingQuestions = Questions.find({author: this.userId, variableName: {$exists: true}});
         // Get default questionnaire if he exist
@@ -46,14 +54,44 @@ Meteor.methods({
             module.title,
             module.id);
     },
-    getModules() {
-        // Get list of existing modules
-        return fs.readdirSync('/knowModules/', 'utf-8');
+    getModulesList() {
+        return fs.readdirSync(path + '/knowModules/', 'utf-8');
     },
     getModuleContent(file) {
-        return fs.readFileSync('/knowModules/' + file, 'utf-8');
+        return fs.readFileSync(path + '/knowModules/' + file, 'utf-8');
+    },
+    getLocation(location) {
+        return getLocationList(location.inputValue, location.answerType);
     }
 });
+
+/**
+ * Get list of countries or cities from countries.json and return them on client side
+ * @param inputValue
+ * @param answerType
+ * @returns {Array}
+ */
+function getLocationList(inputValue, answerType) {
+    const regexp = new RegExp(`.*?\\b(${inputValue.toLowerCase()})`);
+
+    if (locations !== void 0) {
+        let foundedLocations = [];
+
+        locations.forEach((item) => {
+            if (answerType === 3) {
+                if (item.country.toLowerCase().match(regexp)) {
+                    foundedLocations.push(item);
+                }
+            } else {
+                if (item.city.toLowerCase().match(regexp)) {
+                    foundedLocations.push(item);
+                }
+            }
+        });
+
+        return foundedLocations;
+    }
+}
 
 /**
  * Insert into mongodb default questions from existing module

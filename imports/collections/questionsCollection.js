@@ -39,14 +39,24 @@ let questionsSchema = new SimpleSchema({
                     {label: 'Checkbox', value: 0},
                     {label: 'Radio button', value: 1},
                     {label: 'Input', value: 2},
+                    {label: 'Country', value: 3},
+                    {label: 'City', value: 4},
                 ]
             }
         }
     },
     variableName: {
         type: String,
-        label: "Variable name",
+        label: 'Variable name',
         optional: true
+    },
+    otherAnswerType: {
+        type: Boolean,
+        label: 'The checkbox type will have an additional input field "Other"',
+        optional: true,
+        autoform: {
+            class: 'other-input'
+        }
     },
     answers: {
         type: Array,
@@ -54,8 +64,17 @@ let questionsSchema = new SimpleSchema({
         optional: true
     },
     'answers.$': {
-        type: String,
+        type: Object,
+        label: "Answer format",
         optional: true
+    },
+    'answers.$.label': {
+        type: String,
+        label: "Text for answer"
+    },
+    'answers.$.value': {
+        type: Number,
+        label: "Value for answer"
     },
     publishedDate: {
         type: Date,

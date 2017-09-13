@@ -1,0 +1,301 @@
+{
+  "id": "learnvest-questionnaire",
+  "title": "Learnvest M.A.S.H. Calculator: How Much Will My Lifestyle Cost?",
+  "questionsList": [
+    {
+      "question": "What will be your primary residence?",
+      "description": "Choose or enter an approximate amount that you would spend on this object",
+      "answersType": 1,
+      "answers": [
+        {
+          "label": "A modest single family home in the 'burbs. ($250,000)",
+          "value": 250000
+        },
+        {
+          "label": "A condo in the city. ($300,000)",
+          "value": 300000
+        },
+        {
+          "label": "A luxury home in a gated community. ($600,000)",
+          "value": 600000
+        },
+        {
+          "label": "A house on the waterfront. ($1,200,000)",
+          "value": 1200000
+        }
+      ],
+      "variableName": "primary_residence",
+      "deprecated": false,
+      "published": true,
+      "otherAnswerType": true
+    },
+    {
+      "question": "Would you want to splurge on a second or vacation home?",
+      "description": "Choose or enter an approximate amount that you would spend on this object",
+      "answersType": 1,
+      "answers": [
+        {
+          "label": "No, one home base is enough for me. ($0)",
+          "value": 0
+        },
+        {
+          "label": "a cabin in the mountains. ($100,000)",
+          "value": 100000
+        },
+        {
+          "label": "a condo in a beach town. ($250,000)",
+          "value": 250000
+        },
+        {
+          "label": "a condo in the city. ($300,000)",
+          "value": 300000
+        },
+        {
+          "label": "a beachfront house. ($1,200,000)",
+          "value": 1200000
+        }
+      ],
+      "variableName": "secondary_residence",
+      "deprecated": false,
+      "published": true,
+      "otherAnswerType": true
+    },
+    {
+      "question": "What type of vehicle will/do you drive?",
+      "description": "Choose or enter an approximate amount that you would spend on this object",
+      "answersType": 1,
+      "answers": [
+        {
+          "label": "None. I'll ride my bike or take public transportation! ($0)",
+          "value": 0
+        },
+        {
+          "label": "Honda Civic or similar. ($18,000)",
+          "value": 18000
+        },
+        {
+          "label": "Toyota Camry or similar. ($25,000)",
+          "value": 25000
+        },
+        {
+          "label": "Ford Expedition or similar. ($40,000)",
+          "value": 40000
+        },
+        {
+          "label": "Mercedes Benz or similar. ($60,000)",
+          "value": 60000
+        }
+      ],
+      "variableName": "vehicle",
+      "deprecated": false,
+      "published": true,
+      "otherAnswerType": true
+    },
+    {
+      "question": "How often will you trade in your wheels for a newer model?",
+      "description": "Enter an approximate amount that you would spend on this object",
+      "answersType": 2,
+      "variableName": "vehicle_maintenance",
+      "deprecated": false,
+      "published": true
+    },
+    {
+      "question": "How many kids will/do you have?",
+      "description": "Enter an approximate amount that you would spend on this object",
+      "answersType": 2,
+      "variableName": "children",
+      "deprecated": false,
+      "published": true
+    },
+    {
+      "question": "Who will care for the kids?",
+      "description": "Choose an approximate amount that you would spend on this object",
+      "answersType": 1,
+      "answers": [
+        {
+          "label": "My partner or I will stay at home to raise them. ($0)",
+          "value": 0
+        },
+        {
+          "label": "My parents live nearby—free babysitting! ($0)",
+          "value": 0
+        },
+        {
+          "label": "No kids; no childcare needed. ($0)",
+          "value": 0
+        },
+        {
+          "label": "I'll work part-time and use daycare on those days. ($18,000 a year)",
+          "value": 18000
+        },
+        {
+          "label": "I'll keep working, so I'll get a nanny. ($30,000 a year)",
+          "value": 30000
+        }
+      ],
+      "variableName": "child_care",
+      "deprecated": false,
+      "published": true
+    },
+    {
+      "question": "Will you pay for your child's college?",
+      "description": "Choose an approximate amount that you would spend on this object",
+      "answersType": 1,
+      "answers": [
+        {
+          "label": "No. ($0)",
+          "value": 0
+        },
+        {
+          "label": "No kids; no college savings needed. ($0)",
+          "value": 0
+        },
+        {
+          "label": "Yes, for community college. ($10,000)",
+          "value": 10000
+        },
+        {
+          "label": "Yes, for state school. ($20,000)",
+          "value": 20000
+        },
+        {
+          "label": "Yes, for private school. ($160,000)",
+          "value": 160000
+        }
+      ],
+      "variableName": "tuition_fee",
+      "deprecated": false,
+      "published": true
+    },
+    {
+      "question": "How much do you like to spend on your appearance?",
+      "description": "Choose an approximate amount that you would spend on this object",
+      "answersType": 1,
+      "answers": [
+        {
+          "label": "I'm a minimalist. The basics work well for me, so I stick with them. ($2,000 a year)",
+          "value": 2000
+        },
+        {
+          "label": "I'm low–maintenance. I mostly wear jeans with a tee but sometimes splurge if I see a deal. ($4,000 a year)",
+          "value": 4000
+        },
+        {
+          "label": "I enjoy fashion. I search high and low, and mix moderately priced labels with thrift-store finds. ($8,000 a year)",
+          "value": 8000
+        },
+        {
+          "label": "I'm a fashionista. I love certain labels and stay on top of the latest trends. ($20,000 a year)",
+          "value": 20000
+        }
+      ],
+      "variableName": "clothing",
+      "deprecated": false,
+      "published": true
+    },
+    {
+      "question": "How will you spend your free time?",
+      "description": "Choose an approximate amount that you would spend on this object",
+      "answersType": 1,
+      "answers": [
+        {
+          "label": "I'll get my fun for free by reading books from the library, walking and meditating. ($0 a year)",
+          "value": 0
+        },
+        {
+          "label": "I'll keep it simple by doing most things at home—from gardening to cooking to entertaining. ($5,000 a year)",
+          "value": 5000
+        },
+        {
+          "label": "I'll pursue moderately priced hobbies such as painting and yoga, plus treat myself to nights out. ($10,000 a year)",
+          "value": 10000
+        },
+        {
+          "label": "I want to be able to eat out at fine restaurants, take up sailing and attend charity galas. ($25,000 a year)",
+          "value": 25000
+        }
+      ],
+      "variableName": "free_time_hobbies",
+      "deprecated": false,
+      "published": true
+    },
+    {
+      "question": "How much do you intend to travel?",
+      "description": "Choose an approximate amount that you would spend on this object",
+      "answersType": 1,
+      "answers": [
+        {
+          "label": "Almost never, but always in a car when I do! ($1,000 a year)",
+          "value": 1000
+        },
+        {
+          "label": "Twice a year, mostly to visit family and always domestically. ($2,000 a year)",
+          "value": 2000
+        },
+        {
+          "label": "Twice a year, possibly to Europe or Mexico but also domestically. ($5,000 a year)",
+          "value": 5000
+        },
+        {
+          "label": "Several times a year, to places like Bali, Shanghai and Cape Town. ($15,000 a year)",
+          "value": 15000
+        }
+      ],
+      "variableName": "travel",
+      "deprecated": false,
+      "published": true
+    },
+    {
+      "question": "How do you plan on spending your retirement?",
+      "description": "Choose an approximate amount that you would spend on this object",
+      "answersType": 1,
+      "answers": [
+        {
+          "label": "Retirement? I plan to work 'til the day I die. ($0)",
+          "value": 0
+        },
+        {
+          "label": "I'll be working part-time for some extra income. (After part-time income, $40,000 a year)",
+          "value": 40000
+        },
+        {
+          "label": "I'll stay in my home but volunteer and occasionally travel. ($200,000 a year)",
+          "value": 200000
+        },
+        {
+          "label": "I'll live in a gated community with a golf course and travel the world. ($400,000 a year)",
+          "value": 400000
+        }
+      ],
+      "variableName": "retirement_cost",
+      "deprecated": false,
+      "published": true
+    },
+    {
+      "question": "Will you need to help pay for your parents' care?",
+      "description": "Choose an approximate amount that you would spend on this object",
+      "answersType": 1,
+      "answers": [
+        {
+          "label": "No. ($0)",
+          "value": 0
+        },
+        {
+          "label": "Yes—for day-to-day expenses. ($30,000)",
+          "value": 30000
+        },
+        {
+          "label": "Yes—for in-home care. ($300,000)",
+          "value": 300000
+        },
+        {
+          "label": "Yes—for a nursing home or assisted living facility. ($400,000)",
+          "value": 400000
+        }
+      ],
+      "variableName": "nursing_care",
+      "deprecated": false,
+      "published": true
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+<template name="RadioButtonType">
+    <h6 class="center-align">
+        {{#if lastAnswer}}
+            Your last answer: {{lastAnswer}}
+        {{/if}}
+    </h6>
+    <p>Answer:</p>
+    <ul class="collection">
+        {{#each answerOptions.answers}}
+            <li class="collection-item">
+                <input type="radio" name="answer" id="{{label}}">
+                <label for="{{label}}">{{label}}</label>
+            </li>
+        {{/each}}
+        {{#if otherAnswerType}}
+            <li class="collection-item">
+                <input type="radio" name="answer" id="{{label}}">
+                <label for="{{label}}">{{label}}</label>
+            </li>
+        {{/if}}
+    </ul>
+</template>

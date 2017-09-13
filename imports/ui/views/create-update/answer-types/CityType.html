@@ -1,0 +1,21 @@
+<template name="CityType">
+    <h6 class="center-align">
+        {{#if lastAnswer}}
+            Your last answer: {{lastAnswer}}
+        {{/if}}
+    </h6>
+    <p>Answer:</p>
+    <div class="input-field">
+        <input type="text" name="answer" id="location" required>
+        <label for="location"></label>
+    </div>
+    {{#if location}}
+        <ul id='locations' class='collection with-header'>
+            {{#each location}}
+                <li class="collection-item">
+                    {{city}}
+                </li>
+            {{/each}}
+        </ul>
+    {{/if}}
+</template>

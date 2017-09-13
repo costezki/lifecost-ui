@@ -3,38 +3,25 @@
         <fieldset>
             <legend class="center-align">{{question.question}}</legend>
             <h5 class="center-align">{{question.description}}</h5>
-            <h6 class="center-align">
-                {{#if answer}}
-                    Your last answer: {{answer}}
-                {{/if}}
-            </h6>
             {{#if not question.deprecated}}
-                <label for="answersType">Add answer:</label>
-                {{#if answerOptions}}
-                    {{#if checkAnswerType answerOptions.answerType}}
-                        <ul class="collection">
-                            {{#each answerOptions.answers}}
-                                <li class="collection-item">
-                                    <input type="checkbox" name="answer" id="{{label}}">
-                                    <label for="{{label}}">{{label}}</label>
-                                </li>
-                            {{/each}}
-                        </ul>
-                    {{else}}
-                        <ul class="collection">
-                            {{#each answerOptions.answers}}
-                                <li class="collection-item">
-                                    <input type="radio" name="answer" id="{{label}}">
-                                    <label for="{{label}}">{{label}}</label>
-                                </li>
-                            {{/each}}
-                        </ul>
-                    {{/if}}
+                {{#if checkAnswerType answerType 0}}
+                    {{> CheckboxType questionId=currentQuestionId}}
                 {{else}}
-                    <div class="input-field">
-                        <input type="text" name="answer" id="answer">
-                        <label for="answer"></label>
-                    </div>
+                    {{#if checkAnswerType answerType 1}}
+                        {{> RadioButtonType questionId=currentQuestionId}}
+                    {{else}}
+                        {{#if checkAnswerType answerType 2}}
+                            {{>TextInputType questionId=currentQuestionId}}
+                        {{else}}
+                            {{#if checkAnswerType answerType 3}}
+                                {{>CountryType questionId=currentQuestionId}}
+                            {{else}}
+                                {{>CityType questionId=currentQuestionId}}
+                                <!--{{>LocationsType questionId=currentQuestionId}}-->
+                            {{/if}}
+                        {{/if}}
+
+                    {{/if}}
                 {{/if}}
                 <div class="right">
                     <button type="submit" class="btn waves-light">
@@ -43,7 +30,7 @@
                     </button>
                 </div>
             {{else}}
-                <h5 class="center-align" style="color: red;">Question was deprecated!</h5>
+                <h5 class="center-align red-text">Question was deprecated!</h5>
             {{/if}}
         </fieldset>
     </form>

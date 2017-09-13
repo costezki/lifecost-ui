@@ -59,42 +59,8 @@ export function qqList(questionnaireId) {
     }
 }
 
-export function questionnaireInsertAnswer(answer, questionId, template) {
-    addAnswer.call({answer, questionId}, (err) => {
-        if (err) new ErrorHandler(err.reason, "rounded");
-
-        let activeQuestion = template.parent().activeQuestion.get();
-        let activeQuestionNumber = activeQuestion.questionNumber;
-        let questionnaire = Questionnaires.findOne(FlowRouter.getParam('id'));
-
-        if (questionnaire !== void 0) {
-            let questions = Questions.find({_id: {$in: questionnaire.questionsList}, published: true});
-            let clearedQuestions = template.parent().clearedQuestions.get();
-
-            template.parent().clearedQuestions.get()[clearedQuestions.length - 1].cleared = true;
-
-            if (questions.count() > activeQuestionNumber + 1) {
-                $('.pagination').find('li').removeClass('active');
-                $('.pagination').find('li:nth-child(' + (activeQuestionNumber + 2) + ')').addClass('active');
-
-                let nextQuestion = {
-                    questionNumber: activeQuestionNumber + 1,
-                    cleared: false
-                };
-
-                clearedQuestions.push(nextQuestion);
-
-                template.parent().clearedQuestions.set(clearedQuestions);
-                template.parent().activeQuestion.set(nextQuestion);
-            } else {
-                FlowRouter.go('/published-questions');
-            }
-        }
-    });
-}
-
 export function updatePublicationQuestionnaire(questionnaireId, published, date) {
-    let questionnaire = Questionnaires.findOne(questionnaireId);
+    const questionnaire = Questionnaires.findOne(questionnaireId);
 
     if (questionnaire !== void 0) {
         if (published) {
@@ -128,10 +94,48 @@ export function updatePublicationQuestionnaire(questionnaireId, published, date)
     }
 }
 
-export function insertAnswer(answer, questionId) {
+export function insertAnswer(answer, questionId, template, questionnaire) {
     addAnswer.call({answer, questionId}, (err) => {
         if (err) new ErrorHandler(err.reason, "rounded");
+
+        if (questionnaire !== void 0) {
+            const activeQuestion = template.parent().activeQuestion.get();
+            const activeQuestionNumber = activeQuestion.questionNumber;
+            const questionnaire = Questionnaires.findOne(FlowRouter.getParam('id'));
+
+            if (questionnaire !== void 0) {
+                const questions = Questions.find({_id: {$in: questionnaire.questionsList}, published: true});
+                const clearedQuestions = template.parent().clearedQuestions.get();
+
+                template.parent().clearedQuestions.get()[clearedQuestions.length - 1].cleared = true;
+
+                if (questions.count() > activeQuestionNumber + 1) {
+                    $('.pagination').find('li').removeClass('active');
+                    $('.pagination').find('li:nth-child(' + (activeQuestionNumber + 2) + ')').addClass('active');
+
+                    const nextQuestion = {
+                        questionNumber: activeQuestionNumber + 1,
+                        cleared: false
+                    };
+
+                    clearedQuestions.push(nextQuestion);
+
+                    template.parent().clearedQuestions.set(clearedQuestions);
+                    template.parent().activeQuestion.set(nextQuestion);
+                } else {
+                    FlowRouter.go('/published-questions');
+                }
+            }
+        }
     });
+}
+
+export function checkLocation(location, inputValue, locationType, questionId, template, isQuestionnaire) {
+    if (location[0][locationType].toLocaleLowerCase() === inputValue.toLocaleLowerCase()) {
+        insertAnswer(JSON.stringify(location[0]), questionId, template, isQuestionnaire);
+    } else {
+        new ErrorHandler(`Select ${locationType} from list or input correct word!`, null, null, 'warning')
+    }
 }
 
 export function updatePublicationQuestion(questionId, published, date, deprecated) {

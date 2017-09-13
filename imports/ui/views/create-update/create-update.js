@@ -1,7 +1,7 @@
 import './CreateQuestion';
 import './EditQuestion';
-import './AddAnswers';
+import './AddAnswers.html';
 import './Answer';
-import './QuestionnaireAnswers';
 import './EditQuestionnaire';
 import './CreateQuestionnaire';
+import './answer-types/answer-types';

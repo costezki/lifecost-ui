@@ -1,106 +1,96 @@
-import {Answers} from '/imports/collections/answersCollection';
+import {ReactiveVar} from 'meteor/reactive-var';
+
 import {Questions} from '/imports/collections/questionsCollection';
-import {insertAnswer} from '../utils';
+import {insertAnswer, checkLocation} from '../utils';
 
 import './Answer.html';
+import {ErrorHandler} from "../../errors/ErrorHandler";
 
 Template.Answer.onCreated(function () {
     Meteor.subscribe('answers');
     Meteor.subscribe('questions');
+
+    this.questionId = new ReactiveVar();
+    this.answerType = new ReactiveVar();
+    this.location = new ReactiveVar();
+    this.inputValue = new ReactiveVar();
 });
 
 Template.Answer.helpers({
     question() {
-        let question = Questions.findOne(FlowRouter.getParam('id'));
+        // qqId = questionnaire question id
+        let qqId = Template.currentData().questionId;
+        let question;
+
+        if (qqId !== void 0) {
+            Template.instance().questionId.set(qqId);
+            question = Questions.findOne(qqId);
+        } else {
+            Template.instance().questionId.set(FlowRouter.getParam('id'));
+            question = Questions.findOne(FlowRouter.getParam('id'));
+        }
 
         if (question !== void 0) {
-            if (question.published) {
+            if (question.published || question.deprecated) {
+                Template.instance().answerType.set(question.answersType);
                 return question;
             } else {
-                if (question.deprecated) {
-                    return question;
-                } else {
-                    FlowRouter.go('/published-questions');
-                }
+                FlowRouter.go('/published-questions');
             }
         }
     },
-    answer() {
-        let answers = Answers.find({author: Meteor.userId(), questionId: FlowRouter.getParam('id')});
-
-        if (answers.count() > 0) {
-            let answer = answers.fetch()[answers.count() - 1];
-            let question = Questions.findOne(answer.questionId);
-
-            if (question !== void 0) {
-                let answerType = question.answersType;
-                if (answerType === 0) {
-                    let selectedAnswers = [];
-                    answer = answer.answer.split(',');
-
-                    answer.forEach(function (item) {
-                        selectedAnswers.push(question.answers[item])
-                    });
-
-                    return selectedAnswers;
-                } else if (answerType === 1) {
-                    return question.answers[answer.answer];
-                } else {
-                    return answer.answer;
-                }
-            }
-        }
+    currentQuestionId() {
+        return Template.instance().questionId.get();
     },
-    answerOptions() {
-        let question = Questions.findOne(FlowRouter.getParam('id'));
-
-        if (question !== void 0) {
-            let answers = [];
-
-            if (question.answersType !== 2) {
-                question.answers.forEach(function (item, index) {
-                    answers.push({
-                        label: item,
-                        value: index
-                    });
-                });
-                if (question.answersType === 1) {
-                    return {answers, answerType: 'radioButton'};
-                } else {
-                    return {answers, answerType: 'checkbox'};
-                }
-            }
-        }
+    answerType() {
+        return Template.instance().answerType.get();
     }
 });
 
 Template.Answer.events({
-    'submit #insert-answer': function (event) {
+    'submit #insert-answer': function (event, template) {
         event.preventDefault();
 
-        let questionId = FlowRouter.getParam('id');
-        let question = Questions.findOne(questionId);
+        const questionId = Template.instance().questionId.get();
+        const answerType = template.answerType.get();
+        const inputValue = template.inputValue.get();
+        const answer = event.target.answer;
+        const isQuestionnaire = Template.currentData().isQuestionnaire;
 
-        if (question.answersType === 0) {
-            let answers = [];
-            let checkboxes = event.target.answer;
+        switch (answerType) {
+            case 0:
+                let answers = [];
 
-            for (let i = 0; i < checkboxes.length; i++) {
-                if (checkboxes[i].checked) {
-                    answers.push(i);
-                }
-            }
-            insertAnswer(answers.toString(), questionId);
-        } else if (question.answersType === 1) {
-            event.target.answer.forEach(function (item, answer) {
-                if (item.checked) {
-                    insertAnswer(answer.toString(), questionId);
-                }
-            });
-        } else {
-            let answer = event.target.answer.value;
+                answer.forEach((item, index) => {
+                    if (item.checked) answers.push(index);
+                });
 
-            insertAnswer(answer, questionId);
+                insertAnswer(answers.toString(), questionId, template, isQuestionnaire);
+                break;
+            case 1:
+                answer.forEach(function (item, answer) {
+                    if (item.checked) {
+                        insertAnswer(answer.toString(), questionId, template, isQuestionnaire);
+                    }
+                });
+                break;
+            case 2:
+                insertAnswer(answer.value, questionId, template, isQuestionnaire);
+                break;
+            default:
+                Meteor.call('getLocation', {inputValue, answerType}, (err, location) => {
+                    if (err) new ErrorHandler(err.reason);
+
+                    if (location.length === 1) {
+                        checkLocation(location, inputValue, answerType === 3 ? 'country' : 'city', questionId, template, isQuestionnaire);
+                    } else if (location.length > 1) {
+                        console.log(location);
+                        new ErrorHandler('Select one variant from list!', null, null, 'warning')
+                    } else {
+                        new ErrorHandler('No result!', null, null, 'warning')
+                    }
+                });
+                break;
         }
     }
 });
