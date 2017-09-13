@@ -10,7 +10,8 @@ Template.registerHelper('getBirthday', function (date) {
 });
 
 Template.registerHelper('getAuthor', function (author) {
-    let user = UserSettings.findOne({user: author});
+    const user = UserSettings.findOne({user: author});
+
     if (user !== void 0) return user.userName;
 });
 
@@ -32,24 +33,17 @@ Template.registerHelper('firstQuestion', function (index) {
 
 Template.registerHelper('getQuestions', function (questionsList) {
     if (questionsList !== void 0) {
-        let questions = [];
+        return questionsList.map((questionId) => {
+            const question = Questions.findOne({_id: questionId, published: true});
 
-        questionsList.forEach(function (questionId) {
-            let question = Questions.findOne({_id: questionId, published: true});
             if (question !== void 0) {
-                questions.push(question);
+                return question;
             }
         });
-
-        return questions;
     }
 });
 
-Template.registerHelper('checkRole', function (a, b) {
-    return a === b;
-});
-
-Template.registerHelper('checkAnswerType', function (a, b) {
+Template.registerHelper('equal', function (a, b) {
     return a === b;
 });
 

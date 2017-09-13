@@ -10,7 +10,7 @@ Template.ShowQuestionnaire.onCreated(function () {
     Meteor.subscribe('questions');
     Meteor.subscribe('questionnaires');
 
-    let firstQuestions = {
+    const firstQuestions = {
         questionNumber: 0,
         cleared: false
     };
@@ -32,7 +32,7 @@ Template.ShowQuestionnaire.helpers({
         Template.instance().questionsList.set(questions);
 
         if (questions !== void 0) {
-            let activeQuestion = Template.instance().activeQuestion.get();
+            const activeQuestion = Template.instance().activeQuestion.get();
 
             return questions[activeQuestion.questionNumber];
         }

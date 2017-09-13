@@ -18,13 +18,13 @@ Template.PublishedQuestions.helpers({
         return Questions.find();
     },
     questionnaires() {
-        let questionnaires = Questionnaires.find();
+        const questionnaires = Questionnaires.find();
 
         if (questionnaires.count() > 0) {
             let publishedQuestionnaires = [];
 
             questionnaires.fetch().forEach(function (questionnaire) {
-                let questions = Questions.find({
+                const questions = Questions.find({
                     _id: {
                         $in: questionnaire.questionsList
                     },
@@ -40,7 +40,7 @@ Template.PublishedQuestions.helpers({
                             publishedAt: null
                         }
                     }, (err) => {
-                        if (err) new ErrorHandler(err.reason, "rounded");
+                        if (err) new ErrorHandler(err, "rounded");
                     })
                 }
             });
@@ -52,24 +52,11 @@ Template.PublishedQuestions.helpers({
 
 Template.PublishedQuestions.events({
     'click .delete-question': function () {
-        let deleteQuestion = confirm("Delete this question?\n\"" + this.question + "\"");
+        const deleteQuestion = confirm("Delete this question?\n\"" + this.question + "\"");
 
         if (deleteQuestion) {
             Questions.remove(this._id, (err) => {
-                if (err) new ErrorHandler(err.reason, "rounded");
-            });
-        }
-    },
-    'click .make-publish': function (event) {
-        let published = Questions.findOne(this._id);
-
-        if (published.published) {
-            Questions.update(this._id, {$set: {published: false, publishedDate: null}}, (err) => {
-                if (err) new ErrorHandler(err.reason, "rounded");
-            });
-        } else {
-            Questions.update(this._id, {$set: {published: true, publishedDate: new Date()}}, (err) => {
-                if (err) new ErrorHandler(err.reason, "rounded");
+                if (err) new ErrorHandler(err, "rounded");
             });
         }
     }

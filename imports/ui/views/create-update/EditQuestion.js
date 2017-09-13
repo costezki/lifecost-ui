@@ -8,11 +8,7 @@ Template.EditQuestion.onCreated(function () {
             FlowRouter.go('/questions');
         },
         formToDoc: function (doc) {
-            if (doc.answersType !== 0) {
-                $('.other-input').parent().css('display', 'none');
-            } else {
-                $('.other-input').parent().css('display', 'inherit');
-            }
+            $('.other-input').parent().css('display', doc.answersType !== 0 ? 'none' : 'inherit');
 
             if (doc.answersType >= 2 || doc.answersType === void 0) {
                 $('#updateQuestion').find('.collection').css('display', 'none');
@@ -30,7 +26,8 @@ Template.EditQuestion.onRendered(function () {
 
 Template.EditQuestion.helpers({
     Question() {
-        let question = Questions.findOne({_id: FlowRouter.getParam('id')});
+        const question = Questions.findOne({_id: FlowRouter.getParam('id')});
+
         if (question !== void 0) {
             return question;
         }

@@ -12,7 +12,8 @@ export function insertQuestionnaire(published, title, date, questions) {
         published: published,
         publishedAt: date
     }, (err) => {
-        if (err) new ErrorHandler(err.reason, "rounded");
+        if (err) new ErrorHandler(err, "rounded");
+
         FlowRouter.go('/questions');
     });
 }
@@ -25,18 +26,19 @@ export function updateQuestionnaire(id, title, questions) {
             createdAt: new Date()
         }
     }, (err) => {
-        if (err) new ErrorHandler(err.reason, "rounded");
+        if (err) new ErrorHandler(err, "rounded");
+
         FlowRouter.go('/questions');
     });
 }
 
 export function qqList(questionnaireId) {
-    let questionnaire = Questionnaires.findOne(questionnaireId);
+    const questionnaire = Questionnaires.findOne(questionnaireId);
 
     if (questionnaire !== void 0) {
-        let questionsIds = questionnaire.questionsList;
+        const questionsIds = questionnaire.questionsList;
 
-        let questions = Questions.find(
+        const questions = Questions.find(
             {
                 _id: {
                     $in: questionsIds
@@ -47,7 +49,7 @@ export function qqList(questionnaireId) {
 
         if (questions.count() > 0) {
             questions.fetch().forEach(function (question) {
-                let index = questionsIds.indexOf(question._id);
+                const index = questionsIds.indexOf(question._id);
 
                 if (index > -1) {
                     questionsIds.splice(index, 1);
@@ -89,14 +91,14 @@ export function updatePublicationQuestionnaire(questionnaireId, published, date)
                 publishedAt: date
             }
         }, (err) => {
-            if (err) new ErrorHandler(err.reason, "rounded");
+            if (err) new ErrorHandler(err, "rounded");
         });
     }
 }
 
 export function insertAnswer(answer, questionId, template, questionnaire) {
     addAnswer.call({answer, questionId}, (err) => {
-        if (err) new ErrorHandler(err.reason, "rounded");
+        if (err) new ErrorHandler(err, "rounded");
 
         if (questionnaire !== void 0) {
             const activeQuestion = template.parent().activeQuestion.get();
@@ -146,6 +148,6 @@ export function updatePublicationQuestion(questionId, published, date, deprecate
             deprecated: deprecated
         }
     }, (err) => {
-        if (err) new ErrorHandler(err.reason, "rounded");
+        if (err) new ErrorHandler(err, "rounded");
     });
 }

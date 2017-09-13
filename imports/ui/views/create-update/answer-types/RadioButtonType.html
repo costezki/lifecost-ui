@@ -14,8 +14,12 @@
         {{/each}}
         {{#if otherAnswerType}}
             <li class="collection-item">
-                <input type="radio" name="answer" id="{{label}}">
-                <label for="{{label}}">{{label}}</label>
+                <input type="radio" name="answer" id="other-type">
+                <label for="other-type">Other:</label>
+                <div class="input-field">
+                    <input type="text" id="other-input">
+                    <label for="other-input">Input other value:</label>
+                </div>
             </li>
         {{/if}}
     </ul>

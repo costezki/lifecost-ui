@@ -7,18 +7,13 @@ Template.SignUp.onCreated(function () {
     AutoForm.addFormType('signUpForm');
     AutoForm.addHooks('signUpForm', {
         // Called when any submit operation succeeds
-        onSuccess: function (formType, result) {
-            let settings = this.insertDoc;
+        onSuccess: function () {
+            const settings = this.insertDoc;
 
             Meteor.loginWithPassword(settings.email, settings.password, (err) => {
                 if (err) new ErrorHandler(err.reason, "rounded");
                 location.reload();
             });
-        },
-
-        // Called when any submit operation fails
-        onError: function (formType, err) {
-            if (err) new ErrorHandler(err.reason, "rounded");
         }
     })
 });

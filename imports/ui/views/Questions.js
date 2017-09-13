@@ -46,16 +46,14 @@ Template.Questions.helpers({
 Template.Questions.events({
     'click .delete': function () {
         if (this.title) {
-            let deleteQuestionnaire = confirm("Delete this questionnaire?\n\"" + this.title + "\"");
+            const deleteQuestionnaire = confirm("Delete this questionnaire?\n\"" + this.title + "\"");
 
-            if (deleteQuestionnaire) {
-                Questionnaires.remove(this._id);
-            }
+            if (deleteQuestionnaire) Questionnaires.remove(this._id);
         } else {
-            let deleteQuestion = confirm("Delete this question?\n\"" + this.question + "\"");
+            const deleteQuestion = confirm("Delete this question?\n\"" + this.question + "\"");
 
             if (deleteQuestion) {
-                let answers = Answers.find({questionId: this._id});
+                const answers = Answers.find({questionId: this._id});
 
                 if (answers.count() > 0) {
                     Questions.update(this._id, {
@@ -65,7 +63,7 @@ Template.Questions.events({
                             publishedDate: null
                         }
                     }, (err) => {
-                        if (err) new ErrorHandler(err.reason, "rounded");
+                        if (err) new ErrorHandler(err, "rounded");
                     });
                 } else {
                     Questions.remove(this._id);
@@ -74,21 +72,21 @@ Template.Questions.events({
         }
     },
     'click .make-publish': function () {
-        let question = Questions.findOne(this._id);
-        let questionnaire = Questionnaires.findOne(this._id);
+        const question = Questions.findOne(this._id);
+        const questionnaire = Questionnaires.findOne(this._id);
 
         if (question !== void 0) {
-            let published = question.published;
+            const published = question.published;
 
             updatePublicationQuestion(this._id, !published, published ? null : new Date(), false);
         } else if (questionnaire !== void 0) {
-            let published = questionnaire.published;
+            const published = questionnaire.published;
 
             updatePublicationQuestionnaire(this._id, !published, published ? null : new Date());
         }
     },
     'click .insert-module'() {
-        let module = this.trim('');
+        const module = this.trim('');
 
         if (module !== "" && module !== void 0) {
             Meteor.call('createDefaultQuestionnaire', module, (err) => {
@@ -97,7 +95,7 @@ Template.Questions.events({
         }
     },
     'click #create-questionnaire': function () {
-        let questions = Questions.find({author: Meteor.userId(), published: true});
+        const questions = Questions.find({author: Meteor.userId(), published: true});
 
         if (questions.count() > 1) {
             $('#create-questions').modal('close');
@@ -107,11 +105,12 @@ Template.Questions.events({
         }
     },
     'click .show-module': function (event, template) {
-        let module = this.trim('');
+        const module = this.trim('');
 
         if (module !== "" && module !== void 0) {
             Meteor.call('getModuleContent', module, (err, content) => {
                 if (err) new ErrorHandler(err.reason, "rounded");
+
                 template.moduleContent.set(content);
             });
         }

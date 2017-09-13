@@ -1,4 +1,5 @@
 import {ReactiveVar} from 'meteor/reactive-var';
+
 import {Questions} from '/imports/collections/questionsCollection';
 import {insertQuestionnaire} from '../utils';
 
@@ -6,13 +7,14 @@ import './CreateQuestionnaire.html';
 
 Template.CreateQuestionnaire.onCreated(function () {
     Meteor.subscribe('questions');
+
     this.published = new ReactiveVar(false);
 });
 
 Template.CreateQuestionnaire.onRendered(function () {
-    let questionnaireList = document.getElementById('questions-list');
-    let availableList = document.getElementById('available-list');
-    let sortableSettings = {
+    const questionnaireList = document.getElementById('questions-list');
+    const availableList = document.getElementById('available-list');
+    const sortableSettings = {
         animation: 150,  // ms, animation speed moving items when sorting, `0` — without animation
         dragClass: 'sortable-drag',
         group: 'questionnaire'
@@ -35,17 +37,17 @@ Template.CreateQuestionnaire.events({
     'submit #create-questionnaire': function (event, template) {
         event.preventDefault();
 
-        let questionnaireList = $(event.target).find('#questions-list').children();
+        const questionnaireList = $(event.target).find('#questions-list').children();
 
         let questions = [];
 
-        for (let i = 0; i < questionnaireList.length; i++) {
-            questions.push(questionnaireList[i].id);
-        }
+        questionnaireList.forEach((item) => {
+            questions.push(item.id);
+        });
 
         if (questions.length > 1) {
-            let title = event.target['questionnaire-title'].value.trim();
-            let published = template.published.get();
+            const title = event.target['questionnaire-title'].value.trim();
+            const published = template.published.get();
 
             insertQuestionnaire(published, title, published ? new Date() : null, questions);
         }

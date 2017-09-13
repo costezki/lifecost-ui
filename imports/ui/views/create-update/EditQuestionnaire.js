@@ -10,9 +10,9 @@ Template.EditQuestionnaire.onCreated(function () {
 });
 
 Template.EditQuestionnaire.onRendered(function () {
-    let questionnaireList = document.getElementById('questions-list');
-    let availableList = document.getElementById('available-list');
-    let sortableSettings = {
+    const questionnaireList = document.getElementById('questions-list');
+    const availableList = document.getElementById('available-list');
+    const sortableSettings = {
         animation: 150,  // ms, animation speed moving items when sorting, `0` — without animation
         dragClass: 'sortable-drag',
         group: 'questionnaire'
@@ -24,7 +24,7 @@ Template.EditQuestionnaire.onRendered(function () {
 
 Template.EditQuestionnaire.helpers({
     available() {
-        let questionnaire = Questionnaires.findOne(FlowRouter.getParam('id'));
+        const questionnaire = Questionnaires.findOne(FlowRouter.getParam('id'));
 
         if (questionnaire !== void 0) {
             return Questions.find({
@@ -36,14 +36,14 @@ Template.EditQuestionnaire.helpers({
         }
     },
     questionnaire() {
-        let questionnaire = Questionnaires.findOne(FlowRouter.getParam('id'));
+        const questionnaire = Questionnaires.findOne(FlowRouter.getParam('id'));
 
         if (questionnaire !== void 0) {
             return questionnaire.questionsList;
         }
     },
     questionnaireTitle() {
-        let questionnaire = Questionnaires.findOne(FlowRouter.getParam('id'));
+        const questionnaire = Questionnaires.findOne(FlowRouter.getParam('id'));
 
         if (questionnaire !== void 0) {
             return questionnaire.title;
@@ -55,16 +55,17 @@ Template.EditQuestionnaire.events({
     'submit #update-questionnaire': function (event, template) {
         event.preventDefault();
 
-        let questionnaireList = $(event.target).find('#questions-list').children();
+        const questionnaireList = $(event.target).find('#questions-list').children();
 
         let questions = [];
 
-        for (let i = 0; i < questionnaireList.length; i++) {
-            questions.push(questionnaireList[i].id);
-        }
+        questionnaireList.forEach((item) => {
+            questions.push(item.id);
+        });
 
         if (questions.length > 1) {
-            let title = event.target['questionnaire-title'].value.trim();
+            const title = event.target['questionnaire-title'].value.trim();
+
             updateQuestionnaire(FlowRouter.getParam('id'), title, questions);
         } else {
             new ErrorHandler(

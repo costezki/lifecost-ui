@@ -19,7 +19,7 @@ Template.Answer.onCreated(function () {
 Template.Answer.helpers({
     question() {
         // qqId = questionnaire question id
-        let qqId = Template.currentData().questionId;
+        const qqId = Template.currentData().questionId;
         let question;
 
         if (qqId !== void 0) {
@@ -70,7 +70,21 @@ Template.Answer.events({
             case 1:
                 answer.forEach(function (item, answer) {
                     if (item.checked) {
-                        insertAnswer(answer.toString(), questionId, template, isQuestionnaire);
+                        if (item.id === 'other-type') {
+                            const otherValue = $('#other-input').val().trim();
+
+                            if (otherValue !== '' && otherValue !== void 0) {
+                                insertAnswer(JSON.stringify({
+                                    label: 'Other',
+                                    value: otherValue,
+                                    answerNumber: answer
+                                }), questionId, template, isQuestionnaire);
+                            } else {
+                                new ErrorHandler('Input value', null, null, 'warning');
+                            }
+                        } else {
+                            insertAnswer(answer.toString(), questionId, template, isQuestionnaire);
+                        }
                     }
                 });
                 break;

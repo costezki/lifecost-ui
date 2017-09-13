@@ -4,20 +4,19 @@
             <legend class="center-align">{{question.question}}</legend>
             <h5 class="center-align">{{question.description}}</h5>
             {{#if not question.deprecated}}
-                {{#if checkAnswerType answerType 0}}
+                {{#if equal answerType 0}}
                     {{> CheckboxType questionId=currentQuestionId}}
                 {{else}}
-                    {{#if checkAnswerType answerType 1}}
+                    {{#if equal answerType 1}}
                         {{> RadioButtonType questionId=currentQuestionId}}
                     {{else}}
-                        {{#if checkAnswerType answerType 2}}
+                        {{#if equal answerType 2}}
                             {{>TextInputType questionId=currentQuestionId}}
                         {{else}}
-                            {{#if checkAnswerType answerType 3}}
+                            {{#if equal answerType 3}}
                                 {{>CountryType questionId=currentQuestionId}}
                             {{else}}
                                 {{>CityType questionId=currentQuestionId}}
-                                <!--{{>LocationsType questionId=currentQuestionId}}-->
                             {{/if}}
                         {{/if}}
 

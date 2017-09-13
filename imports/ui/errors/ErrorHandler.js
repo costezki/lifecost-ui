@@ -33,10 +33,6 @@ export class ErrorHandler {
         this.callCallback();
     }
 
-    removeError() {
-        this.currentError.remove();
-    }
-
     callCallback() {
         if (this.callback && this.callback !== void 0) {
             this.callback();

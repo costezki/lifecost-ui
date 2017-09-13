@@ -13,7 +13,7 @@ export const createAccounts = new ValidatedMethod({
         birthday: {type: Date}
     }).validator(),
     run({email, password, confirmPassword, userName, birthday}) {
-        let userId = Accounts.createUser({
+        const userId = Accounts.createUser({
             email: email,
             password: password,
             username: userName,

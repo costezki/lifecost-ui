@@ -14,6 +14,8 @@ Template.RadioButtonType.helpers({
         const question = Questions.findOne(Template.currentData().questionId);
 
         if (question !== void 0) {
+            Template.instance().otherAnswerType.set(question.otherAnswerType);
+
             return {
                 answers: question.answers.map((item, index) => {
                     return item;
@@ -25,13 +27,15 @@ Template.RadioButtonType.helpers({
         const answers = Answers.find({author: Meteor.userId(), questionId: Template.currentData().questionId});
 
         if (answers.count() > 0) {
-            let answer = answers.fetch()[answers.count() - 1];
+            const answer = answers.fetch()[answers.count() - 1];
             const question = Questions.findOne(answer.questionId);
 
             if (question !== void 0) {
-                Template.instance().otherAnswerType.set(question.otherAnswerType);
-
-                return question.answers[answer.answer];
+                if (typeof JSON.parse(answer.answer) === 'object') {
+                    return JSON.parse(answer.answer).value;
+                } else {
+                    return question.answers[answer.answer].value;
+                }
             }
         }
     },

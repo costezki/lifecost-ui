@@ -54,18 +54,20 @@ Template.SideNav.helpers({
         return UserSettings.findOne({user: Meteor.userId()});
     },
     questionsLength() {
-        let questionsLength = Questions.find({author: Meteor.userId()}).count()
-        let questionnairesLength = Questionnaires.find({author: Meteor.userId()}).count();
+        const questionsLength = Questions.find({author: Meteor.userId()}).count();
+        const questionnairesLength = Questionnaires.find({author: Meteor.userId()}).count();
+
         return questionsLength + questionnairesLength;
     },
     myAnswers() {
-        let answers = Answers.find({author: Meteor.userId()});
+        const answers = Answers.find({author: Meteor.userId()});
+
         if (answers.count() > 0) {
             let questions = [];
             let questionsIds = [];
 
             answers.fetch().forEach(function (item) {
-                let question = Questions.findOne(item.questionId);
+                const question = Questions.findOne(item.questionId);
 
                 if (question !== void 0) {
                     let flag = false;
@@ -77,9 +79,7 @@ Template.SideNav.helpers({
                         }
                     });
 
-                    if (!flag) {
-                        questions.push(question);
-                    }
+                    if (!flag) questions.push(question);
                 }
                 questionsIds.push(item.questionId);
             });
@@ -100,19 +100,20 @@ Template.SideNav.events({
     'submit #unlock-role'(event) {
         event.preventDefault();
 
-        let secretKey = event.target['secret-key'].value;
+        const secretKey = event.target['secret-key'].value;
 
         Meteor.call('checkKey', secretKey, (err, res) => {
             if (err) new ErrorHandler(err.reason, "rounded");
 
             if (res) {
-                Meteor.call('change-role', (err, res) => {
+                Meteor.call('change-role', (err) => {
                     if (err) new ErrorHandler(err.reason, "rounded");
+
                     $('#input-role-secret-key').modal('close');
                     $('#buy-role').modal('close');
                 });
             } else {
-                alert('Your key is broken!\nPlease try another key.');
+                new ErrorHandler('Your key is broken!\nPlease try another key.');
             }
         })
     }
