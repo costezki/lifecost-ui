@@ -8,7 +8,7 @@ Template.EditQuestion.onCreated(function () {
             FlowRouter.go('/questions');
         },
         formToDoc: function (doc) {
-            $('.other-input').parent().css('display', doc.answersType !== 0 ? 'none' : 'inherit');
+            $('.other-input').parent().css('display', doc.answersType !== 1 ? 'none' : 'inherit');
 
             if (doc.answersType >= 2 || doc.answersType === void 0) {
                 $('#updateQuestion').find('.collection').css('display', 'none');
@@ -22,6 +22,7 @@ Template.EditQuestion.onCreated(function () {
 
 Template.EditQuestion.onRendered(function () {
     $('input#question-title, textarea#question-desc').characterCounter();
+    Materialize.updateTextFields();
 });
 
 Template.EditQuestion.helpers({

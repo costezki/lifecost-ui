@@ -18,6 +18,8 @@ Template.EditQuestionnaire.onRendered(function () {
         group: 'questionnaire'
     };
 
+    Materialize.updateTextFields();
+
     Sortable.create(questionnaireList, sortableSettings);
     Sortable.create(availableList, sortableSettings);
 });
@@ -28,6 +30,7 @@ Template.EditQuestionnaire.helpers({
 
         if (questionnaire !== void 0) {
             return Questions.find({
+                author: Meteor.userId(),
                 _id: {
                     $nin: questionnaire.questionsList
                 },

@@ -43,6 +43,30 @@ let userSettingsSchema = new SimpleSchema({
         autoValue: function () {
             return new Date(this.value);
         }
+    },
+    country: {
+        type: String,
+        label: 'Country',
+        optional: true,
+        autoform: {
+            class: 'set-country'
+        }
+    },
+    city: {
+        type: String,
+        label: 'City',
+        optional: true,
+        autoform: {
+            class: 'set-city'
+        }
+    },
+    location: {
+        type: String,
+        optional: true,
+        autoform: {
+            type: 'hidden',
+            label: false
+        }
     }
 });
 

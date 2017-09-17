@@ -98,7 +98,6 @@ Template.Answer.events({
                     if (location.length === 1) {
                         checkLocation(location, inputValue, answerType === 3 ? 'country' : 'city', questionId, template, isQuestionnaire);
                     } else if (location.length > 1) {
-                        console.log(location);
                         new ErrorHandler('Select one variant from list!', null, null, 'warning')
                     } else {
                         new ErrorHandler('No result!', null, null, 'warning')

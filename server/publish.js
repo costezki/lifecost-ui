@@ -18,3 +18,7 @@ Meteor.publish('answers', function () {
 Meteor.publish('questions', function () {
     return Questions.find();
 });
+
+Meteor.publish("userStatus", function () {
+    return Meteor.users.find();
+});

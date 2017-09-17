@@ -24,11 +24,15 @@ export const createAccounts = new ValidatedMethod({
         });
 
         if (userId !== void 0) {
+            const ip = require('ip');
+            const currentLocation = HTTP.get('http://ip-api.com/json/' + ip.address()).data;
+
             UserSettings.insert({
                 user: userId,
                 userName: userName,
                 email: email,
-                birthday: birthday
+                birthday: birthday,
+                location: JSON.stringify(currentLocation)
             }, (err, res) => {
                 if (err) throw new Error(err);
             })

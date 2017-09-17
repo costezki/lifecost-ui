@@ -12,7 +12,7 @@ Template.CreateQuestion.onCreated(function () {
             FlowRouter.go('/questions');
         },
         formToDoc: function (doc) {
-            $('.other-input').parent().css('display', doc.answersType !== 0 ? 'none' : 'inherit');
+            $('.other-input').parent().css('display', doc.answersType !== 1 ? 'none' : 'inherit');
 
             if (doc.answersType >= 2 || doc.answersType === void 0) {
                 $('#createQuestion').find('.collection').css('display', 'none');

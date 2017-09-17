@@ -1,15 +1,32 @@
 <template name="UserSettings">
-	<div class="container">
-		<div class="row">
-			<div class="col s12">
-				<h4 class="center-align">User settings</h4>
-				<p class="center-align">Some description</p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col s8 offset-s2">
-				{{> quickForm collection=UserSettings buttonClasses="btn right" buttonContent="Update" id="updateUserSettings" type="update" doc=settings}}
-			</div>
-		</div>
-	</div>
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <h4 class="center-align">User settings</h4>
+                <p class="center-align">Some description</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col {{#if location}} s6 {{else}} s8 offset-s2{{/if}}">
+                {{> quickForm collection=UserSettings buttonClasses="btn right" buttonContent="Update" id="updateUserSettings" type="update" doc=settings}}
+            </div>
+            {{#if location}}
+                <div class="col s6">
+                    <ul id='locations' class='collection with-header'>
+                        {{#each location}}
+                            {{#if locationType}}
+                                <li class="collection-item">
+                                    {{country}}
+                                </li>
+                            {{else}}
+                                <li class="collection-item">
+                                    {{city}}
+                                </li>
+                            {{/if}}
+                        {{/each}}
+                    </ul>
+                </div>
+            {{/if}}
+        </div>
+    </div>
 </template>
