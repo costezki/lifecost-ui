@@ -1,0 +1,39 @@
+<template name="QuestionnaireStatistic">
+    <div class="container">
+        <div class="row">
+            <h5 class="center-align">Questionnaire info</h5>
+        </div>
+        <div class="row">
+            <div class="col s6">
+                <ul class="collection">
+                    <li class="collection-item">
+                        <b>Age: </b> {{chartData.age}}
+                    </li>
+                    <li class="collection-item">
+                        <b>Life span: </b> {{chartData.life_span}}
+                    </li>
+                    <li class="collection-item">
+                        <b>Retirement age: </b> {{chartData.retirement_age}}
+                    </li>
+                </ul>
+            </div>
+            <div class="col s6">
+                <ul class="collection">
+                    <li class="collection-item">
+                        <b>Life cost: </b> {{round chartData.life_cost}}$
+                    </li>
+                    <li class="collection-item">
+                        <b>Inflation rate: </b> {{chartData.inflation_rate}}
+                    </li>
+                    <li class="collection-item">
+                        <b>Yearly minimum income: </b> {{round chartData.yearly_minimum_income}}$
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div id="questionnaire-chart" class="col s12"></div>
+        {{drawChart}}
+    </div>
+</template>

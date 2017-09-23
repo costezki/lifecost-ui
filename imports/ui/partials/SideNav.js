@@ -1,8 +1,11 @@
+import {ReactiveVar} from 'meteor/reactive-var';
+
 import {Questions} from '/imports/collections/questionsCollection';
 import {Questionnaires} from '/imports/collections/questionnairesCollection';
 import {Answers} from '/imports/collections/answersCollection';
 import {UserSettings} from '/imports/collections/userCollection';
 import {ErrorHandler} from "../errors/ErrorHandler";
+import {showCompletedQuestionnaires} from "../views/utils";
 
 import './SideNav.html';
 
@@ -11,6 +14,16 @@ Template.SideNav.onCreated(function () {
     Meteor.subscribe('questionnaires');
     Meteor.subscribe('answers');
     Meteor.subscribe('userSettings');
+
+    this.currentLocation = new ReactiveVar();
+
+    Meteor.call('getCurrentLocation', (err, location) => {
+        if (err) new ErrorHandler(err.reason);
+
+        console.log(location);
+
+        this.currentLocation.set(location);
+    })
 });
 
 Template.SideNav.onRendered(function () {
@@ -59,6 +72,13 @@ Template.SideNav.helpers({
 
         return questionsLength + questionnairesLength;
     },
+    completedQuestionnairesLength() {
+        const completedCount = showCompletedQuestionnaires();
+
+        if (completedCount !== void 0) {
+            return completedCount.length;
+        }
+    },
     myAnswers() {
         const answers = Answers.find({author: Meteor.userId()});
 
@@ -87,6 +107,9 @@ Template.SideNav.helpers({
         } else {
             return 0;
         }
+    },
+    currentLocation() {
+        return Template.instance().currentLocation.get();
     }
 });
 

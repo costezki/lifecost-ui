@@ -62,3 +62,5 @@ createRouter('/published-questions', 'published-questions', false, 'User', 'Publ
 createRouter('/add-answer/:id', 'add-answer', false, 'User', 'AddAnswers');
 createRouter('/answers', 'answers', true, 'User', 'ShowAnswers');
 createRouter('/settings', 'settings', true, 'User', 'UserSettings');
+createRouter('/show-statistics', 'show-statistics', true, 'User', 'ShowStatistics');
+createRouter('/questionnaire-statistic/:id', 'questionnaire-statistic', true, 'User', 'QuestionnaireStatistic');

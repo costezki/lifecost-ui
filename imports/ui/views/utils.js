@@ -1,5 +1,6 @@
 import {addAnswer} from '/imports/mdg/methods';
 import {Questions} from '/imports/collections/questionsCollection';
+import {Answers} from "/imports/collections/answersCollection";
 import {Questionnaires} from '/imports/collections/questionnairesCollection';
 import {ErrorHandler} from "../errors/ErrorHandler";
 
@@ -101,9 +102,10 @@ export function insertAnswer(answer, questionId, template, questionnaire) {
         if (err) new ErrorHandler(err, "rounded");
 
         if (questionnaire !== void 0) {
+            const questionnaireId = FlowRouter.getParam('id');
             const activeQuestion = template.parent().activeQuestion.get();
             const activeQuestionNumber = activeQuestion.questionNumber;
-            const questionnaire = Questionnaires.findOne(FlowRouter.getParam('id'));
+            const questionnaire = Questionnaires.findOne(questionnaireId);
 
             if (questionnaire !== void 0) {
                 const questions = Questions.find({_id: {$in: questionnaire.questionsList}, published: true});
@@ -125,7 +127,7 @@ export function insertAnswer(answer, questionId, template, questionnaire) {
                     template.parent().clearedQuestions.set(clearedQuestions);
                     template.parent().activeQuestion.set(nextQuestion);
                 } else {
-                    FlowRouter.go('/published-questions');
+                    FlowRouter.go(`/questionnaire-statistic/${questionnaireId}`);
                 }
             }
         }
@@ -150,4 +152,53 @@ export function updatePublicationQuestion(questionId, published, date, deprecate
     }, (err) => {
         if (err) new ErrorHandler(err, "rounded");
     });
+}
+
+export function showCompletedQuestionnaires() {
+    const questionnaires = Questionnaires.find();
+
+    if (questionnaires.count() > 0) {
+        let completed = [];
+
+        questionnaires.forEach((questionnaire) => {
+            const questionsIds = questionnaire.questionsList;
+            let flag = true;
+
+            questionsIds.map((id) => {
+                const answer = Answers.findOne({questionId: id, author: Meteor.userId()});
+
+                if (answer === void 0) flag = false;
+            });
+
+            if (flag) completed.push(questionnaire);
+        });
+
+        return completed;
+    }
+}
+
+export function getAnswerValue(question, questionId) {
+    const answers = Answers.find({questionId: questionId, author: Meteor.userId()});
+
+    if (answers.count() > 0) {
+        const answer = answers.fetch()[answers.count() - 1];
+
+        if (question.otherAnswerType) {
+            const questionAnswer = JSON.parse(answer.answer).value;
+
+            if (questionAnswer !== void 0) {
+                return questionAnswer;
+            } else {
+                if (question.answersType === 1) {
+                    return question.answers[answer.answer].value;
+                } else {
+                    return answer.answer;
+                }
+            }
+        } else if (question.answersType > 1) {
+            return answer.answer;
+        } else {
+            return question.answers[answer.answer].value
+        }
+    }
 }

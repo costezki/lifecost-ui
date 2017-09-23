@@ -37,13 +37,13 @@ Template.CreateQuestionnaire.events({
     'submit #create-questionnaire': function (event, template) {
         event.preventDefault();
 
-        const questionnaireList = $(event.target).find('#questions-list').children();
+        const questionnaireList = $('#questions-list').children();
 
         let questions = [];
 
-        questionnaireList.forEach((item) => {
-            questions.push(item.id);
-        });
+        for (let i = 0; i < questionnaireList.length; i++) {
+            questions.push(questionnaireList.id)
+        }
 
         if (questions.length > 1) {
             const title = event.target['questionnaire-title'].value.trim();

@@ -1,0 +1,14 @@
+<template name="ShowStatistics">
+    <div class="container">
+        <div class="row">
+            <ul class="collection with-header">
+                <li class="collection-header"><h5 class="center-align">Questionnaires statistics</h5></li>
+                {{#each questionnaires}}
+                    <li class="collection-item">
+                        <a href="/questionnaire-statistic/{{_id}}">{{title}}</a>
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</template>

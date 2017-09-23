@@ -3,6 +3,7 @@ import SimpleSchema from 'simpl-schema';
 import {Answers} from '/imports/collections/answersCollection';
 import {UserSettings} from '/imports/collections/userCollection';
 
+
 export const createAccounts = new ValidatedMethod({
     name: 'createAccounts',
     validate: new SimpleSchema({

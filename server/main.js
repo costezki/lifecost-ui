@@ -1,15 +1,19 @@
 import '/imports/mdg/methods';
 import {Questions} from '/imports/collections/questionsCollection';
 import {Questionnaires} from "../imports/collections/questionnairesCollection";
+import {Answers} from "../imports/collections/answersCollection";
 
-let fs = require('fs');
+const fs = require('fs');
+const PythonShell = require('python-shell');
+const Future = Npm.require('fibers/future');
+
 let path = Npm.require('path');
 
-// Full path to private folder in project
+// Load all locations to use in future
 // Meteor application structure dependent
 path = path.resolve('.').split(path.sep + '.meteor')[0] + '/private';
 
-// Load all locations to use in future
+// Full path to private folder in project
 const locations = JSON.parse(fs.readFileSync(path + '/gis/countries.json', 'utf-8'));
 
 Meteor.startup(() => {
@@ -62,8 +66,87 @@ Meteor.methods({
     },
     getLocation(location) {
         return getLocationList(location.inputValue, location.answerType);
+    },
+    callPython(model) {
+        const options = {
+            scriptPath: path + '/python/',
+            args: [model.questionnaireId, JSON.stringify(collectAnswers(model.questionnaireId, model.userId))]
+        };
+
+        const pyShell = new PythonShell('lifecost-call.py', options);
+
+        const thisFuture = new Future();
+
+        pyShell.on('message', function (message) {
+            // received a message sent from the Python script (a simple "print" statement)
+            thisFuture.return(message);
+        });
+
+        // end the input stream and allow the process to exit
+        pyShell.end(function (err) {
+            if (err) throw err;
+        });
+
+        return JSON.parse(thisFuture.wait());
+    },
+    getCurrentLocation() {
+        const ip = require('ip');
+
+        return HTTP.get('http://ip-api.com/json/' + ip.address()).data;
     }
 });
+
+/**
+ * Collect data from user answers in the questionnaire
+ * @param questionnaireId
+ * @param user
+ * @returns {{}}
+ */
+function collectAnswers(questionnaireId = 'learnvest-questionnaire', user) {
+    const questionnaire = Questionnaires.findOne(questionnaireId);
+
+    if (questionnaire !== void 0) {
+        const questionsId = questionnaire.questionsList;
+        const questions = Questions.find({
+            _id: {
+                $in: questionsId
+            },
+            published: true
+        });
+        let data = {};
+
+        if (questions.count() === questionsId.length) {
+
+            questions.fetch().forEach((question) => {
+                const answers = Answers.find({questionId: question._id, author: user});
+
+                if (answers.count() > 0) {
+                    const answer = answers.fetch()[answers.count() - 1];
+
+                    if (question.otherAnswerType) {
+                        const questionAnswer = JSON.parse(answer.answer).value;
+
+                        if (questionAnswer !== void 0) {
+                            data[question.variableName] = questionAnswer;
+                        } else {
+                            if (question.answersType === 1) {
+                                data[question.variableName] = question.answers[answer.answer].value;
+                            } else {
+                                data[question.variableName] = answer.answer;
+                            }
+                        }
+                    } else if (question.answersType > 1) {
+                        data[question.variableName] = answer.answer;
+                    } else {
+                        data[question.variableName] = question.answers[answer.answer].value
+                    }
+                }
+            });
+
+            return data;
+        }
+    }
+}
 
 /**
  * Get list of countries or cities from countries.json and return them on client side

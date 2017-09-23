@@ -6,21 +6,24 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "mocha": "^3.2.0",
+    "mocha": "^3.5.3",
     "mochawesome": "^2.0.3"
   },
   "dependencies": {
     "babel-runtime": "^6.23.0",
     "bcrypt": "^1.0.3",
     "core-js": "^2.5.1",
+    "d3": "^4.10.2",
+    "fibers": "^2.0.0",
     "ip": "^1.1.5",
     "jquery": "^3.2.1",
     "materialize-clockpicker": "^1.0.1",
     "meteor-node-stubs": "^0.2.5",
     "mongo-object": "0.0.2",
     "mongodb": "^2.2.31",
-    "mongoose": "^4.11.10",
+    "mongoose": "^4.11.11",
     "path": "^0.12.7",
+    "python-shell": "^0.4.0",
     "simpl-schema": "^0.3.1"
   }
 }

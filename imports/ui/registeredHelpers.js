@@ -50,3 +50,7 @@ Template.registerHelper('equal', function (a, b) {
 Template.registerHelper('changeModuleName', function (module) {
     return module.replace('.json', '');
 });
+
+Template.registerHelper('round', function (number) {
+    return Math.round(number);
+});

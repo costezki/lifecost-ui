@@ -1,5 +1,5 @@
 {
-  "id": "learnvest-questionnaire",
+  "id": "learnvest",
   "title": "Learnvest M.A.S.H. Calculator: How Much Will My Lifestyle Cost?",
   "questionsList": [
     {
@@ -294,6 +294,30 @@
         }
       ],
       "variableName": "nursing_care",
+      "deprecated": false,
+      "published": true
+    },
+    {
+      "question": "How old are you?",
+      "description": "Input your age",
+      "answersType": 2,
+      "variableName": "age",
+      "deprecated": false,
+      "published": true
+    },
+    {
+      "question": "What is the inflation rate in your country?",
+      "description": "Input inflation rate",
+      "answersType": 2,
+      "variableName": "inflation_rate",
+      "deprecated": false,
+      "published": true
+    },
+    {
+      "question": "How much do you plan to live?",
+      "description": "Enter how many years you would have lived",
+      "answersType": 2,
+      "variableName": "life_span",
       "deprecated": false,
       "published": true
     }

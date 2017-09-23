@@ -1,5 +1,6 @@
 import {Questions} from '/imports/collections/questionsCollection';
 import {Answers} from '/imports/collections/answersCollection';
+import {getAnswerValue} from "./utils";
 
 import './ShowAnswers.html';
 
@@ -15,41 +16,39 @@ Template.ShowAnswers.helpers({
             let questions = [];
             let questionsIds = [];
 
-            answers.fetch().forEach(function (item) {
+            answers.fetch().forEach((item) => {
                 const question = Questions.findOne(item.questionId);
 
                 if (question !== void 0) {
-                    let flag = false;
+                    let flag = true;
 
                     questionsIds.forEach(function (id) {
                         if (item.questionId === id) {
-                            flag = true;
+                            flag = false;
                             return false;
                         }
                     });
 
-                    if (!flag) {
+                    if (flag) {
                         switch (question.answersType) {
                             case 0:
                                 questions.push({
                                     question: question,
-                                    answer: item.answer.split(',').map((answer) => {
-                                        return question.answers[answer];
-                                    }),
+                                    answer: getAnswerValue(question, item.questionId),
                                     answerCreatedAt: item.createdAt
                                 });
                                 break;
                             case 1:
                                 questions.push({
                                     question: question,
-                                    answer: question.answers[item.answer],
+                                    answer: getAnswerValue(question, item.questionId),
                                     answerCreatedAt: item.createdAt
                                 });
                                 break;
                             case 2:
                                 questions.push({
                                     question: question,
-                                    answer: item.answer,
+                                    answer: getAnswerValue(question, item.questionId),
                                     answerCreatedAt: item.createdAt
                                 });
                                 break;

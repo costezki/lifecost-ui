@@ -51,6 +51,29 @@
                         <li class="collection-item">
                             Birthday: <span class="right">{{getBirthday userSettings.birthday}}</span>
                         </li>
+                        <li class="collection-item">
+                            Country:
+                            <span class="right">
+                                {{#if currentLocation.country}}
+                                    {{currentLocation.country}}
+                                {{else}}
+                                    {{userSettings.country}}
+                                {{/if}}
+                            </span>
+                        </li>
+                        <li class="collection-item">
+                            City:
+                            <span class="right">
+                                {{#if currentLocation.city}}
+                                    {{currentLocation.city}}
+                                {{else}}
+                                    {{userSettings.city}}
+                                {{/if}}
+                            </span>
+                        </li>
+                        <li class="collection-item">
+                            IP: <span class="right">{{currentLocation.query}}</span>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -164,9 +187,12 @@
             </a>
         </li>
         <li>
-            <a href="#!">
+            <a href="/show-statistics">
                 <i class="material-icons left">show_chart</i>
                 Show statistics
+                <span class="secondary-content">
+                    {{completedQuestionnairesLength}}
+                </span>
             </a>
         </li>
     </ul>
